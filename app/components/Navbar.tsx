@@ -1,103 +1,87 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname(); // ✅ Detect current page
+
+  const menuItems = [
+    ["Home", "/"],
+    ["Floor Plans", "/floorplans"],
+    ["Amenities", "/amenities"],
+    ["About us", "/aboutus"],
+    ["Book A Visit", "/bookvisit"],
+  ];
 
   return (
-    <nav className="fixed top-5 left-0 w-full z-[1000] flex justify-center">
+    <nav className="fixed top-3 left-0 w-full z-[1000] flex justify-center">
       <div
         className="
           bg-white 
           backdrop-blur-md 
           border border-white/70 
-          shadow-[0_10px_40px_rgba(0,0,0,0.05)]
-          px-[30px] py-[12px] 
+          shadow-[0_4px_20px_rgba(0,0,0,0.06)]
+          w-[88%] md:w-[90%] max-w-[1200px]
+          px-4 py-2.5 md:px-[30px] md:py-[12px]
           rounded-full 
           flex items-center justify-between
-          w-[90%] max-w-[1200px]
         "
       >
         {/* Logo */}
-        <div className="font-extrabold text-[1.2rem] tracking-[-0.5px] flex items-center gap-2">
-          <Link href="/" className="flex items-center gap-2">
-            <img src="/logo.png" alt="Logo" className="h-10 w-auto" />
-          </Link>
-        </div>
+        <Link href="/" className="flex items-center gap-2">
+          <Image
+            src="/logos/logo.png"
+            alt="Autumn Towne Logo"
+            width={120}
+            height={63}
+            quality={100}
+            priority
+            className="h-8 w-auto md:h-10"
+          />
+        </Link>
 
-        {/* Desktop Nav */}
+        {/* Desktop Menu */}
         <ul className="hidden md:flex items-center gap-8">
-          <li>
-            <Link
-              href="/"
-              className="
-                text-[0.95rem] font-medium 
-                text-[#999999] 
-                hover:text-[#E95522] 
-                transition relative
-              "
-            >
-              Home
-            </Link>
-          </li>
+          {menuItems.map(([label, href]) => {
+            const isActive = pathname === href;
 
-          <li>
-            <Link
-              href="/floorplans"
-              className="
-                text-[0.95rem] font-medium 
-                text-[#999999] 
-                hover:text-[#E95522] 
-                transition
-              "
-            >
-              Floor Plans
-            </Link>
-          </li>
+            return (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className={`
+                    text-[0.95rem] font-medium transition relative 
+                    ${
+                      isActive
+                        ? "text-[#E95522] font-semibold"
+                        : "text-[#999] hover:text-[#E95522]"
+                    }
+                  `}
+                >
+                  {label}
 
-          <li>
-            <Link
-              href="/amenities"
-              className="
-                text-[0.95rem] font-medium 
-                text-[#999999] 
-                hover:text-[#E95522] 
-                transition
-              "
-            >
-              Amenities
-            </Link>
-          </li>
+                  {/* Active underline */}
+                  {isActive && (
+                    <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-[#E95522] rounded-full" />
+                  )}
+                </Link>
+              </li>
+            );
+          })}
 
-          <li>
-            <Link
-              href="/aboutus"
-              className="
-                text-[0.95rem] font-medium 
-                text-[#999999] 
-                hover:text-[#E95522] 
-                transition
-              "
-            >
-              About us
-            </Link>
-          </li>
-
-          {/* Contact Button */}
+          {/* Contact button */}
           <li>
             <Link
               href="/contactus"
               className="
-                bg-[#E95522] 
-                text-white 
-                px-5 py-2 
-                rounded-md 
-                font-semibold
-                hover:bg-[#cf4a1d]
-                transition
+                bg-[#E95522] text-white 
+                px-5 py-2 rounded-md 
+                font-semibold hover:bg-[#cf4a1d] transition
               "
             >
               Contact us
@@ -105,56 +89,48 @@ export default function Navbar() {
           </li>
         </ul>
 
-        {/* Hamburger (Mobile Only) */}
+        {/* Hamburger Button */}
         <button
-          className="md:hidden text-[1.5rem] text-black"
+          className="md:hidden text-[1.7rem] text-[#333]"
           onClick={() => setOpen(!open)}
         >
           {open ? <FaTimes /> : <FaBars />}
         </button>
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile Menu */}
       {open && (
         <ul
           className="
-            absolute top-[80px] left-0 w-full 
-            bg-white 
-            shadow-lg 
-            py-6 px-6 
-            flex flex-col gap-4 
-            font-medium text-[#666] 
-            md:hidden
+            absolute top-[70px] md:hidden 
+            left-0 w-full bg-white shadow-lg 
+            py-6 px-6 flex flex-col gap-4 
+            font-medium text-[#444] rounded-b-2xl
           "
         >
-          <li>
-            <Link href="/" onClick={() => setOpen(false)}>
-              Home
-            </Link>
-          </li>
+          {menuItems.map(([label, href]) => {
+            const isActive = pathname === href;
 
-          <li>
-            <Link href="/floorplans" onClick={() => setOpen(false)}>
-              Floor Plans
-            </Link>
-          </li>
-
-          <li>
-            <Link href="/amenities" onClick={() => setOpen(false)}>
-              Amenities
-            </Link>
-          </li>
-
-          <li>
-            <Link href="/aboutus" onClick={() => setOpen(false)}>
-              About us
-            </Link>
-          </li>
+            return (
+              <li key={href}>
+                <Link
+                  href={href}
+                  onClick={() => setOpen(false)}
+                  className={`
+                    block py-2
+                    ${isActive ? "text-[#E95522] font-semibold" : "text-[#444]"}
+                  `}
+                >
+                  {label}
+                </Link>
+              </li>
+            );
+          })}
 
           <li>
             <Link
               href="/contactus"
-              className="text-white bg-[#E95522] px-4 py-2 rounded-md"
+              className="block text-center text-white bg-[#E95522] px-4 py-2 rounded-md"
               onClick={() => setOpen(false)}
             >
               Contact us
