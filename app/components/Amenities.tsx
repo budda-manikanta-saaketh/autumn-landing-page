@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   FaCoffee,
   FaDog,
@@ -54,43 +55,52 @@ export default function Amenities() {
               <div
                 key={i}
                 className="
-                  px-4 py-2 
-                  border border-[#eee] rounded-full 
-                  text-xs md:text-sm 
-                  font-medium flex items-center gap-2
-                  text-[#5B2C1A]
-                "
+      px-4 py-2 
+      border border-[#eee] rounded-full 
+      text-xs md:text-sm 
+      font-medium flex items-center gap-2
+      text-[#5B2C1A]
+      bg-white
+      transition-all duration-200
+
+      hover:bg-[#E95522]/10 
+      hover:border-[#E95522]/40 
+      hover:shadow-md 
+      hover:scale-[1.05]
+      cursor-pointer
+    "
               >
                 <span className="text-base">{f.icon}</span> {f.label}
               </div>
             ))}
           </div>
 
-          {/* Info Box */}
-          <div
-            className="
+          <Link href="/contactus" className="block w-fit">
+            <div
+              className="
               bg-[#F8F9FB] p-4 md:p-5 rounded-[20px] 
               flex gap-4 max-w-full md:max-w-[400px]
             "
-          >
-            <div
-              className="
+            >
+              <div
+                className="
                 w-10 h-10 bg-white rounded-full shadow 
                 flex items-center justify-center font-bold text-[#5B2C1A]
               "
-            >
-              ?
-            </div>
+              >
+                ?
+              </div>
 
-            <div>
-              <h4 className="text-lg font-semibold text-[#5B2C1A]">
-                Questions?
-              </h4>
-              <p className="text-[#666] text-sm md:text-base">
-                Our management team is on-site to help.
-              </p>
+              <div>
+                <h4 className="text-lg font-semibold text-[#5B2C1A]">
+                  Questions?
+                </h4>
+                <p className="text-[#666] text-sm md:text-base">
+                  Our management team is on-site to help.
+                </p>
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
 
         {/* RIGHT IMAGE CARD */}
@@ -119,17 +129,18 @@ export default function Amenities() {
                 </h4>
                 <p className="text-[#666] text-sm">Modern & welcoming</p>
               </div>
-
-              <button
-                className="
+              <Link href="/amenities" className="block w-fit">
+                <button
+                  className="
                   w-10 h-10 md:w-12 md:h-12 
                   bg-[#E95522] text-white rounded-full 
                   flex items-center justify-center 
                   transition hover:scale-110 hover:rotate-12
                 "
-              >
-                <FaArrowRight />
-              </button>
+                >
+                  <FaArrowRight />
+                </button>
+              </Link>
             </div>
           </div>
         </div>

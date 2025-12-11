@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FaArrowRight, FaCheck } from "react-icons/fa";
 
 export default function Amenities() {
@@ -108,34 +109,36 @@ export default function Amenities() {
           </div>
 
           {/* INFO BOX */}
-          <div
-            className="
+          <Link href="/contactus" className="block w-fit">
+            <div
+              className="
               bg-gradient-to-br from-[#5B2C1A] to-[#7a3d24] 
               p-5 md:p-6 rounded-2xl 
               flex gap-4 max-w-full md:max-w-[400px]
               shadow-xl hover:shadow-2xl transition-all duration-300
               hover:scale-[1.02]
             "
-          >
-            <div
-              className="
+            >
+              <div
+                className="
                 w-12 h-12 bg-white rounded-full shadow-lg
                 flex items-center justify-center font-bold text-[#5B2C1A]
                 text-xl
               "
-            >
-              ?
-            </div>
+              >
+                ?
+              </div>
 
-            <div>
-              <h4 className="text-lg font-semibold text-white mb-1">
-                Questions?
-              </h4>
-              <p className="text-orange-100 text-sm md:text-base">
-                Our management team is on-site to help.
-              </p>
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-1">
+                  Questions?
+                </h4>
+                <p className="text-orange-100 text-sm md:text-base">
+                  Our management team is on-site to help.
+                </p>
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
 
         {/* RIGHT IMAGE CARD */}
@@ -173,20 +176,6 @@ export default function Amenities() {
                 </h4>
                 <p className="text-[#666] text-sm">Modern & welcoming</p>
               </div>
-
-              <button
-                className="
-          w-10 h-10 md:w-12 md:h-12 
-          bg-gradient-to-br from-[#E95522] to-orange-600
-          text-white rounded-full 
-          flex items-center justify-center 
-          transition-all duration-300
-          hover:scale-110 hover:rotate-12 hover:shadow-lg
-          shadow-md
-        "
-              >
-                <FaArrowRight />
-              </button>
             </div>
           </div>
         </div>

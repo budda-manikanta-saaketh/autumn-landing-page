@@ -2,105 +2,48 @@
 
 import { useState } from "react";
 import {
-  FaPaperPlane,
   FaInstagram,
   FaFacebook,
   FaArrowUp,
+  FaPaperPlane,
 } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Footer() {
-  const [sent, setSent] = useState(false);
-
-  const submit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSent(true);
-    setTimeout(() => setSent(false), 3000);
-  };
-
   return (
     <footer id="contact" className="bg-white pt-16 md:pt-20 mt-20 relative">
       <div className="max-w-[1280px] mx-auto px-4 md:px-6">
-        {/* CTA BOX */}
-        {/* CTA BOX (Improved + Mobile Friendly) */}
+        {/* ======================== CTA BOX ======================== */}
         <div className="bg-[#8A3B27] text-white rounded-[28px] md:rounded-[32px] px-6 md:px-12 py-12 md:py-16 text-center mb-16">
           <h2 className="text-[2rem] md:text-[2.6rem] font-bold mb-4 leading-tight">
             Ready to Move In?
           </h2>
 
           <p className="text-white/80 max-w-[480px] mx-auto text-sm md:text-base mb-8">
-            Send us your details and our management team will contact you
-            shortly.
+            Have questions or want to learn more? Contact our management team
+            and we’ll be happy to assist you.
           </p>
 
-          {/* Modern Card Form */}
-          <form
-            onSubmit={submit}
+          {/* CTA BUTTON */}
+          <Link
+            href="/contactus"
             className="
-      bg-white/10 backdrop-blur-md 
-      rounded-[20px] md:rounded-full 
-      p-5 md:p-3 
-      flex flex-col md:flex-row 
-      gap-4 md:gap-2 
-      items-center justify-center 
-      max-w-[680px] mx-auto
-    "
+              bg-white text-[#8A3B27]
+              px-8 py-3.5
+              rounded-full
+              font-semibold
+              text-base
+              flex items-center justify-center gap-2
+              mx-auto
+              w-max
+              hover:bg-[#FBE4DD] transition
+            "
           >
-            {/* Name */}
-            <input
-              type="text"
-              placeholder="Your Name"
-              required
-              className="
-        bg-white/20 text-white 
-        px-4 py-3 
-        rounded-[14px] md:rounded-full 
-        outline-none 
-        w-full md:w-auto 
-        placeholder:text-white/60
-        text-sm md:text-base
-      "
-            />
-
-            {/* Email */}
-            <input
-              type="email"
-              placeholder="Email Address"
-              required
-              className="
-        bg-white/20 text-white 
-        px-4 py-3 
-        rounded-[14px] md:rounded-full 
-        outline-none 
-        w-full md:w-auto 
-        placeholder:text-white/60
-        text-sm md:text-base
-      "
-            />
-
-            {/* Button */}
-            <button
-              className="
-        bg-white text-[#8A3B27] 
-        px-6 md:px-8 py-3 
-        rounded-[14px] md:rounded-full 
-        font-semibold 
-        text-sm md:text-base
-        flex items-center justify-center gap-2
-        w-full md:w-auto
-      "
-            >
-              {sent ? (
-                "Sent ✓"
-              ) : (
-                <>
-                  Send Request <FaPaperPlane />
-                </>
-              )}
-            </button>
-          </form>
+            Contact Us <FaPaperPlane />
+          </Link>
         </div>
 
-        {/* INFORMATION GRID */}
+        {/* ======================== INFO GRID ======================== */}
         <div
           className="
             grid 
@@ -163,7 +106,7 @@ export default function Footer() {
           </div>
 
           {/* COL 4 — SOCIAL */}
-          <div className="flex sm:flex-row md:flex-col items-start gap-3">
+          <div className="flex sm:flex-row md:flex-row items-start gap-3">
             <a
               className="
                 w-10 h-10 

@@ -145,7 +145,7 @@ export default function Properties() {
                   </span>
 
                   <a
-                    href="#contact"
+                    href="/amenities"
                     className="
                       w-10 h-10 rounded-full 
                       bg-[#E95522] text-white 

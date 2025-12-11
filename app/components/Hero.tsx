@@ -51,7 +51,7 @@ export default function Hero() {
             </div>
 
             <a
-              href="#contact"
+              href="/contactus"
               className="w-10 h-10 rounded-full bg-[#E95522] text-white flex items-center justify-center"
             >
               <FaEnvelope />

@@ -2,14 +2,28 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ["images.unsplash.com", "autumnplazaapartments.com"],
     remotePatterns: [
       {
         protocol: "https",
         hostname: "images.unsplash.com",
       },
+      {
+        protocol: "https",
+        hostname: "autumnplazaapartments.com",
+      },
+      {
+        protocol: "https",
+        hostname: "www.autumnplazaapartments.com",
+      },
     ],
+
+    qualities: [90, 75, 100],
+    formats: ["image/webp"],
   },
+
+  poweredByHeader: false,
+  trailingSlash: true,
+  reactStrictMode: true,
 };
 
 export default nextConfig;

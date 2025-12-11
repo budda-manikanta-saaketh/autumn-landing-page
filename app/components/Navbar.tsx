@@ -12,10 +12,10 @@ export default function Navbar() {
 
   const menuItems = [
     ["Home", "/"],
-    ["Floor Plans", "/floorplans"],
-    ["Amenities", "/amenities"],
-    ["About us", "/aboutus"],
-    ["Book A Visit", "/bookvisit"],
+    ["Floor Plans", "/floorplans/"],
+    ["Amenities", "/amenities/"],
+    ["About us", "/aboutus/"],
+    ["Book A Visit", "/bookvisit/"],
   ];
 
   return (

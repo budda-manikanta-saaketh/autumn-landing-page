@@ -47,7 +47,7 @@ const data = [
   },
 ];
 
-export default function Properties() {
+export default function FloorPlans() {
   const [filter, setFilter] = useState("all");
 
   const filtered = data.filter((p) =>
@@ -99,7 +99,7 @@ export default function Properties() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
               {twoBed.map((p, i) => (
-                <PropertyCard key={i} p={p} />
+                <FloorPlanCard key={i} p={p} />
               ))}
             </div>
           </>
@@ -114,7 +114,7 @@ export default function Properties() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {oneBed.map((p, i) => (
-                <PropertyCard key={i} p={p} />
+                <FloorPlanCard key={i} p={p} />
               ))}
             </div>
           </>
@@ -128,7 +128,7 @@ export default function Properties() {
 /* EXTRACTED CARD COMPONENT */
 /* ---------------------------------------------- */
 
-function PropertyCard({ p }: any) {
+function FloorPlanCard({ p }: any) {
   return (
     <div
       className="
@@ -212,3 +212,21 @@ function PropertyCard({ p }: any) {
     </div>
   );
 }
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: "Luxury 2 Bedroom Suite",
+      brand: "Autumn Towne",
+      category: "Apartment",
+      offers: {
+        "@type": "Offer",
+        priceCurrency: "USD",
+        price: "1995",
+        availability: "https://schema.org/InStock",
+      },
+    }),
+  }}
+></script>;
