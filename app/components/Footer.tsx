@@ -14,7 +14,6 @@ export default function Footer() {
   return (
     <footer id="contact" className="bg-[#FDF9F6] pt-0 md:pt-10 mt-4 relative">
       <div className="max-w-[1280px] mx-auto px-4 md:px-6">
-        {/* ======================== CTA BOX ======================== */}
         <div className="bg-[#5B2C1A] text-white rounded-[28px] md:rounded-[32px] px-8 md:px-14 py-14 md:py-18 text-center mb-20 shadow-xl">
           <h2 className="text-[2.2rem] md:text-[2.8rem] font-extrabold mb-4 leading-tight tracking-wide">
             Ready to Move In?
@@ -39,8 +38,6 @@ export default function Footer() {
             Contact Us <FaPhoneFlip size={18} />
           </Link>
         </div>
-
-        {/* ======================== INFO GRID ======================== */}
         <div
           className="
             grid 
@@ -50,7 +47,6 @@ export default function Footer() {
             border-b border-[#C8B4A9]
           "
         >
-          {/* COL 1 */}
           <div>
             <h3 className="text-3xl font-extrabold text-[#5B2C1A] tracking-tight">
               Autumn <span className="text-[#E95522]">Towne</span>
@@ -67,7 +63,6 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* COL 2 */}
           <div>
             <h4 className="text-xl font-semibold mb-3 text-[#E95522]">
               Say Hello
@@ -81,7 +76,6 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* COL 3 */}
           <div>
             <h4 className="text-xl font-semibold mb-3 text-[#E95522]">
               Useful Links
@@ -107,7 +101,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* COL 4 — SOCIAL */}
           <div>
             <h4 className="text-xl font-semibold mb-4 text-[#E95522]">
               Follow Us
@@ -145,19 +138,14 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* DISCLAIMER */}
         <p className="text-center text-[#5B2C1A] text-sm md:text-base mt-8 px-4 leading-relaxed font-medium">
           All rental information, terms, and prices are subject to change
           without notice. Please check the website for the latest updates.
         </p>
-
-        {/* COPYRIGHT */}
         <div className="text-center py-8 text-[#5B2C1A] text-sm md:text-base font-semibold">
           © 2025 Autumn Towne Luxury Apartments for Seniors. All Rights
           Reserved.
         </div>
-
-        {/* SCROLL TO TOP */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="

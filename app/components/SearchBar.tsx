@@ -17,9 +17,7 @@ export default function SearchBar() {
           w-full md:w-auto
         "
       >
-        {/* --- ROW WRAPPER FOR MOBILE --- */}
         <div className="flex flex-col md:flex-row md:items-center">
-          {/* Item 1 */}
           <div className="flex flex-col px-6 py-3 border-b md:border-b-0 md:border-r border-[#eee] text-center md:text-left">
             <label className="text-[0.75rem] text-[#666] font-semibold mb-1">
               Looking for
@@ -29,7 +27,6 @@ export default function SearchBar() {
             </span>
           </div>
 
-          {/* Item 2 */}
           <div className="flex flex-col px-6 py-3 border-b md:border-b-0 md:border-r border-[#eee] text-center md:text-left">
             <label className="text-[0.75rem] text-[#666] font-semibold mb-1">
               Location
@@ -39,7 +36,6 @@ export default function SearchBar() {
             </span>
           </div>
 
-          {/* Item 3 */}
           <div className="flex flex-col px-6 py-3 text-center md:text-left">
             <label className="text-[0.75rem] text-[#666] font-semibold mb-1">
               Price Range
@@ -50,7 +46,6 @@ export default function SearchBar() {
           </div>
         </div>
 
-        {/* Button */}
         <a
           href="#properties"
           className="

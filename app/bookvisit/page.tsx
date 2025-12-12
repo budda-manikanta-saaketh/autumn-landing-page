@@ -90,7 +90,6 @@ export default function BookVisit() {
       {open && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-[2000] p-4">
           <div className="bg-white rounded-[20px] w-full max-w-[900px] relative shadow-2xl">
-            {/* CLOSE BUTTON */}
             <button
               onClick={() => setOpen(false)}
               className="absolute top-4 right-4 text-[#5B2C1A] hover:text-[#E95522] text-2xl"

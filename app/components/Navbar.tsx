@@ -8,7 +8,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const pathname = usePathname(); // ✅ Detect current page
+  const pathname = usePathname();
 
   const menuItems = [
     ["Home", "/"],
@@ -32,7 +32,6 @@ export default function Navbar() {
           flex items-center justify-between
         "
       >
-        {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/logos/logo.png"
@@ -45,7 +44,6 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Desktop Menu */}
         <ul className="hidden md:flex items-center gap-8">
           {menuItems.map(([label, href]) => {
             const isActive = pathname === href;
@@ -64,8 +62,6 @@ export default function Navbar() {
                   `}
                 >
                   {label}
-
-                  {/* Active underline */}
                   {isActive && (
                     <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-[#E95522] rounded-full" />
                   )}
@@ -74,7 +70,6 @@ export default function Navbar() {
             );
           })}
 
-          {/* Contact button */}
           <li>
             <Link
               href="/contactus"
@@ -88,8 +83,6 @@ export default function Navbar() {
             </Link>
           </li>
         </ul>
-
-        {/* Hamburger Button */}
         <button
           className="md:hidden text-[1.7rem] text-[#333]"
           onClick={() => setOpen(!open)}
@@ -98,7 +91,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {open && (
         <ul
           className="

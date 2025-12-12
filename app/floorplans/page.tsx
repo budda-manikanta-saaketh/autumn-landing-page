@@ -54,20 +54,17 @@ export default function FloorPlans() {
     filter === "all" ? true : p.beds.toString() === filter
   );
 
-  // Grouped results
   const twoBed = filtered.filter((p) => p.beds === 2);
   const oneBed = filtered.filter((p) => p.beds === 1);
 
   return (
     <section id="properties" className="pt-16 md:pt-20 pb-6 md:pt-8">
       <div className="max-w-[1280px] mx-auto px-4 md:px-6">
-        {/* HEADER */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-10 md:mb-12 gap-6">
           <h2 className="text-[2rem] md:text-[2.5rem] leading-tight font-bold text-[#5B2C1A] text-center md:text-left">
             Discover Floor Plans
           </h2>
 
-          {/* FILTER PILLS */}
           <div className="bg-[#eee] p-1 rounded-full flex self-center md:self-end">
             {[
               { key: "all", label: "All" },
@@ -90,7 +87,6 @@ export default function FloorPlans() {
           </div>
         </div>
 
-        {/* 2 BEDROOM SECTION */}
         {(filter === "all" || filter === "2") && twoBed.length > 0 && (
           <>
             <h3 className="text-xl md:text-2xl font-bold mb-6 text-[#5B2C1A]">
@@ -105,7 +101,6 @@ export default function FloorPlans() {
           </>
         )}
 
-        {/* 1 BEDROOM SECTION */}
         {(filter === "all" || filter === "1") && oneBed.length > 0 && (
           <>
             <h3 className="text-xl md:text-2xl font-bold mb-6 text-[#5B2C1A]">
@@ -147,27 +142,22 @@ function FloorPlanCard({ p }: any) {
         </div>
       </div>
 
-      {/* CONTENT */}
       <div className="px-5 md:px-6 pb-8 pt-3">
-        {/* SQFT — PRIMARY FOCUS */}
         <h3 className="text-[1.9rem] md:text-[2.1rem] font-bold text-[#E95522] leading-tight">
           {p.sqft} sqft
         </h3>
 
-        {/* PRICE — SECONDARY */}
         <p className="text-[#5B2C1A] text-[1.05rem] md:text-[1.15rem] font-semibold mt-1">
           {p.price}
           <span className="text-sm text-[#7A5D4A] font-normal"> /month</span>
         </p>
 
-        {/* TITLE */}
         <h4 className="text-lg md:text-xl font-bold text-[#5B2C1A] mt-2">
           {p.title}
         </h4>
 
         <p className="text-[#7A5D4A] text-sm mb-4">Autumn Towne Way</p>
 
-        {/* SPECS */}
         <div className="flex flex-wrap gap-3 text-sm text-[#5B2C1A] mb-6">
           <span className="flex items-center gap-1">
             <FaBed className="text-[#E95522]" /> {p.beds} Beds
@@ -177,7 +167,6 @@ function FloorPlanCard({ p }: any) {
           </span>
         </div>
 
-        {/* FOOTER */}
         <div className="flex justify-between items-center pt-4 border-t border-[#f5f5f5]">
           <span className="text-sm font-medium text-[#5B2C1A]">
             Fixed Utilities Included

@@ -31,7 +31,6 @@ export default function AboutUs() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          {/* IMAGE */}
           <div className="relative h-[300px] sm:h-[380px] md:h-[450px] rounded-[32px] overflow-hidden shadow-xl group">
             <Image
               src="https://images.unsplash.com/photo-1505691938895-1758d7feb511"
@@ -41,7 +40,6 @@ export default function AboutUs() {
                group-hover:scale-105 group-hover:brightness-110"
             />
 
-            {/* Soft Gradient Overlay */}
             <div
               className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent 
                   transition-all duration-700 group-hover:from-black/50 group-hover:via-black/20"
@@ -95,7 +93,6 @@ export default function AboutUs() {
     group cursor-pointer
   "
               >
-                {/* ICON */}
                 <div
                   className="
       text-[#E95522] text-[1.6rem]
@@ -107,7 +104,6 @@ export default function AboutUs() {
                   {f.icon}
                 </div>
 
-                {/* LABEL */}
                 <p
                   className="
       text-[#5B2C1A] font-semibold text-sm md:text-base
@@ -118,7 +114,6 @@ export default function AboutUs() {
                   {f.label}
                 </p>
 
-                {/* HOVER DETAIL BOX */}
                 <div
                   className="
       absolute inset-x-0 -bottom-3 translate-y-full

@@ -38,7 +38,6 @@ export default function Amenities() {
           gap-12 md:gap-20 items-start
         "
       >
-        {/* LEFT CONTENT */}
         <div>
           <h2 className="text-[2rem] md:text-[2.5rem] leading-tight font-bold mb-6 text-[#5B2C1A]">
             Discover Beautiful <br />
@@ -57,8 +56,6 @@ export default function Amenities() {
             </span>{" "}
             Living
           </h2>
-
-          {/* Feature Tags — Updated with real amenities */}
           <div className="flex flex-wrap gap-3 md:gap-4 my-6 md:my-8">
             {[
               { icon: <FaCoffee />, label: "Gourmet Coffee & Pastries" },
@@ -100,7 +97,6 @@ export default function Amenities() {
             "
             >
               <div className="flex items-center gap-4 group cursor-pointer">
-                {/* ICON */}
                 <div
                   className="
       w-10 h-10 
@@ -117,7 +113,6 @@ export default function Amenities() {
                   <FaCalendar />
                 </div>
 
-                {/* TEXT */}
                 <div
                   className="
       transition-all duration-300
@@ -135,8 +130,6 @@ export default function Amenities() {
             </div>
           </Link>
         </div>
-
-        {/* RIGHT IMAGE CARD */}
         <div className="relative h-[260px] sm:h-[340px] md:h-[500px] rounded-[24px] md:rounded-[32px] overflow-hidden group shadow-xl">
           <Image
             src="https://images.unsplash.com/photo-1570129477492-45c003edd2be"
@@ -144,8 +137,6 @@ export default function Amenities() {
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-110"
           />
-
-          {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
           <div

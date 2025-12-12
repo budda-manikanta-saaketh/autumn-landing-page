@@ -13,9 +13,7 @@ export default function Hero() {
   return (
     <header id="home" className="pt-[120px] pb-[60px]">
       <div className="max-w-[1280px] mx-auto px-6 grid md:grid-cols-[1fr_1.2fr] gap-[40px] md:gap-[60px] items-center">
-        {/* LEFT TEXT BLOCK */}
         <div className="text-center md:text-left text-[#5B2C1A]">
-          {/* HEADLINE */}
           <h1
             className="font-bold tracking-[-1.2px] mb-6 leading-[1.15]
             text-[2.2rem] sm:text-[2.6rem] md:text-[3.2rem] lg:text-[3.8rem]"
@@ -37,8 +35,6 @@ export default function Hero() {
             Autumn Towne Senior Apartments offers big city living with home-town
             appeal.
           </p>
-
-          {/* ================= PRIMARY CTA (Phone Number) ================= */}
           <a
             href="tel:6156484099"
             className="
@@ -64,12 +60,10 @@ export default function Hero() {
     hover:-translate-y-1 hover:shadow-lg hover:border-[#E95522]/30
   "
           >
-            {/* ICON */}
             <div className="text-[2.5rem] text-[#C9C9C9] transition-colors duration-300 group-hover:text-[#5B2C1A]">
               <FaUserCircle />
             </div>
 
-            {/* TEXT */}
             <div className="transition-colors duration-300">
               <span className="text-sm text-[#7a7a7a] block">
                 Management Team
@@ -79,7 +73,6 @@ export default function Hero() {
               </h4>
             </div>
 
-            {/* CTA BUTTON */}
             <div className="ml-auto">
               <a
                 href="/contactus"
@@ -95,7 +88,6 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* STATS */}
           <div className="flex justify-center md:justify-start gap-3 sm:gap-4 flex-wrap">
             <div className="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-semibold flex items-center gap-2">
               <FaStar className="text-yellow-500" /> 4.8 (120+)
@@ -106,8 +98,6 @@ export default function Hero() {
             </div>
           </div>
         </div>
-
-        {/* RIGHT IMAGE GRID */}
         <div className="grid grid-cols-2 gap-4 grid-rows-[150px_150px] sm:grid-rows-[180px_180px] md:grid-rows-[200px_200px]">
           <div className="relative row-span-2 group overflow-hidden rounded-[24px] md:rounded-[32px]">
             <Image
@@ -117,8 +107,6 @@ export default function Hero() {
               className="object-cover transition-all duration-700 
                group-hover:scale-105 group-hover:brightness-105"
             />
-
-            {/* FLOATING TAG */}
             <div
               className="absolute bottom-3 left-3 sm:bottom-5 sm:left-5
       bg-white/95 px-3 py-1.5 sm:px-4 sm:py-2 rounded-[10px] sm:rounded-[12px]

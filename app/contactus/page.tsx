@@ -13,8 +13,6 @@ import {
 export default function ContactUs() {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
-
-  // Form fields
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -41,8 +39,6 @@ export default function ContactUs() {
 
     if (data.success) {
       setSent(true);
-
-      // Clear form fields
       setName("");
       setEmail("");
       setPhone("");
@@ -57,7 +53,6 @@ export default function ContactUs() {
   return (
     <section className="pt-[140px] pb-20 relative">
       <div className="max-w-[1100px] mx-auto px-6">
-        {/* HEADER */}
         <h1 className="text-[2.5rem] md:text-[3rem] font-bold text-[#5B2C1A] text-center leading-tight">
           Contact Us
         </h1>

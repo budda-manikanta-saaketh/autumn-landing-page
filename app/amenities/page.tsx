@@ -87,7 +87,6 @@ export default function Amenities() {
   return (
     <section className="pt-20 bg-gradient-to-b from-white via-orange-50/30 to-white">
       <div className="max-w-[1280px] mx-auto px-4 md:px-6">
-        {/* ============================ HEADER ============================ */}
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold text-[#5B2C1A] leading-tight">
             Discover Beautiful
@@ -157,7 +156,6 @@ export default function Amenities() {
                     {item}
                   </span>
 
-                  {/* Hover Info Box */}
                   <div
                     className="
                         absolute left-0 right-0 top-full 
@@ -177,7 +175,6 @@ export default function Amenities() {
             </ul>
           </div>
 
-          {/* ================= SOCIAL AMENITIES ================= */}
           <div className="bg-gradient-to-br from-orange-50 to-white rounded-2xl p-8 shadow-lg border border-orange-100 hover:shadow-2xl transition-all">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-14 h-14 rounded-xl bg-[#FFECE3] flex items-center justify-center text-[#5B2C1A]">
@@ -217,7 +214,6 @@ export default function Amenities() {
                     {item}
                   </span>
 
-                  {/* Hover Info Box */}
                   <div
                     className="
                                 absolute left-0 right-0 top-full 
@@ -240,7 +236,6 @@ export default function Amenities() {
 
         <div className="bg-[#5B2C1A] rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            {/* LEFT SIDE */}
             <div className="flex items-center gap-6">
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-[#5B2C1A] text-3xl">
                 <FaCalendar />
@@ -256,7 +251,6 @@ export default function Amenities() {
               </div>
             </div>
 
-            {/* CTA BUTTON */}
             <a href="/bookvisit">
               <button className="px-8 py-3 bg-[#E95522] hover:bg-orange-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
                 Schedule Now
