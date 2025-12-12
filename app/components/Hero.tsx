@@ -6,6 +6,7 @@ import {
   FaEnvelope,
   FaStar,
   FaCheckCircle,
+  FaPhoneAlt,
 } from "react-icons/fa";
 
 export default function Hero() {
@@ -14,7 +15,7 @@ export default function Hero() {
       <div className="max-w-[1280px] mx-auto px-6 grid md:grid-cols-[1fr_1.2fr] gap-[40px] md:gap-[60px] items-center">
         {/* LEFT TEXT BLOCK */}
         <div className="text-center md:text-left text-[#5B2C1A]">
-          {/* RESPONSIVE HEADLINE */}
+          {/* HEADLINE */}
           <h1
             className="font-bold tracking-[-1.2px] mb-6 leading-[1.15]
             text-[2.2rem] sm:text-[2.6rem] md:text-[3.2rem] lg:text-[3.8rem]"
@@ -32,30 +33,66 @@ export default function Hero() {
             Towne
           </h1>
 
-          <p className="text-[1rem] sm:text-[1.05rem] text-[#666] mb-10 max-w-[450px] mx-auto md:mx-0 leading-relaxed">
+          <p className="text-[1rem] sm:text-[1.05rem] text-[#666] mb-8 max-w-[450px] mx-auto md:mx-0 leading-relaxed">
             Autumn Towne Senior Apartments offers big city living with home-town
             appeal.
           </p>
 
-          {/* AGENT CARD */}
-          <div className="hidden md:flex items-center gap-4 bg-white shadow-md rounded-[20px] px-5 py-3 mb-6">
-            <div className="text-[2.5rem] text-gray-300">
+          {/* ================= PRIMARY CTA (Phone Number) ================= */}
+          <a
+            href="tel:6156484099"
+            className="
+              inline-flex items-center justify-center gap-3
+              bg-[#E95522] hover:bg-[#cf4a1d]
+              text-white font-semibold px-6 py-3 sm:px-8 sm:py-4
+              rounded-full shadow-lg hover:shadow-xl
+              text-lg sm:text-xl transition-all
+              hover:scale-[1.05] active:scale-[0.98]
+              mb-8
+            "
+          >
+            <FaPhoneAlt className="text-xl" />
+            Call (615) 648-4099
+          </a>
+
+          <div
+            className="
+    hidden md:flex items-center gap-4 
+    bg-white shadow-md rounded-[20px] 
+    px-5 py-3 mb-6 border border-transparent
+    transition-all duration-300 
+    hover:-translate-y-1 hover:shadow-lg hover:border-[#E95522]/30
+  "
+          >
+            {/* ICON */}
+            <div className="text-[2.5rem] text-[#C9C9C9] transition-colors duration-300 group-hover:text-[#5B2C1A]">
               <FaUserCircle />
             </div>
 
-            <div>
-              <span className="text-sm text-[#666]">Management Team</span>
+            {/* TEXT */}
+            <div className="transition-colors duration-300">
+              <span className="text-sm text-[#7a7a7a] block">
+                Management Team
+              </span>
               <h4 className="text-base font-semibold text-[#5B2C1A]">
-                (615) 648-4099
+                Here to assist you
               </h4>
             </div>
 
-            <a
-              href="/contactus"
-              className="w-10 h-10 rounded-full bg-[#E95522] text-white flex items-center justify-center"
-            >
-              <FaEnvelope />
-            </a>
+            {/* CTA BUTTON */}
+            <div className="ml-auto">
+              <a
+                href="/contactus"
+                className="
+        w-10 h-10 rounded-full bg-[#E95522] text-white 
+        flex items-center justify-center
+        transition-all duration-300
+        hover:bg-[#cf4a1d] hover:scale-110
+      "
+              >
+                <FaEnvelope />
+              </a>
+            </div>
           </div>
 
           {/* STATS */}
@@ -72,21 +109,21 @@ export default function Hero() {
 
         {/* RIGHT IMAGE GRID */}
         <div className="grid grid-cols-2 gap-4 grid-rows-[150px_150px] sm:grid-rows-[180px_180px] md:grid-rows-[200px_200px]">
-          {/* MAIN IMAGE */}
-          <div className="relative row-span-2">
+          <div className="relative row-span-2 group overflow-hidden rounded-[24px] md:rounded-[32px]">
             <Image
               src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00"
               alt="Autumn Towne Senior Apartments"
               fill
-              className="object-cover rounded-[24px] md:rounded-[32px]"
+              className="object-cover transition-all duration-700 
+               group-hover:scale-105 group-hover:brightness-105"
             />
 
             {/* FLOATING TAG */}
             <div
               className="absolute bottom-3 left-3 sm:bottom-5 sm:left-5
-              bg-white/95 px-3 py-1.5 sm:px-4 sm:py-2 rounded-[10px] sm:rounded-[12px]
-              flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm
-              font-semibold shadow text-[#5B2C1A]"
+      bg-white/95 px-3 py-1.5 sm:px-4 sm:py-2 rounded-[10px] sm:rounded-[12px]
+      flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm
+      font-semibold shadow text-[#5B2C1A]"
             >
               <FaSmile className="text-[#E95522]" />
               <FaSmile className="text-[#E95522]" />
@@ -95,23 +132,23 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* IMAGE 2 */}
-          <div className="relative">
+          <div className="relative group overflow-hidden rounded-[24px] md:rounded-[32px]">
             <Image
               src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267"
               alt="Community Area"
               fill
-              className="object-cover rounded-[24px] md:rounded-[32px]"
+              className="object-cover transition-all duration-700 
+               group-hover:scale-105 group-hover:brightness-105"
             />
           </div>
 
-          {/* IMAGE 3 */}
-          <div className="relative">
+          <div className="relative group overflow-hidden rounded-[24px] md:rounded-[32px]">
             <Image
               src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2"
               alt="Interior Design"
               fill
-              className="object-cover rounded-[24px] md:rounded-[32px]"
+              className="object-cover transition-all duration-700 
+               group-hover:scale-105 group-hover:brightness-105"
             />
           </div>
         </div>

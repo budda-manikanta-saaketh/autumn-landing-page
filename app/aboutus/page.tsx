@@ -13,11 +13,8 @@ import {
 
 export default function AboutUs() {
   return (
-    <section className="pt-[140px] pb-20">
+    <section className="pt-[140px] pb-4">
       <div className="max-w-[1280px] mx-auto px-6">
-        {/* --------------------------- */}
-        {/* HEADER SECTION */}
-        {/* --------------------------- */}
         <div className="text-center mb-12">
           <h1 className="text-[2.4rem] md:text-[3rem] font-bold text-[#5B2C1A] leading-tight">
             Welcome to <br />
@@ -33,23 +30,24 @@ export default function AboutUs() {
           </p>
         </div>
 
-        {/* --------------------------- */}
-        {/* IMAGE + FEATURE PARAGRAPHS */}
-        {/* --------------------------- */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* IMAGE */}
-          <div className="relative h-[300px] sm:h-[380px] md:h-[450px] rounded-[32px] overflow-hidden shadow-xl">
+          <div className="relative h-[300px] sm:h-[380px] md:h-[450px] rounded-[32px] overflow-hidden shadow-xl group">
             <Image
               src="https://images.unsplash.com/photo-1505691938895-1758d7feb511"
               alt="Autumn Towne Community"
               fill
-              className="object-cover"
+              className="object-cover transition-all duration-700 ease-out
+               group-hover:scale-105 group-hover:brightness-110"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+            {/* Soft Gradient Overlay */}
+            <div
+              className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent 
+                  transition-all duration-700 group-hover:from-black/50 group-hover:via-black/20"
+            />
           </div>
 
-          {/* PARAGRAPH CONTENT */}
           <div>
             <h2 className="text-[1.8rem] md:text-[2rem] font-bold text-[#5B2C1A] mb-4">
               A Vibrant, Active Senior Community
@@ -70,9 +68,6 @@ export default function AboutUs() {
           </div>
         </div>
 
-        {/* --------------------------- */}
-        {/* FEATURE ICON GRID */}
-        {/* --------------------------- */}
         <div className="mt-16">
           <h3 className="text-[1.9rem] font-bold text-[#5B2C1A] text-center mb-10">
             What Our Residents Enjoy
@@ -90,23 +85,77 @@ export default function AboutUs() {
               <div
                 key={i}
                 className="
-                  bg-white border border-[#eee] rounded-[20px] 
-                  p-6 flex flex-col items-center gap-3 text-center
-                  shadow-sm hover:shadow-md transition
-                "
+    relative bg-white border border-[#eee] rounded-[20px] 
+    p-6 flex flex-col items-center gap-3 text-center
+    shadow-sm 
+    transition-all duration-300 
+    hover:shadow-xl 
+    hover:bg-[#E95522]/10 
+    hover:-translate-y-1
+    group cursor-pointer
+  "
               >
-                <div className="text-[#E95522] text-[1.6rem]">{f.icon}</div>
-                <p className="text-[#5B2C1A] font-semibold text-sm md:text-base">
+                {/* ICON */}
+                <div
+                  className="
+      text-[#E95522] text-[1.6rem]
+      transition-all duration-300
+      group-hover:scale-110 
+      group-hover:text-[#c5441b]
+    "
+                >
+                  {f.icon}
+                </div>
+
+                {/* LABEL */}
+                <p
+                  className="
+      text-[#5B2C1A] font-semibold text-sm md:text-base
+      transition-colors duration-300 
+      group-hover:text-[#E95522]
+    "
+                >
                   {f.label}
                 </p>
+
+                {/* HOVER DETAIL BOX */}
+                <div
+                  className="
+      absolute inset-x-0 -bottom-3 translate-y-full
+      opacity-0 group-hover:opacity-100
+      group-hover:translate-y-2
+      transition-all duration-300 
+      bg-white text-[#5B2C1A]
+      text-xs md:text-sm
+      px-4 py-3 rounded-[16px]
+      shadow-lg border border-[#eee]
+      pointer-events-none
+      mx-3
+    "
+                >
+                  {(() => {
+                    switch (f.label) {
+                      case "Gourmet Coffee Bar":
+                        return "Freshly brewed coffee and pastries served daily in our community dining room.";
+                      case "Secured Dog Park":
+                        return "A safe, fenced-in area for your pets to play and socialize.";
+                      case "Community Wi-Fi":
+                        return "High-speed wireless internet available throughout the property.";
+                      case "Wellness Center":
+                        return "Fitness space with equipment designed for active seniors.";
+                      case "Club Room & Billiards":
+                        return "Social space for games, gatherings, and entertainment.";
+                      case "Spacious Floor Plans":
+                        return "Open layouts with large windows, modern kitchens, and in-unit laundry.";
+                      default:
+                        return "";
+                    }
+                  })()}
+                </div>
               </div>
             ))}
           </div>
         </div>
-
-        {/* --------------------------- */}
-        {/* CTA SECTION */}
-        {/* --------------------------- */}
         <div className="mt-20 text-center bg-[#E95522]/10 rounded-[28px] p-10 shadow">
           <h3 className="text-[1.8rem] md:text-[2rem] font-bold text-[#5B2C1A] mb-3">
             Schedule a Visit Today
@@ -117,13 +166,13 @@ export default function AboutUs() {
           </p>
 
           <Link
-            href="/contactus"
+            href="/bookvisit"
             className="
               inline-block bg-[#E95522] text-white px-8 py-3 
               rounded-full font-semibold hover:bg-[#cf4a1d] transition
             "
           >
-            Contact Us
+            Schedule Now
           </Link>
         </div>
       </div>

@@ -59,7 +59,7 @@ export default function FloorPlans() {
   const oneBed = filtered.filter((p) => p.beds === 1);
 
   return (
-    <section id="properties" className="py-16 md:py-20">
+    <section id="properties" className="pt-16 md:pt-20 pb-6 md:pt-8">
       <div className="max-w-[1280px] mx-auto px-4 md:px-6">
         {/* HEADER */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-10 md:mb-12 gap-6">
@@ -124,10 +124,6 @@ export default function FloorPlans() {
   );
 }
 
-/* ---------------------------------------------- */
-/* EXTRACTED CARD COMPONENT */
-/* ---------------------------------------------- */
-
 function FloorPlanCard({ p }: any) {
   return (
     <div
@@ -148,51 +144,43 @@ function FloorPlanCard({ p }: any) {
             quality={100}
             className="object-contain rounded-[20px] p-2"
           />
-
-          <span
-            className="
-        absolute top-3 left-3 md:top-4 md:left-4 
-        bg-[#E95522] text-white
-        px-3 py-1 md:px-4 
-        rounded-full text-xs md:text-sm 
-        font-bold shadow
-      "
-          >
-            For Rent
-          </span>
         </div>
       </div>
 
       {/* CONTENT */}
       <div className="px-5 md:px-6 pb-8 pt-3">
-        <h3 className="text-[1.35rem] md:text-[1.5rem] font-bold text-[#5B2C1A]">
-          {p.price}
-          <span className="text-sm font-normal text-[#666]">/month</span>
+        {/* SQFT — PRIMARY FOCUS */}
+        <h3 className="text-[1.9rem] md:text-[2.1rem] font-bold text-[#E95522] leading-tight">
+          {p.sqft} sqft
         </h3>
 
-        <h4 className="text-lg md:text-xl font-semibold text-[#5B2C1A] mt-1">
+        {/* PRICE — SECONDARY */}
+        <p className="text-[#5B2C1A] text-[1.05rem] md:text-[1.15rem] font-semibold mt-1">
+          {p.price}
+          <span className="text-sm text-[#7A5D4A] font-normal"> /month</span>
+        </p>
+
+        {/* TITLE */}
+        <h4 className="text-lg md:text-xl font-bold text-[#5B2C1A] mt-2">
           {p.title}
         </h4>
 
-        <p className="text-[#666] text-sm mb-4">Autumn Towne Way</p>
+        <p className="text-[#7A5D4A] text-sm mb-4">Autumn Towne Way</p>
 
         {/* SPECS */}
-        <div className="flex flex-wrap gap-3 text-sm text-[#444] mb-6">
+        <div className="flex flex-wrap gap-3 text-sm text-[#5B2C1A] mb-6">
           <span className="flex items-center gap-1">
-            <FaBed /> {p.beds} Beds
+            <FaBed className="text-[#E95522]" /> {p.beds} Beds
           </span>
           <span className="flex items-center gap-1">
-            <FaBath /> {p.baths} Bath
-          </span>
-          <span className="flex items-center gap-1">
-            <FaRulerCombined /> {p.sqft} sqft
+            <FaBath className="text-[#E95522]" /> {p.baths} Bath
           </span>
         </div>
 
         {/* FOOTER */}
         <div className="flex justify-between items-center pt-4 border-t border-[#f5f5f5]">
           <span className="text-sm font-medium text-[#5B2C1A]">
-            Fixed Utilities
+            Fixed Utilities Included
           </span>
 
           <a
@@ -212,6 +200,7 @@ function FloorPlanCard({ p }: any) {
     </div>
   );
 }
+
 <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{

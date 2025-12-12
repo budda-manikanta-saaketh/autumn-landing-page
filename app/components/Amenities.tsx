@@ -8,12 +8,29 @@ import {
   FaGamepad,
   FaShieldAlt,
   FaArrowRight,
+  FaCalendar,
 } from "react-icons/fa";
 import { FaHammer } from "react-icons/fa6";
+const featureInfo: Record<string, string> = {
+  "Gourmet Coffee & Pastries":
+    "Enjoy fresh morning pastries and premium coffee daily in our community dining area.",
+  "Billiards Club Room":
+    "A cozy, social environment where residents can play billiards and relax.",
+  "Wellness Center":
+    "A fitness space designed with seniors in mind—safe, simple, and accessible.",
+  "Complementary Wi-Fi":
+    "High-speed Wi-Fi available throughout the community for work, entertainment, and communication.",
+  "Dog Park (Coming Soon)":
+    "A secure, fenced-in area where pets can enjoy fresh air and play.",
+  "24/7 Security Surveillance":
+    "Continuous monitoring and enhanced safety for a worry-free lifestyle.",
+  "Stainless Steel Appliances":
+    "Modern, durable kitchen appliances included in every apartment.",
+};
 
 export default function Amenities() {
   return (
-    <section id="amenities" className="py-16 md:py-20 bg-white mx-4 md:mx-6">
+    <section id="amenities" className="py-4 md:py-8 bg-white mx-4 md:mx-6">
       <div
         className="
           max-w-[1280px] mx-auto px-4 md:px-6
@@ -75,29 +92,45 @@ export default function Amenities() {
             ))}
           </div>
 
-          <Link href="/contactus" className="block w-fit">
+          <Link href="/bookvisit" className="block w-fit">
             <div
               className="
               bg-[#F8F9FB] p-4 md:p-5 rounded-[20px] 
               flex gap-4 max-w-full md:max-w-[400px]
             "
             >
-              <div
-                className="
-                w-10 h-10 bg-white rounded-full shadow 
-                flex items-center justify-center font-bold text-[#5B2C1A]
-              "
-              >
-                ?
-              </div>
+              <div className="flex items-center gap-4 group cursor-pointer">
+                {/* ICON */}
+                <div
+                  className="
+      w-10 h-10 
+      bg-white 
+      rounded-full 
+      shadow 
+      flex items-center justify-center 
+      font-bold 
+      text-[#E95522]
+      transition-all duration-300
+      group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-md
+    "
+                >
+                  <FaCalendar />
+                </div>
 
-              <div>
-                <h4 className="text-lg font-semibold text-[#5B2C1A]">
-                  Questions?
-                </h4>
-                <p className="text-[#666] text-sm md:text-base">
-                  Our management team is on-site to help.
-                </p>
+                {/* TEXT */}
+                <div
+                  className="
+      transition-all duration-300
+      group-hover:translate-x-1
+    "
+                >
+                  <h4 className="text-lg font-semibold text-[#5B2C1A] group-hover:text-[#E95522]">
+                    Schedule a Visit
+                  </h4>
+                  <p className="text-[#666] text-sm md:text-base group-hover:text-[#5B2C1A]">
+                    Book a tour and explore our community in person.
+                  </p>
+                </div>
               </div>
             </div>
           </Link>

@@ -7,7 +7,7 @@ import { FaBed, FaBath, FaRulerCombined, FaArrowRight } from "react-icons/fa";
 const data = [
   {
     price: "$1,995",
-    title: "Luxury 2 Bedroom Suite",
+    title: "Luxury 2 Bedroom",
     beds: 2,
     baths: 2,
     sqft: 1327,
@@ -17,7 +17,7 @@ const data = [
     price: "$1,895",
     title: "Standard 2 Bedroom",
     beds: 2,
-    baths: 1,
+    baths: 2,
     sqft: 1092,
     img: "https://images.unsplash.com/photo-1554995207-c18c203602cb",
   },
@@ -39,7 +39,7 @@ export default function Properties() {
   );
 
   return (
-    <section id="properties" className="py-16 md:py-20">
+    <section id="properties" className="py-6 md:py-8">
       <div className="max-w-[1280px] mx-auto px-4 md:px-6">
         {/* HEADER */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-10 md:mb-12 gap-6">
@@ -79,11 +79,11 @@ export default function Properties() {
             <div
               key={i}
               className="
-                bg-white rounded-[28px] md:rounded-[32px] 
-                overflow-hidden border border-[#f0f0f0]
-                hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)]
-                transition transform hover:-translate-y-1
-              "
+        bg-white rounded-[28px] md:rounded-[32px] 
+        overflow-hidden border border-[#f0f0f0]
+        hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)]
+        transition transform hover:-translate-y-1
+      "
             >
               {/* IMAGE */}
               <div className="relative h-[220px] md:h-[250px] p-2">
@@ -96,63 +96,56 @@ export default function Properties() {
                     className="object-cover rounded-[20px]"
                   />
                 </div>
-
-                <span
-                  className="
-                    absolute top-4 left-4 md:top-6 md:left-6 
-                    bg-[#E95522] text-white
-                    px-3 py-1.5 md:px-4 md:py-1.5 
-                    rounded-full text-xs md:text-sm 
-                    font-bold shadow
-                  "
-                >
-                  For Rent
-                </span>
               </div>
 
               {/* CONTENT */}
               <div className="px-5 md:px-6 pb-8 pt-3">
-                <h3 className="text-[1.35rem] md:text-[1.5rem] font-bold text-[#5B2C1A]">
-                  {p.price}
-                  <span className="text-sm font-normal text-[#666]">
-                    /month
-                  </span>
+                {/* SQFT — MAIN FOCUS */}
+                <h3 className="text-[1.9rem] md:text-[2.1rem] font-bold text-[#E95522] leading-tight">
+                  {p.sqft} sqft
                 </h3>
 
-                <h4 className="text-lg md:text-xl font-semibold text-[#5B2C1A] mt-1">
+                {/* PRICE — SECONDARY */}
+                <p className="text-[#5B2C1A] text-[1.05rem] md:text-[1.15rem] font-semibold mt-1">
+                  {p.price}
+                  <span className="text-sm text-[#7A5D4A] font-normal">
+                    {" "}
+                    /month
+                  </span>
+                </p>
+
+                {/* TITLE */}
+                <h4 className="text-lg md:text-xl font-bold text-[#5B2C1A] mt-2">
                   {p.title}
                 </h4>
 
-                <p className="text-[#666] text-sm mb-4">Autumn Towne Way</p>
+                <p className="text-[#7A5D4A] text-sm mb-4">Autumn Towne Way</p>
 
                 {/* SPECS */}
-                <div className="flex flex-wrap gap-3 text-sm text-[#444] mb-6">
+                <div className="flex flex-wrap gap-3 text-sm text-[#5B2C1A] mb-6">
                   <span className="flex items-center gap-1">
-                    <FaBed /> {p.beds} Beds
+                    <FaBed className="text-[#E95522]" /> {p.beds} Beds
                   </span>
                   <span className="flex items-center gap-1">
-                    <FaBath /> {p.baths} Bath
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <FaRulerCombined /> {p.sqft} sqft
+                    <FaBath className="text-[#E95522]" /> {p.baths} Bath
                   </span>
                 </div>
 
                 {/* FOOTER */}
                 <div className="flex justify-between items-center pt-4 border-t border-[#f5f5f5]">
                   <span className="text-sm font-medium text-[#5B2C1A]">
-                    Fixed Utilities
+                    Fixed Utilities Included
                   </span>
 
                   <a
                     href="/amenities"
                     className="
-                      w-10 h-10 rounded-full 
-                      bg-[#E95522] text-white 
-                      flex items-center justify-center 
-                      hover:rotate-[-20deg] hover:scale-110 
-                      transition
-                    "
+              w-10 h-10 rounded-full 
+              bg-[#E95522] text-white 
+              flex items-center justify-center 
+              hover:rotate-[-20deg] hover:scale-110 
+              transition
+            "
                   >
                     <FaArrowRight />
                   </a>
