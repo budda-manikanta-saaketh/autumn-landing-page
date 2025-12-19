@@ -38,13 +38,44 @@ export default function Amenities() {
   ];
 
   const features = [
-    { icon: FaCoffee, label: "Gourmet Coffee" },
-    { icon: FaDumbbell, label: "Wellness Center" },
-    { icon: FaWifi, label: "Free Wi-Fi" },
-    { icon: FaShieldAlt, label: "24/7 Security" },
-    { icon: FaUsers, label: "Club Room" },
-    { icon: FaHome, label: "Dog Park" },
+    {
+      icon: FaCoffee,
+      label: "Gourmet Coffee",
+      description:
+        "Freshly brewed gourmet coffee available daily in our community lounge.",
+    },
+    {
+      icon: FaDumbbell,
+      label: "Wellness Center",
+      description:
+        "Modern fitness and wellness facilities designed for active senior living.",
+    },
+    {
+      icon: FaWifi,
+      label: "Free Wi-Fi",
+      description:
+        "High-speed wireless internet access available throughout the community.",
+    },
+    {
+      icon: FaShieldAlt,
+      label: "24/7 Security",
+      description:
+        "Round-the-clock security and controlled access for peace of mind.",
+    },
+    {
+      icon: FaUsers,
+      label: "Club Room",
+      description:
+        "A comfortable social space for gatherings, games, and community events.",
+    },
+    {
+      icon: FaHome,
+      label: "Dog Park",
+      description:
+        "Secure, pet-friendly outdoor area where dogs can play and socialize.",
+    },
   ];
+
   const amenityInfo: Record<string, string> = {
     "Stainless Steel Appliances":
       "Modern, energy-efficient appliances included in every home.",
@@ -104,18 +135,61 @@ export default function Amenities() {
           {features.map((item, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-xl p-5 text-center shadow-md border border-orange-100 
-              hover:shadow-xl hover:-translate-y-1 transition-all"
+              className="
+        relative bg-white border border-[#eee] rounded-[18px]
+        p-5 flex flex-col items-center gap-3 text-center
+        shadow-sm transition-all duration-300
+        hover:shadow-xl hover:bg-[#E95522]/10 hover:-translate-y-1
+        group cursor-pointer
+      "
             >
-              <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-[#FFF7F3] flex items-center justify-center text-[#E95522]">
+              {/* Icon */}
+              <div
+                className="
+          w-12 h-12 rounded-xl bg-[#FFF7F3]
+          flex items-center justify-center
+          text-[#E95522]
+          transition-all duration-300
+          group-hover:scale-110 group-hover:text-[#c5441b]
+        "
+              >
                 <item.icon size={22} />
               </div>
-              <p className="text-sm font-semibold text-[#5B2C1A]">
+
+              {/* Label */}
+              <p
+                className="
+          text-sm font-semibold text-[#5B2C1A]
+          transition-colors duration-300
+          group-hover:text-[#E95522]
+        "
+              >
                 {item.label}
               </p>
+
+              {/* Tooltip / Description */}
+              {item.description && (
+                <div
+                  className="
+            absolute inset-x-0 -bottom-3 translate-y-full
+            opacity-0 group-hover:opacity-100
+            group-hover:translate-y-2
+            transition-all duration-300
+            bg-white text-[#5B2C1A]
+            text-xs
+            px-4 py-3 rounded-[14px]
+            shadow-lg border border-[#eee]
+            pointer-events-none
+            mx-2 z-10
+          "
+                >
+                  {item.description}
+                </div>
+              )}
             </div>
           ))}
         </div>
+
         <div className="grid lg:grid-cols-2 gap-10 mb-16">
           <div className="bg-white rounded-2xl p-8 shadow-lg border border-orange-100 hover:shadow-2xl transition-all">
             <div className="flex items-center gap-4 mb-6">
@@ -139,7 +213,7 @@ export default function Amenities() {
                   key={idx}
                   className="
                       relative flex items-start gap-3 p-2 rounded-lg 
-                      hover:bg-[#FFF7F3] transition-all group cursor-pointer
+                      hover:bg-[#FFF7F3] transition-all group
                     "
                 >
                   <span
@@ -197,7 +271,7 @@ export default function Amenities() {
                   key={idx}
                   className="
                             relative flex items-start gap-3 p-2 rounded-lg 
-                            hover:bg-white/60 transition-all group cursor-pointer
+                            hover:bg-white/60 transition-all group
                           "
                 >
                   <span

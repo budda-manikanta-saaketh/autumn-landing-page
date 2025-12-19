@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { FaBed, FaBath, FaRulerCombined, FaArrowRight } from "react-icons/fa";
+import { FaBed, FaBath, FaArrowRight } from "react-icons/fa";
 
 const data = [
   {
@@ -58,14 +58,15 @@ export default function FloorPlans() {
   const oneBed = filtered.filter((p) => p.beds === 1);
 
   return (
-    <section id="properties" className="pt-16 md:pt-20 pb-6 md:pt-8">
+    <section id="properties" className="pt-16 md:pt-20 pb-8">
       <div className="max-w-[1280px] mx-auto px-4 md:px-6">
-        <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-10 md:mb-12 gap-6">
-          <h2 className="text-[2rem] md:text-[2.5rem] leading-tight font-bold text-[#5B2C1A] text-center md:text-left">
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-12 gap-6">
+          <h2 className="text-[2rem] md:text-[2.5rem] font-bold text-[#5B2C1A]">
             Discover Floor Plans
           </h2>
 
-          <div className="bg-[#eee] p-1 rounded-full flex self-center md:self-end">
+          <div className="bg-[#eee] p-1 rounded-full flex">
             {[
               { key: "all", label: "All" },
               { key: "1", label: "1 Bed" },
@@ -74,7 +75,7 @@ export default function FloorPlans() {
               <button
                 key={option.key}
                 onClick={() => setFilter(option.key)}
-                className={`px-5 py-2 rounded-full font-semibold text-sm transition
+                className={`px-5 py-2 rounded-full text-sm font-semibold transition
                   ${
                     filter === option.key
                       ? "bg-white shadow-md text-[#5B2C1A]"
@@ -87,13 +88,14 @@ export default function FloorPlans() {
           </div>
         </div>
 
+        {/* 2 Bedroom */}
         {(filter === "all" || filter === "2") && twoBed.length > 0 && (
           <>
             <h3 className="text-xl md:text-2xl font-bold mb-6 text-[#5B2C1A]">
               2 Bedroom
             </h3>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
               {twoBed.map((p, i) => (
                 <FloorPlanCard key={i} p={p} />
               ))}
@@ -101,64 +103,60 @@ export default function FloorPlans() {
           </>
         )}
 
+        {/* 1 Bedroom */}
         {(filter === "all" || filter === "1") && oneBed.length > 0 && (
           <>
             <h3 className="text-xl md:text-2xl font-bold mb-6 text-[#5B2C1A]">
               1 Bedroom
             </h3>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {oneBed.map((p, i) => (
                 <FloorPlanCard key={i} p={p} />
               ))}
             </div>
           </>
         )}
+        {/* 3D Viewer Card */}
+        <FloorPlanIframeCard
+          src="/1bhk/index.htm"
+          title="3D Floor Plan Viewer"
+        />
       </div>
     </section>
   );
 }
 
+/* ---------- STANDARD FLOOR PLAN CARD ---------- */
 function FloorPlanCard({ p }: any) {
   return (
-    <div
-      className="
-        bg-white rounded-[28px] md:rounded-[32px] 
-        overflow-hidden border border-[#f0f0f0]
-        hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)]
-        transition transform hover:-translate-y-1
-      "
-    >
+    <div className="bg-white rounded-[28px] border border-[#f0f0f0] overflow-hidden hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition hover:-translate-y-1">
       <div className="p-2">
-        <div className="relative w-full aspect-[4/3] bg-white rounded-[20px] overflow-hidden">
+        <div className="relative w-full aspect-[4/3] rounded-[20px] overflow-hidden bg-white">
           <Image
             src={p.img}
             alt={p.title}
             fill
-            sizes="100%"
-            quality={100}
-            className="object-contain rounded-[20px] p-2"
+            className="object-contain p-2"
           />
         </div>
       </div>
 
-      <div className="px-5 md:px-6 pb-8 pt-3">
-        <h3 className="text-[1.9rem] md:text-[2.1rem] font-bold text-[#E95522] leading-tight">
+      <div className="px-6 pb-8 pt-3">
+        <h3 className="text-[1.9rem] font-bold text-[#E95522]">
           {p.sqft} sqft
         </h3>
 
-        <p className="text-[#5B2C1A] text-[1.05rem] md:text-[1.15rem] font-semibold mt-1">
+        <p className="font-semibold text-[#5B2C1A] mt-1">
           {p.price}
-          <span className="text-sm text-[#7A5D4A] font-normal"> /month</span>
+          <span className="text-sm font-normal text-[#7A5D4A]"> /month</span>
         </p>
 
-        <h4 className="text-lg md:text-xl font-bold text-[#5B2C1A] mt-2">
-          {p.title}
-        </h4>
+        <h4 className="text-lg font-bold text-[#5B2C1A] mt-2">{p.title}</h4>
 
-        <p className="text-[#7A5D4A] text-sm mb-4">Autumn Towne Way</p>
+        <p className="text-sm text-[#7A5D4A] mb-4">Autumn Towne Way</p>
 
-        <div className="flex flex-wrap gap-3 text-sm text-[#5B2C1A] mb-6">
+        <div className="flex gap-4 text-sm mb-6 text-[#5B2C1A]">
           <span className="flex items-center gap-1">
             <FaBed className="text-[#E95522]" /> {p.beds} Beds
           </span>
@@ -167,20 +165,14 @@ function FloorPlanCard({ p }: any) {
           </span>
         </div>
 
-        <div className="flex justify-between items-center pt-4 border-t border-[#f5f5f5]">
+        <div className="flex justify-between items-center pt-4 border-t">
           <span className="text-sm font-medium text-[#5B2C1A]">
             Fixed Utilities Included
           </span>
 
           <a
             href="/amenities"
-            className="
-              w-10 h-10 rounded-full 
-              bg-[#E95522] text-white 
-              flex items-center justify-center 
-              hover:rotate-[-20deg] hover:scale-110 
-              transition
-            "
+            className="w-10 h-10 bg-[#E95522] text-white rounded-full flex items-center justify-center hover:scale-110 transition"
           >
             <FaArrowRight />
           </a>
@@ -190,21 +182,44 @@ function FloorPlanCard({ p }: any) {
   );
 }
 
-<script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Product",
-      name: "Luxury 2 Bedroom Suite",
-      brand: "Autumn Towne",
-      category: "Apartment",
-      offers: {
-        "@type": "Offer",
-        priceCurrency: "USD",
-        price: "1995",
-        availability: "https://schema.org/InStock",
-      },
-    }),
-  }}
-></script>;
+/* ---------- 3D IFRAME CARD ---------- */
+function FloorPlanIframeCard({ src, title }: any) {
+  return (
+    <div className="bg-white rounded-[28px] border border-[#f0f0f0] overflow-hidden hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition hover:-translate-y-1">
+      <div className="p-2">
+        <div className="relative w-full aspect-[4/3] rounded-[20px] overflow-hidden bg-black">
+          <iframe
+            src={src}
+            className="w-full h-full border-0"
+            loading="lazy"
+            allow="fullscreen"
+          />
+        </div>
+      </div>
+
+      <div className="px-6 pb-8 pt-3">
+        <h3 className="text-[1.9rem] font-bold text-[#E95522]">Interactive</h3>
+
+        <p className="font-semibold text-[#5B2C1A] mt-1">{title}</p>
+
+        <p className="text-sm text-[#7A5D4A] mb-6">
+          Explore the layout in full 3D
+        </p>
+
+        <div className="flex justify-between items-center pt-4 border-t">
+          <span className="text-sm font-medium text-[#5B2C1A]">
+            360° Interactive View
+          </span>
+
+          <a
+            href={src}
+            target="_blank"
+            className="w-10 h-10 bg-[#E95522] text-white rounded-full flex items-center justify-center hover:scale-110 transition"
+          >
+            <FaArrowRight />
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}

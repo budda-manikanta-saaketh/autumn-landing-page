@@ -14,23 +14,23 @@ export default function Navbar() {
     ["Home", "/"],
     ["Floor Plans", "/floorplans/"],
     ["Amenities", "/amenities/"],
-    ["About us", "/aboutus/"],
     ["Book A Visit", "/bookvisit/"],
+    ["About us", "/aboutus/"],
   ];
 
   return (
     <nav className="fixed top-3 left-0 w-full z-[1000] flex justify-center">
       <div
         className="
-          bg-white 
-          backdrop-blur-md 
-          border border-white/70 
-          shadow-[0_4px_20px_rgba(0,0,0,0.06)]
-          w-[88%] md:w-[90%] max-w-[1200px]
-          px-4 py-2.5 md:px-[30px] md:py-[12px]
-          rounded-full 
-          flex items-center justify-between
-        "
+    bg-white/80
+    backdrop-blur-xl
+    border border-black/10
+    shadow-[0_6px_30px_rgba(0,0,0,0.08)]
+    w-[88%] md:w-[90%] max-w-[1200px]
+    px-4 py-2.5 md:px-[30px] md:py-[12px]
+    rounded-full 
+    flex items-center justify-between
+  "
       >
         <Link href="/" className="flex items-center gap-2">
           <Image
@@ -75,7 +75,7 @@ export default function Navbar() {
               href="/contactus"
               className="
                 bg-[#E95522] text-white 
-                px-5 py-2 rounded-md 
+                px-5 py-2 rounded-full 
                 font-semibold hover:bg-[#cf4a1d] transition
               "
             >
