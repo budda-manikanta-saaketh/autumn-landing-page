@@ -119,7 +119,11 @@ export default function FloorPlans() {
         )}
         {/* 3D Viewer Card */}
         <FloorPlanIframeCard
-          src="/1bhk/index.htm"
+          src="/3d/1bhk/index.htm"
+          title="3D Floor Plan Viewer"
+        />
+        <FloorPlanIframeCard
+          src="/3d/2bhk_1/index.htm"
           title="3D Floor Plan Viewer"
         />
       </div>
