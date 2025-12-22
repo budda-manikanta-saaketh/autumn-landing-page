@@ -102,7 +102,7 @@ export default function Hero() {
         <div className="grid grid-cols-2 gap-4 grid-rows-[150px_150px] sm:grid-rows-[180px_180px] md:grid-rows-[200px_200px]">
           <div className="relative row-span-2 group overflow-hidden rounded-[24px] md:rounded-[32px]">
             <Image
-              src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00"
+              src="/images/Hero1.jpeg"
               alt="Autumn Towne Senior Apartments"
               fill
               className="object-cover transition-all duration-700 
@@ -123,7 +123,7 @@ export default function Hero() {
 
           <div className="relative group overflow-hidden rounded-[24px] md:rounded-[32px]">
             <Image
-              src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267"
+              src="/images/Hero2.jpeg"
               alt="Community Area"
               fill
               className="object-cover transition-all duration-700 
@@ -133,7 +133,7 @@ export default function Hero() {
 
           <div className="relative group overflow-hidden rounded-[24px] md:rounded-[32px]">
             <Image
-              src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2"
+              src="/images/Hero4.jpeg"
               alt="Interior Design"
               fill
               className="object-cover transition-all duration-700 

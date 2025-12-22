@@ -33,7 +33,7 @@ export default function AboutUs() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div className="relative h-[300px] sm:h-[380px] md:h-[450px] rounded-[32px] overflow-hidden shadow-xl group">
             <Image
-              src="https://images.unsplash.com/photo-1505691938895-1758d7feb511"
+              src="/images/Community.jpeg"
               alt="Autumn Towne Community"
               fill
               className="object-cover transition-all duration-700 ease-out

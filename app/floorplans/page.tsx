@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { FaBed, FaBath, FaArrowRight } from "react-icons/fa";
+import Link from "next/link";
 
 const data = [
   {
@@ -17,7 +18,7 @@ const data = [
     price: "$1,895",
     title: "Standard 2 Bedroom",
     beds: 2,
-    baths: 1,
+    baths: 2,
     sqft: 1092,
     img: "/floorplans/standard2.png",
   },
@@ -25,7 +26,7 @@ const data = [
     price: "$1,795",
     title: "Cozy 2 Bedroom",
     beds: 2,
-    baths: 1,
+    baths: 2,
     sqft: 1039,
     img: "/floorplans/cozy2.png",
   },
@@ -46,9 +47,32 @@ const data = [
     img: "/floorplans/cozy1.png",
   },
 ];
+const threeDLayouts = [
+  {
+    key: "1bhk",
+    label: "1 BHK – 3D View",
+    src: "/3d/1bhk/index.htm",
+  },
+  {
+    key: "2bhk1",
+    label: "2 BHK Type A – 3D View",
+    src: "/3d/2bhk_1/index.htm",
+  },
+  {
+    key: "2bhk2",
+    label: "2 BHK Type B – 3D View",
+    src: "/3d/2bhk_2/index.htm",
+  },
+  {
+    key: "2bhk3",
+    label: "2 BHK Type C – 3D View",
+    src: "/3d/2bhk_3/index.htm",
+  },
+];
 
 export default function FloorPlans() {
   const [filter, setFilter] = useState("all");
+  const [selected3D, setSelected3D] = useState(threeDLayouts[0].key);
 
   const filtered = data.filter((p) =>
     filter === "all" ? true : p.beds.toString() === filter
@@ -117,15 +141,49 @@ export default function FloorPlans() {
             </div>
           </>
         )}
-        {/* 3D Viewer Card */}
-        <FloorPlanIframeCard
-          src="/3d/1bhk/index.htm"
-          title="3D Floor Plan Viewer"
-        />
-        <FloorPlanIframeCard
-          src="/3d/2bhk_1/index.htm"
-          title="3D Floor Plan Viewer"
-        />
+        {/* -------- 3D FLOOR PLANS SECTION -------- */}
+        <section className="mt-20">
+          <div className="flex items-center justify-between mb-6">
+            <h3 className="text-xl md:text-2xl font-bold text-[#5B2C1A]">
+              Interactive 3D Floor Plans
+            </h3>
+
+            <select
+              className="
+        border border-[#ddd] rounded-xl px-4 py-2 text-sm
+        focus:outline-none focus:ring-2 focus:ring-[#E95522]/40
+      "
+              value={selected3D}
+              onChange={(e) => setSelected3D(e.target.value)}
+            >
+              {threeDLayouts.map((layout) => (
+                <option key={layout.key} value={layout.key}>
+                  {layout.label}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div className="bg-white rounded-[28px] border border-[#f0f0f0] overflow-hidden shadow-sm">
+            <div
+              className="relative w-full bg-black overflow-hidden
+                          rounded-[20px]
+                          aspect-[4/5]        /* mobile */
+                          sm:aspect-[3/4]    /* small tablets */
+                          md:aspect-[16/10]  /* tablets */
+                          lg:aspect-[16/9]   /* desktop */
+                          xl:aspect-[21/9]   /* large screens */
+                        "
+            >
+              <iframe
+                key={selected3D} // IMPORTANT: forces reload when changed
+                src={threeDLayouts.find((l) => l.key === selected3D)?.src}
+                className="w-full h-full border-0"
+                allow="fullscreen"
+              />
+            </div>
+          </div>
+        </section>
       </div>
     </section>
   );
@@ -134,55 +192,55 @@ export default function FloorPlans() {
 /* ---------- STANDARD FLOOR PLAN CARD ---------- */
 function FloorPlanCard({ p }: any) {
   return (
-    <div className="bg-white rounded-[28px] border border-[#f0f0f0] overflow-hidden hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition hover:-translate-y-1">
-      <div className="p-2">
-        <div className="relative w-full aspect-[4/3] rounded-[20px] overflow-hidden bg-white">
-          <Image
-            src={p.img}
-            alt={p.title}
-            fill
-            className="object-contain p-2"
-          />
+    <Link href="/amenities" className="block">
+      <div className="bg-white rounded-[28px] border border-[#f0f0f0] overflow-hidden hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition hover:-translate-y-1">
+        <div className="p-2">
+          <div className="relative w-full aspect-[4/3] rounded-[20px] overflow-hidden bg-white">
+            <Image
+              src={p.img}
+              alt={p.title}
+              fill
+              className="object-contain p-2"
+            />
+          </div>
+        </div>
+
+        <div className="px-6 pb-8 pt-3">
+          <h3 className="text-[1.9rem] font-bold text-[#E95522]">
+            {p.sqft} sqft
+          </h3>
+
+          <p className="font-semibold text-[#5B2C1A] mt-1">
+            {p.price}
+            <span className="text-sm font-normal text-[#7A5D4A]"> /month</span>
+          </p>
+
+          <h4 className="text-lg font-bold text-[#5B2C1A] mt-2">{p.title}</h4>
+
+          <p className="text-sm text-[#7A5D4A] mb-4">Autumn Towne Way</p>
+
+          <div className="flex gap-4 text-sm mb-6 text-[#5B2C1A]">
+            <span className="flex items-center gap-1">
+              <FaBed className="text-[#E95522]" /> {p.beds} Beds
+            </span>
+            <span className="flex items-center gap-1">
+              <FaBath className="text-[#E95522]" /> {p.baths} Bath
+            </span>
+          </div>
+
+          <div className="flex justify-between items-center pt-4 border-t">
+            <span className="text-sm font-medium text-[#5B2C1A]">
+              Fixed Utilities Included
+            </span>
+
+            {/* icon only — NOT a link */}
+            <div className="w-10 h-10 bg-[#E95522] text-white rounded-full flex items-center justify-center">
+              <FaArrowRight />
+            </div>
+          </div>
         </div>
       </div>
-
-      <div className="px-6 pb-8 pt-3">
-        <h3 className="text-[1.9rem] font-bold text-[#E95522]">
-          {p.sqft} sqft
-        </h3>
-
-        <p className="font-semibold text-[#5B2C1A] mt-1">
-          {p.price}
-          <span className="text-sm font-normal text-[#7A5D4A]"> /month</span>
-        </p>
-
-        <h4 className="text-lg font-bold text-[#5B2C1A] mt-2">{p.title}</h4>
-
-        <p className="text-sm text-[#7A5D4A] mb-4">Autumn Towne Way</p>
-
-        <div className="flex gap-4 text-sm mb-6 text-[#5B2C1A]">
-          <span className="flex items-center gap-1">
-            <FaBed className="text-[#E95522]" /> {p.beds} Beds
-          </span>
-          <span className="flex items-center gap-1">
-            <FaBath className="text-[#E95522]" /> {p.baths} Bath
-          </span>
-        </div>
-
-        <div className="flex justify-between items-center pt-4 border-t">
-          <span className="text-sm font-medium text-[#5B2C1A]">
-            Fixed Utilities Included
-          </span>
-
-          <a
-            href="/amenities"
-            className="w-10 h-10 bg-[#E95522] text-white rounded-full flex items-center justify-center hover:scale-110 transition"
-          >
-            <FaArrowRight />
-          </a>
-        </div>
-      </div>
-    </div>
+    </Link>
   );
 }
 

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { FaBed, FaBath, FaRulerCombined, FaArrowRight } from "react-icons/fa";
+import Link from "next/link";
 
 const data = [
   {
@@ -11,15 +12,31 @@ const data = [
     beds: 2,
     baths: 2,
     sqft: 1327,
-    img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688",
+    img: "/images/Bed2.jpeg",
   },
   {
     price: "$1,895",
     title: "Standard 2 Bedroom",
     beds: 2,
-    baths: 2,
+    baths: 1,
     sqft: 1092,
-    img: "https://images.unsplash.com/photo-1554995207-c18c203602cb",
+    img: "/images/Bed2_2.jpeg",
+  },
+  {
+    price: "$1,795",
+    title: "Cozy 2 Bedroom",
+    beds: 2,
+    baths: 1,
+    sqft: 1039,
+    img: "/images/Bed2Cozy.jpeg",
+  },
+  {
+    price: "$1,750",
+    title: "Luxury 1 Bedroom",
+    beds: 1,
+    baths: 1,
+    sqft: 930,
+    img: "/images/Bed1_2.jpeg",
   },
   {
     price: "$1,495",
@@ -27,7 +44,7 @@ const data = [
     beds: 1,
     baths: 1,
     sqft: 649,
-    img: "https://images.unsplash.com/photo-1505691938895-1758d7feb511",
+    img: "/images/Bed1.jpeg",
   },
 ];
 
@@ -72,74 +89,83 @@ export default function Properties() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {filtered.map((p, i) => (
-            <div
-              key={i}
-              className="
-        bg-white rounded-[28px] md:rounded-[32px] 
-        overflow-hidden border border-[#f0f0f0]
-        hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)]
-        transition transform hover:-translate-y-1
-      "
-            >
-              <div className="relative h-[220px] md:h-[250px] p-2">
-                <div className="relative w-full h-full">
-                  <Image
-                    src={p.img}
-                    alt={p.title}
-                    fill
-                    sizes="100%"
-                    className="object-cover rounded-[20px]"
-                  />
+            <Link key={i} href="/amenities" className="block group">
+              <div
+                className="
+          bg-white rounded-[28px] md:rounded-[32px]
+          overflow-hidden border border-[#f0f0f0]
+          transition-all duration-300
+          group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)]
+          group-hover:-translate-y-1
+        "
+              >
+                {/* IMAGE */}
+                <div className="relative h-[220px] md:h-[250px] p-2">
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={p.img}
+                      alt={p.title}
+                      fill
+                      sizes="100%"
+                      className="object-cover rounded-[20px]"
+                    />
+                  </div>
+                </div>
+
+                {/* CONTENT */}
+                <div className="px-5 md:px-6 pb-8 pt-3">
+                  <h3 className="text-[1.9rem] md:text-[2.1rem] font-bold text-[#E95522]">
+                    {p.sqft} sqft
+                  </h3>
+
+                  <p className="text-[#5B2C1A] font-semibold mt-1">
+                    {p.price}
+                    <span className="text-sm text-[#7A5D4A] font-normal">
+                      {" "}
+                      /month
+                    </span>
+                  </p>
+
+                  <h4 className="text-lg md:text-xl font-bold text-[#5B2C1A] mt-2">
+                    {p.title}
+                  </h4>
+
+                  <p className="text-[#7A5D4A] text-sm mb-4">
+                    Autumn Towne Way
+                  </p>
+
+                  <div className="flex flex-wrap gap-3 text-sm text-[#5B2C1A] mb-6">
+                    <span className="flex items-center gap-1">
+                      <FaBed className="text-[#E95522]" /> {p.beds} Beds
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <FaBath className="text-[#E95522]" /> {p.baths} Bath
+                    </span>
+                  </div>
+
+                  {/* FOOTER */}
+                  <div className="flex justify-between items-center pt-4 border-t border-[#f5f5f5]">
+                    <span className="text-sm font-medium text-[#5B2C1A]">
+                      Fixed Utilities Included
+                    </span>
+
+                    {/* Arrow is visual only */}
+                    <div
+                      className="
+                w-10 h-10 rounded-full
+                bg-[#E95522] text-white
+                flex items-center justify-center
+                transition
+                group-hover:rotate-[-20deg]
+                group-hover:scale-110
+              "
+                    >
+                      <FaArrowRight />
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              <div className="px-5 md:px-6 pb-8 pt-3">
-                <h3 className="text-[1.9rem] md:text-[2.1rem] font-bold text-[#E95522] leading-tight">
-                  {p.sqft} sqft
-                </h3>
-                <p className="text-[#5B2C1A] text-[1.05rem] md:text-[1.15rem] font-semibold mt-1">
-                  {p.price}
-                  <span className="text-sm text-[#7A5D4A] font-normal">
-                    {" "}
-                    /month
-                  </span>
-                </p>
-
-                <h4 className="text-lg md:text-xl font-bold text-[#5B2C1A] mt-2">
-                  {p.title}
-                </h4>
-
-                <p className="text-[#7A5D4A] text-sm mb-4">Autumn Towne Way</p>
-
-                <div className="flex flex-wrap gap-3 text-sm text-[#5B2C1A] mb-6">
-                  <span className="flex items-center gap-1">
-                    <FaBed className="text-[#E95522]" /> {p.beds} Beds
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <FaBath className="text-[#E95522]" /> {p.baths} Bath
-                  </span>
-                </div>
-
-                <div className="flex justify-between items-center pt-4 border-t border-[#f5f5f5]">
-                  <span className="text-sm font-medium text-[#5B2C1A]">
-                    Fixed Utilities Included
-                  </span>
-
-                  <a
-                    href="/amenities"
-                    className="
-              w-10 h-10 rounded-full 
-              bg-[#E95522] text-white 
-              flex items-center justify-center 
-              hover:rotate-[-20deg] hover:scale-110 
-              transition
-            "
-                  >
-                    <FaArrowRight />
-                  </a>
-                </div>
-              </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
