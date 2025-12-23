@@ -15,7 +15,7 @@ export default function Navbar() {
     ["Floor Plans", "/floorplans/"],
     ["Amenities", "/amenities/"],
     ["Gallery", "/gallery/"],
-    ["Book A Visit", "/bookvisit/"],
+    ["Schedule A Visit", "/bookvisit/"],
     ["About us", "/aboutus/"],
   ];
 

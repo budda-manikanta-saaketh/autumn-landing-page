@@ -55,19 +55,20 @@ export default function Amenities() {
             </span>{" "}
             Living
           </h2>
-          <div className="flex flex-wrap gap-3 md:gap-4 my-6 md:my-8">
-            {[
-              { icon: <FaCoffee />, label: "Gourmet Coffee & Pastries" },
-              { icon: <FaGamepad />, label: "Billiards Club Room" },
-              { icon: <FaDumbbell />, label: "Wellness Center" },
-              { icon: <FaWifi />, label: "Complementary Wi-Fi" },
-              { icon: <FaDog />, label: "Dog Park (Coming Soon)" },
-              { icon: <FaShieldAlt />, label: "24/7 Security Surveillance" },
-              { icon: <FaHammer />, label: "Stainless Steel Appliances" },
-            ].map((f, i) => (
-              <div
-                key={i}
-                className="
+          <Link href={"/amenities"}>
+            <div className="flex flex-wrap gap-3 md:gap-4 my-6 md:my-8">
+              {[
+                { icon: <FaCoffee />, label: "Gourmet Coffee & Pastries" },
+                { icon: <FaGamepad />, label: "Billiards Club Room" },
+                { icon: <FaDumbbell />, label: "Wellness Center" },
+                { icon: <FaWifi />, label: "Complementary Wi-Fi" },
+                { icon: <FaDog />, label: "Dog Park (Coming Soon)" },
+                { icon: <FaShieldAlt />, label: "24/7 Security Surveillance" },
+                { icon: <FaHammer />, label: "Stainless Steel Appliances" },
+              ].map((f, i) => (
+                <div
+                  key={i}
+                  className="
       px-4 py-2 
       border border-[#eee] rounded-full 
       text-xs md:text-sm 
@@ -82,12 +83,12 @@ export default function Amenities() {
       hover:scale-[1.05]
       cursor-pointer
     "
-              >
-                <span className="text-base">{f.icon}</span> {f.label}
-              </div>
-            ))}
-          </div>
-
+                >
+                  <span className="text-base">{f.icon}</span> {f.label}
+                </div>
+              ))}
+            </div>
+          </Link>
           <Link href="/bookvisit" className="block w-fit">
             <div
               className="

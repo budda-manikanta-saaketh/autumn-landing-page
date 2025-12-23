@@ -148,20 +148,36 @@ export default function FloorPlans() {
               Interactive 3D Floor Plans
             </h3>
 
-            <select
-              className="
-        border border-[#ddd] rounded-xl px-4 py-2 text-sm
-        focus:outline-none focus:ring-2 focus:ring-[#E95522]/40
-      "
-              value={selected3D}
-              onChange={(e) => setSelected3D(e.target.value)}
-            >
-              {threeDLayouts.map((layout) => (
-                <option key={layout.key} value={layout.key}>
-                  {layout.label}
-                </option>
-              ))}
-            </select>
+            <div className="relative">
+              <select
+                value={selected3D}
+                onChange={(e) => setSelected3D(e.target.value)}
+                className="
+      appearance-none
+      bg-white
+      border border-[#ddd]
+      rounded-full
+      px-5 py-2 pr-10
+      text-sm font-semibold text-[#5B2C1A]
+      shadow-sm
+      hover:border-[#E95522]
+      focus:outline-none
+      focus:ring-2 focus:ring-[#E95522]/40
+      transition
+    "
+              >
+                {threeDLayouts.map((layout) => (
+                  <option key={layout.key} value={layout.key}>
+                    {layout.label}
+                  </option>
+                ))}
+              </select>
+
+              {/* custom arrow */}
+              <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#E95522]">
+                ▼
+              </span>
+            </div>
           </div>
 
           <div className="bg-white rounded-[28px] border border-[#f0f0f0] overflow-hidden shadow-sm">

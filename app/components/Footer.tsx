@@ -12,7 +12,7 @@ import { FaPhoneFlip } from "react-icons/fa6";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-[#FDF9F6] pt-0 md:pt-10 mt-4 relative">
+    <footer id="contact" className="bg-[#FDF9F6] pt-0 md:pt-10 relative">
       <div className="max-w-[1280px] mx-auto px-4 md:px-6">
         <div className="bg-[#5B2C1A] text-white rounded-[28px] md:rounded-[32px] px-8 md:px-14 py-14 md:py-18 text-center mb-20 shadow-xl">
           <h2 className="text-[2.2rem] md:text-[2.8rem] font-extrabold mb-4 leading-tight tracking-wide">
@@ -87,6 +87,7 @@ export default function Footer() {
                 ["Floor Plans", "/floorplans"],
                 ["Amenities", "/amenities"],
                 ["About Us", "/aboutus"],
+                ["Schedule A Visit", "/bookvisit"],
                 ["Contact Us", "/contactus"],
               ].map(([label, link]) => (
                 <li key={link}>

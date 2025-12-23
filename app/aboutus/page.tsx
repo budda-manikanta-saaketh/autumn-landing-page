@@ -9,6 +9,8 @@ import {
   FaDumbbell,
   FaGamepad,
   FaHome,
+  FaFacebook,
+  FaInstagram,
 } from "react-icons/fa";
 
 export default function AboutUs() {
@@ -65,92 +67,73 @@ export default function AboutUs() {
             </p>
           </div>
         </div>
-
-        <div className="mt-16">
-          <h3 className="text-[1.9rem] font-bold text-[#5B2C1A] text-center mb-10">
-            What Our Residents Enjoy
+        {/* ================= TESTIMONIALS ================= */}
+        <div className="mt-20">
+          <h3 className="text-[1.9rem] font-bold text-[#5B2C1A] text-center mb-12">
+            What Our Residents Say
           </h3>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
-              { icon: <FaCoffee />, label: "Gourmet Coffee Bar" },
-              { icon: <FaDog />, label: "Secured Dog Park" },
-              { icon: <FaWifi />, label: "Community Wi-Fi" },
-              { icon: <FaDumbbell />, label: "Wellness Center" },
-              { icon: <FaGamepad />, label: "Club Room & Billiards" },
-              { icon: <FaHome />, label: "Spacious Floor Plans" },
-            ].map((f, i) => (
+              {
+                name: "Margaret L.",
+                text: "Autumn Towne feels like family. The staff is caring, and the community keeps me active and happy every day.",
+              },
+              {
+                name: "Robert D.",
+                text: "I love the peaceful atmosphere and the friendships I’ve built here. It truly feels like home.",
+              },
+              {
+                name: "Helen S.",
+                text: "From the amenities to the people, everything is thoughtfully designed for comfort and joy.",
+              },
+            ].map((t, i) => (
               <div
                 key={i}
-                className="
-    relative bg-white border border-[#eee] rounded-[20px] 
-    p-6 flex flex-col items-center gap-3 text-center
-    shadow-sm 
-    transition-all duration-300 
-    hover:shadow-xl 
-    hover:bg-[#E95522]/10 
-    hover:-translate-y-1
-    group cursor-pointer
-  "
+                className="bg-white border border-[#eee] rounded-[24px] p-8 shadow-sm hover:shadow-lg transition"
               >
-                <div
-                  className="
-      text-[#E95522] text-[1.6rem]
-      transition-all duration-300
-      group-hover:scale-110 
-      group-hover:text-[#c5441b]
-    "
-                >
-                  {f.icon}
-                </div>
-
-                <p
-                  className="
-      text-[#5B2C1A] font-semibold text-sm md:text-base
-      transition-colors duration-300 
-      group-hover:text-[#E95522]
-    "
-                >
-                  {f.label}
+                <p className="text-[#666] italic leading-relaxed mb-6">
+                  “{t.text}”
                 </p>
-
-                <div
-                  className="
-      absolute inset-x-0 -bottom-3 translate-y-full
-      opacity-0 group-hover:opacity-100
-      group-hover:translate-y-2
-      transition-all duration-300 
-      bg-white text-[#5B2C1A]
-      text-xs md:text-sm
-      px-4 py-3 rounded-[16px]
-      shadow-lg border border-[#eee]
-      pointer-events-none
-      mx-3
-    "
-                >
-                  {(() => {
-                    switch (f.label) {
-                      case "Gourmet Coffee Bar":
-                        return "Freshly brewed coffee and pastries served daily in our community dining room.";
-                      case "Secured Dog Park":
-                        return "A safe, fenced-in area for your pets to play and socialize.";
-                      case "Community Wi-Fi":
-                        return "High-speed wireless internet available throughout the property.";
-                      case "Wellness Center":
-                        return "Fitness space with equipment designed for active seniors.";
-                      case "Club Room & Billiards":
-                        return "Social space for games, gatherings, and entertainment.";
-                      case "Spacious Floor Plans":
-                        return "Open layouts with large windows, modern kitchens, and in-unit laundry.";
-                      default:
-                        return "";
-                    }
-                  })()}
-                </div>
+                <p className="font-semibold text-[#5B2C1A]">— {t.name}</p>
               </div>
             ))}
           </div>
         </div>
+        {/* ================= SOCIAL MEDIA ================= */}
+        <div className="mt-24 text-center">
+          <h3 className="text-[1.8rem] font-bold text-[#5B2C1A] mb-4">
+            Stay Connected With Us
+          </h3>
+
+          <p className="text-[#666] max-w-[600px] mx-auto mb-8">
+            Follow us on social media to see community moments, events, and
+            daily life at Autumn Towne.
+          </p>
+
+          <div className="flex justify-center gap-6">
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-14 h-14 rounded-full bg-[#1877F2]/10 flex items-center justify-center
+                 text-[#1877F2] text-xl hover:bg-[#1877F2] hover:text-white transition"
+            >
+              <FaFacebook />
+            </a>
+
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-14 h-14 rounded-full bg-[#E1306C]/10 flex items-center justify-center
+                 text-[#E1306C] text-xl hover:bg-[#E1306C] hover:text-white transition"
+            >
+              <FaInstagram />
+            </a>
+          </div>
+        </div>
+
         <div className="mt-20 text-center bg-[#E95522]/10 rounded-[28px] p-10 shadow">
           <h3 className="text-[1.8rem] md:text-[2rem] font-bold text-[#5B2C1A] mb-3">
             Schedule a Visit Today
