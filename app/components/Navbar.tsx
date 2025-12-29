@@ -12,42 +12,49 @@ export default function Navbar() {
 
   const menuItems = [
     ["Home", "/"],
-    ["Floor Plans", "/floorplans/"],
-    ["Amenities", "/amenities/"],
-    ["Gallery", "/gallery/"],
-    ["Schedule A Visit", "/bookvisit/"],
-    ["About us", "/aboutus/"],
+
+    ["Floor Plans", "/floorplans"],
+    ["Amenities", "/amenities"],
+    ["Gallery", "/gallery"],
+    ["Schedule A Visit", "/bookvisit"],
+    ["About Us", "/aboutus"],
+    ["Autumn Plaza", "/autumn-plaza"],
   ];
+
+  const isActiveRoute = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
+  };
 
   return (
     <nav className="fixed top-3 left-0 w-full z-[1000] flex justify-center">
       <div
         className="
-    bg-white/80
-    backdrop-blur-xl
-    border border-black/10
-    shadow-[0_6px_30px_rgba(0,0,0,0.08)]
-    w-[88%] md:w-[90%] max-w-[1200px]
-    px-4 py-2.5 md:px-[30px] md:py-[12px]
-    rounded-full 
-    flex items-center justify-between
-  "
+          bg-white/80 backdrop-blur-xl
+          border border-black/10
+          shadow-[0_6px_30px_rgba(0,0,0,0.08)]
+          w-[88%] md:w-[90%] max-w-[1200px]
+          px-4 py-2.5 md:px-[30px] md:py-[12px]
+          rounded-full 
+          flex items-center justify-between
+        "
       >
+        {/* LOGO */}
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/logos/logo.png"
             alt="Autumn Towne Logo"
             width={120}
             height={63}
-            quality={100}
             priority
             className="h-8 w-auto md:h-10"
           />
         </Link>
 
+        {/* DESKTOP MENU */}
         <ul className="hidden md:flex items-center gap-8">
           {menuItems.map(([label, href]) => {
-            const isActive = pathname === href;
+            const isActive = isActiveRoute(href);
 
             return (
               <li key={href}>
@@ -71,6 +78,7 @@ export default function Navbar() {
             );
           })}
 
+          {/* CTA */}
           <li>
             <Link
               href="/contactus"
@@ -80,10 +88,12 @@ export default function Navbar() {
                 font-semibold hover:bg-[#cf4a1d] transition
               "
             >
-              Contact us
+              Contact Us
             </Link>
           </li>
         </ul>
+
+        {/* MOBILE TOGGLE */}
         <button
           className="md:hidden text-[1.7rem] text-[#333]"
           onClick={() => setOpen(!open)}
@@ -92,6 +102,7 @@ export default function Navbar() {
         </button>
       </div>
 
+      {/* MOBILE MENU */}
       {open && (
         <ul
           className="
@@ -102,7 +113,7 @@ export default function Navbar() {
           "
         >
           {menuItems.map(([label, href]) => {
-            const isActive = pathname === href;
+            const isActive = isActiveRoute(href);
 
             return (
               <li key={href}>
@@ -126,7 +137,7 @@ export default function Navbar() {
               className="block text-center text-white bg-[#E95522] px-4 py-2 rounded-md"
               onClick={() => setOpen(false)}
             >
-              Contact us
+              Contact Us
             </Link>
           </li>
         </ul>

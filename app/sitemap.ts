@@ -2,31 +2,38 @@ import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://autumnplazaapartments.com";
+  const lastModified = new Date();
 
-  const pages = [
-    { url: "/", priority: 1.0 },
-    { url: "/floorplans", priority: 0.9 },
-    { url: "/amenities", priority: 0.85 },
-    { url: "/aboutus", priority: 0.8 },
-    { url: "/contactus", priority: 0.8 },
-    { url: "/book-visit", priority: 0.8 },
-  ].map((p) => ({
-    url: `${baseUrl}${p.url}`,
-    lastModified: new Date(),
-    priority: p.priority,
+  // Static pages
+  const staticPages = [
+    { path: "/", priority: 1.0 },
+    { path: "/autumn-plaza", priority: 0.9 },
+    { path: "/floorplans", priority: 0.9 },
+    { path: "/amenities", priority: 0.85 },
+    { path: "/gallery", priority: 0.85 },
+    { path: "/aboutus", priority: 0.8 },
+    { path: "/bookvisit", priority: 0.8 },
+    { path: "/contactus", priority: 0.8 },
+  ];
+
+  // Floor plan detail pages
+  const floorPlans = [
+    "luxury-2-bedroom",
+    "standard-2-bedroom",
+    "cozy-2-bedroom",
+    "luxury-1-bedroom",
+    "cozy-1-bedroom",
+  ].map((slug) => ({
+    url: `${baseUrl}/floorplans/${slug}`,
+    lastModified,
+    priority: 0.85,
   }));
 
-  const floorplanImages = [
-    "/floorplans/luxury2.png",
-    "/floorplans/standard2.png",
-    "/floorplans/cozy2.png",
-    "/floorplans/luxury1.png",
-    "/floorplans/cozy1.png",
-  ].map((img) => ({
-    url: `${baseUrl}${img}`,
-    lastModified: new Date(),
-    priority: 0.6,
+  const pages = staticPages.map((page) => ({
+    url: `${baseUrl}${page.path}`,
+    lastModified,
+    priority: page.priority,
   }));
 
-  return [...pages, ...floorplanImages];
+  return [...pages, ...floorPlans];
 }

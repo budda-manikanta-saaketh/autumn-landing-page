@@ -7,6 +7,7 @@ import Link from "next/link";
 
 const data = [
   {
+    slug: "luxury-2-bedroom",
     price: "$1,995",
     title: "Luxury 2 Bedroom",
     beds: 2,
@@ -15,6 +16,7 @@ const data = [
     img: "/images/Bed2.jpeg",
   },
   {
+    slug: "standard-2-bedroom",
     price: "$1,895",
     title: "Standard 2 Bedroom",
     beds: 2,
@@ -23,6 +25,7 @@ const data = [
     img: "/images/Bed2_2.jpeg",
   },
   {
+    slug: "cozy-2-bedroom",
     price: "$1,795",
     title: "Cozy 2 Bedroom",
     beds: 2,
@@ -31,6 +34,7 @@ const data = [
     img: "/images/Bed2Cozy.jpeg",
   },
   {
+    slug: "luxury-1-bedroom",
     price: "$1,750",
     title: "Luxury 1 Bedroom",
     beds: 1,
@@ -39,6 +43,7 @@ const data = [
     img: "/images/Bed1_2.jpeg",
   },
   {
+    slug: "cozy-1-bedroom",
     price: "$1,495",
     title: "Cozy 1 Bedroom",
     beds: 1,
@@ -89,7 +94,11 @@ export default function Properties() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {filtered.map((p, i) => (
-            <Link key={i} href="/amenities" className="block group">
+            <Link
+              key={i}
+              href={`/floorplans/${p.slug}`}
+              className="block group"
+            >
               <div
                 className="
           bg-white rounded-[28px] md:rounded-[32px]
@@ -146,7 +155,7 @@ export default function Properties() {
                   {/* FOOTER */}
                   <div className="flex justify-between items-center pt-4 border-t border-[#f5f5f5]">
                     <span className="text-sm font-medium text-[#5B2C1A]">
-                      Fixed Utilities Included
+                      View Details & 3D
                     </span>
 
                     {/* Arrow is visual only */}

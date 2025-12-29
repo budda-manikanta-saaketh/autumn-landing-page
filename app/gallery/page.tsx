@@ -1,25 +1,89 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const CATEGORIES = {
   all: "All",
   life: "Daily Life",
   events: "Events",
-  wellness: "Wellness",
   community: "Community",
 };
 
 const IMAGES = [
-  { src: "/images/events/coffee.jpeg", category: "life" },
-  { src: "/images/events/social.jpeg", category: "community" },
-  { src: "/images/events/birthday.jpeg", category: "events" },
-  { src: "/images/events/bingo.jpeg", category: "events" },
-  { src: "/images/events/wellness.jpeg", category: "wellness" },
-  { src: "/images/Community.jpeg", category: "community" },
-  { src: "/images/Hero1.jpeg", category: "life" },
-  { src: "/images/Community2.jpeg", category: "community" },
+  // EVENTS
+  {
+    src: "/images/events/Grand_Opening/go1.jpeg",
+    category: "events",
+    title: "Grand Opening Celebration",
+    slug: "grand-opening",
+  },
+  {
+    src: "/images/events/Greets_And_Eats/gae1.jpg",
+    category: "events",
+    title: "Greets & Eats Social",
+    slug: "greets-and-eats",
+  },
+
+  // DAILY LIFE
+  {
+    src: "/images/dailylife/dl1.jpeg",
+    category: "life",
+    title: "Fitness Center",
+  },
+  {
+    src: "/images/dailylife/dl2.jpeg",
+    category: "life",
+    title: "Resident Coffee Lounge",
+  },
+  {
+    src: "/images/dailylife/dl3.jpeg",
+    category: "life",
+    title: "Pet-Friendly Dog Park",
+  },
+  {
+    src: "/images/dailylife/dl4.jpeg",
+    category: "life",
+    title: "Secure Storage Lockers",
+  },
+  {
+    src: "/images/dailylife/dl5.jpeg",
+    category: "life",
+    title: "Outdoor Pet Area",
+  },
+  {
+    src: "/images/dailylife/dl6.jpeg",
+    category: "life",
+    title: "Modern Laundry Lounge",
+  },
+  {
+    src: "/images/dailylife/dl7.jpeg",
+    category: "life",
+    title: "Elevator Access",
+  },
+  {
+    src: "/images/dailylife/dl8.jpeg",
+    category: "life",
+    title: "Resident Club Room",
+  },
+
+  // COMMUNITY
+  {
+    src: "/images/community/c1.jpeg",
+    category: "community",
+    title: "Community Social Events",
+  },
+  {
+    src: "/images/community/c2.jpg",
+    category: "community",
+    title: "Neighbourly Connections",
+  },
+  {
+    src: "/images/community/c3.jpg",
+    category: "community",
+    title: "Moments of Togetherness",
+  },
 ];
 
 export default function GalleryPage() {
@@ -69,21 +133,49 @@ export default function GalleryPage() {
           ))}
         </div>
 
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
-          {filtered.map((img, i) => (
-            <div
-              key={i}
-              className="relative w-full overflow-hidden rounded-[22px] group"
-            >
-              <Image
-                src={img.src}
-                alt="Autumn Towne Gallery"
-                width={600}
-                height={800}
-                className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-            </div>
-          ))}
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6">
+          {filtered.map((img, i) => {
+            const isEvent = img.category === "events" && img.slug;
+
+            const content = (
+              <div className="relative w-full overflow-hidden rounded-[22px] group cursor-pointer">
+                <Image
+                  src={img.src}
+                  alt={img.title}
+                  width={600}
+                  height={800}
+                  className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-5 text-left">
+                    <h3 className="text-white text-lg font-semibold">
+                      {img.title}
+                    </h3>
+
+                    {isEvent && (
+                      <p className="text-white/80 text-sm mt-1">View Event →</p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            );
+
+            return isEvent ? (
+              <Link
+                key={i}
+                href={`/events/${img.slug}`}
+                className="block break-inside-avoid mb-6"
+              >
+                {content}
+              </Link>
+            ) : (
+              <div key={i} className="block break-inside-avoid mb-6">
+                {content}
+              </div>
+            );
+          })}
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 text-center">
