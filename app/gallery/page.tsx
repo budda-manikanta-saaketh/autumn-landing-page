@@ -144,18 +144,21 @@ export default function GalleryPage() {
                   alt={img.title}
                   width={600}
                   height={800}
-                  className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                 />
 
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                  <div className="p-5 text-left">
-                    <h3 className="text-white text-lg font-semibold">
+                {/* ALWAYS VISIBLE TITLE BAR */}
+                <div className="absolute inset-x-0 bottom-0">
+                  {/* Gradient for readability */}
+                  <div className="bg-gradient-to-t from-black/70 via-black/40 to-transparent px-5 pt-10 pb-5 transition-all duration-300 group-hover:from-black/80">
+                    <h3 className="text-white text-lg font-semibold leading-snug">
                       {img.title}
                     </h3>
 
                     {isEvent && (
-                      <p className="text-white/80 text-sm mt-1">View Event →</p>
+                      <p className="text-white/80 text-sm mt-1 opacity-80 group-hover:opacity-100 transition">
+                        View Event →
+                      </p>
                     )}
                   </div>
                 </div>

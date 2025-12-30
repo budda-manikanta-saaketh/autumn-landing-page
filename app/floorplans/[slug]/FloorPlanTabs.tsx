@@ -40,7 +40,14 @@ export default function FloorPlanTabs({ plan }: { plan: any }) {
         )}
 
         {activeTab === "3d" && (
-          <div className="relative w-full aspect-[16/9] rounded-[20px] overflow-hidden bg-black">
+          <div
+            className="
+      relative w-full overflow-hidden bg-black
+      rounded-[20px]
+      aspect-[3/4] sm:aspect-[16/9]
+      sm:rounded-[20px]
+    "
+          >
             <iframe
               src={plan.threeD}
               className="w-full h-full border-0"
@@ -58,7 +65,6 @@ export default function FloorPlanTabs({ plan }: { plan: any }) {
         <Spec icon={<MapPin />} value={plan.location} label="Location" />
       </div>
 
-      {/* ---------- UTILITIES ---------- */}
       {/* ---------- UTILITIES ---------- */}
       <div className="border rounded-2xl p-6">
         <h3 className="font-bold text-[#5B2C1A] mb-6">Utilities Included</h3>

@@ -308,10 +308,10 @@ export default function Amenities() {
           </div>
         </div>
 
-        <div className="bg-[#5B2C1A] rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all">
+        <div className="bg-[#5B2C1A] rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all mb-6 md:mb-0">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-6">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-[#5B2C1A] text-3xl">
+              <div className="w-16 h-16 min-w-[4rem] aspect-square flex-shrink-0 bg-white rounded-full flex items-center justify-center text-[#5B2C1A] text-3xl">
                 <FaCalendar />
               </div>
 

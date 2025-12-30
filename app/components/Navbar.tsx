@@ -12,13 +12,10 @@ export default function Navbar() {
 
   const menuItems = [
     ["Home", "/"],
-
     ["Floor Plans", "/floorplans"],
     ["Amenities", "/amenities"],
     ["Gallery", "/gallery"],
-    ["Schedule A Visit", "/bookvisit"],
     ["About Us", "/aboutus"],
-    ["Autumn Plaza", "/autumn-plaza"],
   ];
 
   const isActiveRoute = (href: string) => {
@@ -52,7 +49,9 @@ export default function Navbar() {
         </Link>
 
         {/* DESKTOP MENU */}
-        <ul className="hidden md:flex items-center gap-8">
+        {/* DESKTOP MENU */}
+        <ul className="hidden md:flex items-center gap-6">
+          {/* Regular links */}
           {menuItems.map(([label, href]) => {
             const isActive = isActiveRoute(href);
 
@@ -61,13 +60,13 @@ export default function Navbar() {
                 <Link
                   href={href}
                   className={`
-                    text-[0.95rem] font-medium transition relative 
-                    ${
-                      isActive
-                        ? "text-[#E95522] font-semibold"
-                        : "text-[#999] hover:text-[#E95522]"
-                    }
-                  `}
+            text-[0.95rem] font-medium transition relative
+            ${
+              isActive
+                ? "text-[#E95522] font-semibold"
+                : "text-[#999] hover:text-[#E95522]"
+            }
+          `}
                 >
                   {label}
                   {isActive && (
@@ -78,17 +77,56 @@ export default function Navbar() {
             );
           })}
 
-          {/* CTA */}
-          <li>
+          {/* CTA GROUP */}
+          <li className="flex items-center gap-3">
+            {/* Contact Us – secondary outlined CTA */}
             <Link
               href="/contactus"
               className="
-                bg-[#E95522] text-white 
-                px-5 py-2 rounded-full 
-                font-semibold hover:bg-[#cf4a1d] transition
-              "
+      px-5 py-2 rounded-full
+      text-[0.9rem] font-semibold
+      border border-[#8b5a3c]
+      text-[#8b5a3c]
+      hover:bg-[#8b5a3c]/10
+      transition
+    "
             >
               Contact Us
+            </Link>
+
+            {/* Schedule Now – primary CTA */}
+            <Link
+              href="/bookvisit"
+              className="
+      px-5 py-2 rounded-full
+      font-semibold text-[0.9rem]
+      bg-[#E95522]
+      text-white
+      hover:bg-[#cf4a1d]
+      transition
+    "
+            >
+              Schedule Now
+            </Link>
+          </li>
+
+          {/* SUBTLE SEPARATOR */}
+          <li className="h-6 w-px bg-black/10" />
+
+          {/* Autumn Plaza */}
+          <li>
+            <Link
+              href="/autumn-plaza"
+              className={`
+        text-[0.95rem] font-medium transition
+        ${
+          isActiveRoute("/autumn-plaza")
+            ? "text-[#E95522] font-semibold"
+            : "text-[#999] hover:text-[#E95522]"
+        }
+      `}
+            >
+              Autumn Plaza
             </Link>
           </li>
         </ul>
@@ -106,12 +144,13 @@ export default function Navbar() {
       {open && (
         <ul
           className="
-            absolute top-[70px] md:hidden 
-            left-0 w-full bg-white shadow-lg 
-            py-6 px-6 flex flex-col gap-4 
-            font-medium text-[#444] rounded-b-2xl
-          "
+      absolute top-[70px] md:hidden 
+      left-0 w-full bg-white shadow-lg 
+      py-6 px-6 flex flex-col gap-4 
+      font-medium rounded-b-2xl
+    "
         >
+          {/* Main navigation */}
           {menuItems.map(([label, href]) => {
             const isActive = isActiveRoute(href);
 
@@ -121,9 +160,9 @@ export default function Navbar() {
                   href={href}
                   onClick={() => setOpen(false)}
                   className={`
-                    block py-2
-                    ${isActive ? "text-[#E95522] font-semibold" : "text-[#444]"}
-                  `}
+              block py-2 text-[1rem]
+              ${isActive ? "text-[#E95522] font-semibold" : "text-[#444]"}
+            `}
                 >
                   {label}
                 </Link>
@@ -131,13 +170,57 @@ export default function Navbar() {
             );
           })}
 
+          {/* Divider */}
+          <li className="h-px bg-black/10 my-2" />
+
+          {/* Contact Us – secondary */}
           <li>
             <Link
               href="/contactus"
-              className="block text-center text-white bg-[#E95522] px-4 py-2 rounded-md"
               onClick={() => setOpen(false)}
+              className="
+          block text-center
+          border border-[#8b5a3c]
+          text-[#8b5a3c]
+          px-4 py-2 rounded-full
+          font-semibold
+        "
             >
               Contact Us
+            </Link>
+          </li>
+
+          {/* Schedule Now – primary */}
+          <li>
+            <Link
+              href="/bookvisit"
+              onClick={() => setOpen(false)}
+              className="
+          block text-center
+          bg-[#E95522] text-white
+          px-4 py-2 rounded-full
+          font-semibold
+        "
+            >
+              Schedule Now
+            </Link>
+          </li>
+
+          {/* Autumn Plaza */}
+          <li className="pt-2">
+            <Link
+              href="/autumn-plaza"
+              onClick={() => setOpen(false)}
+              className={`
+          block py-2 text-center
+          ${
+            isActiveRoute("/autumn-plaza")
+              ? "text-[#E95522] font-semibold"
+              : "text-[#666]"
+          }
+        `}
+            >
+              Autumn Plaza
             </Link>
           </li>
         </ul>

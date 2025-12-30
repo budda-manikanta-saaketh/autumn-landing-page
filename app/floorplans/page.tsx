@@ -25,7 +25,7 @@ export default function FloorPlans() {
             Discover Floor Plans
           </h2>
 
-          <div className="bg-[#eee] p-1 rounded-full flex">
+          <div className="bg-[#eee] p-1 rounded-full inline-flex self-start w-fit">
             {[
               { key: "all", label: "All" },
               { key: "1", label: "1 Bed" },

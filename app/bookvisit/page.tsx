@@ -31,7 +31,7 @@ export default function BookVisit() {
       <section className="pt-[140px] pb-20">
         <div className="max-w-[900px] mx-auto px-6 text-center">
           <h1 className="text-[2.5rem] md:text-[3rem] font-bold text-[#5B2C1A] leading-tight">
-            Book a Visit
+            Schedule A Visit
           </h1>
 
           <p className="text-[#666] max-w-[650px] mx-auto mt-4 text-[1.05rem] leading-relaxed">
@@ -41,7 +41,7 @@ export default function BookVisit() {
 
           <div className="mt-12 bg-white rounded-[32px] shadow-xl p-10 border border-[#f1f1f1]">
             <h2 className="text-[1.8rem] font-bold text-[#5B2C1A] mb-4">
-              Schedule Your Tour
+              Schedule Now
             </h2>
 
             <p className="text-[#666] mb-8 max-w-[550px] mx-auto">
@@ -65,7 +65,7 @@ export default function BookVisit() {
               `}
             >
               <FaCalendarAlt className="text-xl" />
-              {booked ? "Tour Booked ✓" : "Book Now"}
+              {booked ? "Tour Booked ✓" : "Schedule Now"}
             </button>
 
             <p className="text-[#999] text-sm mt-3">

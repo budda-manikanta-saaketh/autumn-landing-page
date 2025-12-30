@@ -35,7 +35,8 @@ export default function Footer() {
               mx-auto w-max transition-transform hover:scale-[1.04]
             "
           >
-            Contact Us <FaPhoneFlip size={18} />
+            <FaPhone size={18} className="scale-x-[-1]" />
+            Contact Us
           </Link>
         </div>
         <div
