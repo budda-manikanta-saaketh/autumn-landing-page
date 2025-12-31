@@ -48,7 +48,7 @@ export default function Amenities() {
                   rounded-full mr-2 bg-cover bg-center
                 "
                 style={{
-                  backgroundImage: "/images/Amenities.jpeg",
+                  backgroundImage: "/images/Amenities.webp",
                 }}
               />
               Community
@@ -132,7 +132,7 @@ export default function Amenities() {
         </div>
         <div className="relative h-[260px] sm:h-[340px] md:h-[500px] rounded-[24px] md:rounded-[32px] overflow-hidden group shadow-xl">
           <Image
-            src="/images/Amenities.jpeg"
+            src="/images/Amenities.webp"
             alt="Community Living Spaces"
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-110"

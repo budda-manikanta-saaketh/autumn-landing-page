@@ -40,7 +40,7 @@ export default function AutumnPlaza() {
 
           <div className="relative h-[380px] rounded-[28px] overflow-hidden group">
             <Image
-              src="/images/autumn-plaza.png"
+              src="/images/autumn-plaza.webp"
               alt="Autumn Plaza Exterior"
               fill
               className="object-cover transition duration-500 group-hover:scale-105"

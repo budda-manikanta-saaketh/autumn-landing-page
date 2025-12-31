@@ -8,8 +8,8 @@ const plan = {
   sqft: 649,
   location: "Autumn Towne Way",
   utilities: "Fixed Utilities Included",
-  image: "/floorplans/cozy1.png",
-  gallery: ["/floorplans/cozy1.png"],
+  image: "/floorplans/cozy1.webp",
+  gallery: ["/floorplans/cozy1.webp"],
   threeD: "/3d/1bhk/index.htm",
   description:
     "A compact yet comfortable one-bedroom home designed for easy living and everyday convenience.",

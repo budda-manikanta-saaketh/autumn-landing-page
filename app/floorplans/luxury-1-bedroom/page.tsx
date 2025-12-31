@@ -8,8 +8,8 @@ const plan = {
   sqft: 930,
   location: "Autumn Towne Way",
   utilities: "Fixed Utilities Included",
-  image: "/floorplans/luxury1.png",
-  gallery: ["/floorplans/luxury1.png"],
+  image: "/floorplans/luxury1.webp",
+  gallery: ["/floorplans/luxury1.webp"],
   threeD: "/3d/1bhk/index.htm",
   description:
     "Elegant one-bedroom residence featuring a modern layout with upscale finishes and a spacious living area.",

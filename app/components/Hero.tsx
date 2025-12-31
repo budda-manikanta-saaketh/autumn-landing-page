@@ -12,13 +12,13 @@ import {
   FaPhoneAlt,
 } from "react-icons/fa";
 const HERO_IMAGES = [
-  "/images/Hero1.jpeg",
-  "/images/Hero2.jpeg",
-  "/images/Hero3.jpeg",
-  "/images/Hero4.jpeg",
-  "/images/Hero5.jpeg",
-  "/images/Hero6.jpeg",
-  "/images/Hero7.jpeg",
+  "/images/Hero1.webp",
+  "/images/Hero2.webp",
+  "/images/Hero3.webp",
+  "/images/Hero4.webp",
+  "/images/Hero5.webp",
+  "/images/Hero6.webp",
+  "/images/Hero7.webp",
 ];
 
 const getRandomImages = (count: number) =>

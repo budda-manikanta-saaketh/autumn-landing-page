@@ -13,7 +13,7 @@ const data = [
     beds: 2,
     baths: 2,
     sqft: 1327,
-    img: "/images/Bed2.jpeg",
+    img: "/images/Bed2.webp",
   },
   {
     slug: "standard-2-bedroom",
@@ -22,7 +22,7 @@ const data = [
     beds: 2,
     baths: 2,
     sqft: 1092,
-    img: "/images/Bed2_2.jpeg",
+    img: "/images/Bed2_2.webp",
   },
   {
     slug: "cozy-2-bedroom",
@@ -31,7 +31,7 @@ const data = [
     beds: 2,
     baths: 2,
     sqft: 1039,
-    img: "/images/Bed2Cozy.jpeg",
+    img: "/images/Bed2Cozy.webp",
   },
   {
     slug: "luxury-1-bedroom",
@@ -40,7 +40,7 @@ const data = [
     beds: 1,
     baths: 1,
     sqft: 930,
-    img: "/images/Bed1_2.jpeg",
+    img: "/images/Bed1_2.webp",
   },
   {
     slug: "cozy-1-bedroom",
@@ -49,7 +49,7 @@ const data = [
     beds: 1,
     baths: 1,
     sqft: 649,
-    img: "/images/Bed1.jpeg",
+    img: "/images/Bed1.webp",
   },
 ];
 

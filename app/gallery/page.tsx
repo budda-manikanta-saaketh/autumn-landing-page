@@ -14,13 +14,13 @@ const CATEGORIES = {
 const IMAGES = [
   // EVENTS
   {
-    src: "/images/events/Grand_Opening/go1.jpeg",
+    src: "/images/events/Grand_Opening/go1.webp",
     category: "events",
     title: "Grand Opening Celebration",
     slug: "grand-opening",
   },
   {
-    src: "/images/events/Greets_And_Eats/gae1.jpg",
+    src: "/images/events/Greets_And_Eats/gae1.webp",
     category: "events",
     title: "Greets & Eats Social",
     slug: "greets-and-eats",
@@ -28,59 +28,59 @@ const IMAGES = [
 
   // DAILY LIFE
   {
-    src: "/images/dailylife/dl1.jpeg",
+    src: "/images/dailylife/dl1.webp",
     category: "life",
     title: "Fitness Center",
   },
   {
-    src: "/images/dailylife/dl2.jpeg",
+    src: "/images/dailylife/dl2.webp",
     category: "life",
     title: "Resident Coffee Lounge",
   },
   {
-    src: "/images/dailylife/dl3.jpeg",
+    src: "/images/dailylife/dl3.webp",
     category: "life",
     title: "Pet-Friendly Dog Park",
   },
   {
-    src: "/images/dailylife/dl4.jpeg",
+    src: "/images/dailylife/dl4.webp",
     category: "life",
     title: "Secure Storage Lockers",
   },
   {
-    src: "/images/dailylife/dl5.jpeg",
+    src: "/images/dailylife/dl5.webp",
     category: "life",
     title: "Outdoor Pet Area",
   },
   {
-    src: "/images/dailylife/dl6.jpeg",
+    src: "/images/dailylife/dl6.webp",
     category: "life",
     title: "Modern Laundry Lounge",
   },
   {
-    src: "/images/dailylife/dl7.jpeg",
+    src: "/images/dailylife/dl7.webp",
     category: "life",
     title: "Elevator Access",
   },
   {
-    src: "/images/dailylife/dl8.jpeg",
+    src: "/images/dailylife/dl8.webp",
     category: "life",
     title: "Resident Club Room",
   },
 
   // COMMUNITY
   {
-    src: "/images/community/c1.jpeg",
+    src: "/images/community/c1.webp",
     category: "community",
     title: "Community Social Events",
   },
   {
-    src: "/images/community/c2.jpg",
+    src: "/images/community/c2.webp",
     category: "community",
     title: "Neighbourly Connections",
   },
   {
-    src: "/images/community/c3.jpg",
+    src: "/images/community/c3.webp",
     category: "community",
     title: "Moments of Togetherness",
   },
@@ -108,7 +108,7 @@ export default function GalleryPage() {
 
           <div className="relative h-[380px] rounded-[28px] overflow-hidden shadow-xl">
             <Image
-              src="/images/Amenities.jpeg"
+              src="/images/Amenities.webp"
               alt="Autumn Towne Community"
               fill
               className="object-cover"

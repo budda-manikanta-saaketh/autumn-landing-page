@@ -7,7 +7,7 @@ const plan = {
   baths: 2,
   sqft: 1327,
   location: "Autumn Towne Way",
-  image: "/floorplans/luxury2.png",
+  image: "/floorplans/luxury2.webp",
   threeD: "/3d/2bhk_1/index.htm",
   description:
     "Spacious two-bedroom residence featuring premium finishes, open living spaces, and abundant natural light.",

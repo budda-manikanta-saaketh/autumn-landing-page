@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/icons/favicon.ico",
     shortcut: "/icons/favicon.ico",
-    apple: "/icons/apple-touch-icon.png",
+    apple: "/icons/apple-touch-icon.webp",
   },
 
   alternates: {
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     siteName: "Autumn Towne Apartments",
     images: [
       {
-        url: "/og/og-image.jpg",
+        url: "/og/og-image.webp",
         width: 1200,
         height: 630,
         alt: "Autumn Towne Senior Apartments Exterior",
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     title: "Autumn Towne Senior Apartments",
     description:
       "Discover luxury senior living with spacious floor plans, community events, and exceptional amenities.",
-    images: ["/og/og-image.jpg"],
+    images: ["/og/og-image.webp"],
   },
 
   robots: {
@@ -91,7 +91,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ApartmentComplex",
   name: "Autumn Towne Luxury Senior Apartments",
-  image: "https://autumnplazaapartments.com/og/og-image.jpg",
+  image: "https://autumnplazaapartments.com/og/og-image.webp",
   address: {
     "@type": "PostalAddress",
     streetAddress: "146 Autumn Towne Way",

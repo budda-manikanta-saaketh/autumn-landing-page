@@ -8,8 +8,8 @@ const plan = {
   sqft: 1039,
   location: "Autumn Towne Way",
   utilities: "Fixed Utilities Included",
-  image: "/floorplans/cozy2.png",
-  gallery: ["/floorplans/cozy2.png"],
+  image: "/floorplans/cozy2.webp",
+  gallery: ["/floorplans/cozy2.webp"],
   threeD: "/3d/2bhk_3/index.htm",
   description:
     "A thoughtfully designed two-bedroom home offering warmth, comfort, and efficient use of space.",
