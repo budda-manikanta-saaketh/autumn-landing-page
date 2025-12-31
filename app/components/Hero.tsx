@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import {
   FaHome,
   FaSmile,
@@ -9,8 +11,141 @@ import {
   FaCheckCircle,
   FaPhoneAlt,
 } from "react-icons/fa";
+const HERO_IMAGES = [
+  "/images/Hero1.jpeg",
+  "/images/Hero2.jpeg",
+  "/images/Hero3.jpeg",
+  "/images/Hero4.jpeg",
+  "/images/Hero5.jpeg",
+  "/images/Hero6.jpeg",
+  "/images/Hero7.jpeg",
+];
+
+const getRandomImages = (count: number) =>
+  [...HERO_IMAGES].sort(() => 0.5 - Math.random()).slice(0, count);
+function LayoutOne({ images }: { images: string[] }) {
+  return (
+    <div className="grid grid-cols-2 gap-4 grid-rows-[200px_200px]">
+      <div className="relative row-span-2 rounded-[32px] overflow-hidden">
+        <Image src={images[0]} alt="" fill className="object-cover" />
+      </div>
+
+      <div className="relative rounded-[32px] overflow-hidden">
+        <Image src={images[1]} alt="" fill className="object-cover" />
+      </div>
+
+      <div className="relative rounded-[32px] overflow-hidden">
+        <Image src={images[2]} alt="" fill className="object-cover" />
+      </div>
+    </div>
+  );
+}
+function LayoutClassic({ images }: { images: string[] }) {
+  return (
+    <div className="grid grid-cols-2 gap-4 grid-rows-[150px_150px] sm:grid-rows-[180px_180px] md:grid-rows-[200px_200px]">
+      {/* BIG IMAGE */}
+      <div className="relative row-span-2 group overflow-hidden rounded-[24px] md:rounded-[32px]">
+        <Image
+          src={images[0]}
+          alt="Autumn Towne Senior Apartments"
+          fill
+          className="object-cover transition-all duration-700 
+          group-hover:scale-105 group-hover:brightness-105"
+        />
+      </div>
+
+      {/* SMALL IMAGE 1 */}
+      <div className="relative group overflow-hidden rounded-[24px] md:rounded-[32px]">
+        <Image
+          src={images[1]}
+          alt="Community Area"
+          fill
+          className="object-cover transition-all duration-700 
+          group-hover:scale-105 group-hover:brightness-105"
+        />
+      </div>
+
+      {/* SMALL IMAGE 2 */}
+      <div className="relative group overflow-hidden rounded-[24px] md:rounded-[32px]">
+        <Image
+          src={images[2]}
+          alt="Interior Design"
+          fill
+          className="object-cover transition-all duration-700 
+          group-hover:scale-105 group-hover:brightness-105"
+        />
+      </div>
+    </div>
+  );
+}
+
+function LayoutTwo({ images }: { images: string[] }) {
+  return (
+    <div className="grid grid-cols-3 gap-4 h-[420px]">
+      {images.slice(0, 3).map((img, i) => (
+        <div key={i} className="relative rounded-[32px] overflow-hidden">
+          <Image src={img} alt="" fill className="object-cover" />
+        </div>
+      ))}
+    </div>
+  );
+}
+function LayoutThree({ images }: { images: string[] }) {
+  return (
+    <div className="grid grid-cols-2 gap-4">
+      <div className="relative col-span-2 h-[220px] rounded-[32px] overflow-hidden">
+        <Image src={images[0]} alt="" fill className="object-cover" />
+      </div>
+
+      <div className="relative h-[180px] rounded-[32px] overflow-hidden">
+        <Image src={images[1]} alt="" fill className="object-cover" />
+      </div>
+
+      <div className="relative h-[180px] rounded-[32px] overflow-hidden">
+        <Image src={images[2]} alt="" fill className="object-cover" />
+      </div>
+    </div>
+  );
+}
+function LayoutFour({ images }: { images: string[] }) {
+  return (
+    <div className="grid grid-cols-4 grid-rows-2 gap-4 h-[420px]">
+      <div className="relative col-span-3 row-span-2 rounded-[32px] overflow-hidden">
+        <Image src={images[0]} alt="" fill className="object-cover" />
+      </div>
+
+      <div className="relative col-span-1 row-span-1 rounded-[24px] overflow-hidden">
+        <Image src={images[1]} alt="" fill className="object-cover" />
+      </div>
+
+      <div className="relative col-span-1 row-span-1 rounded-[24px] overflow-hidden">
+        <Image src={images[2]} alt="" fill className="object-cover" />
+      </div>
+    </div>
+  );
+}
+const HERO_LAYOUTS = [
+  { component: LayoutClassic, imageCount: 3 },
+  { component: LayoutOne, imageCount: 3 },
+  { component: LayoutTwo, imageCount: 3 },
+  { component: LayoutThree, imageCount: 3 },
+  { component: LayoutFour, imageCount: 3 },
+];
 
 export default function Hero() {
+  const [layoutData, setLayoutData] = useState<{
+    Component: any;
+    images: string[];
+  } | null>(null);
+  useEffect(() => {
+    const layout =
+      HERO_LAYOUTS[Math.floor(Math.random() * HERO_LAYOUTS.length)];
+
+    setLayoutData({
+      Component: layout.component,
+      images: getRandomImages(layout.imageCount),
+    });
+  }, []);
   return (
     <header id="home" className="pt-[120px] pb-[60px]">
       <div className="max-w-[1280px] mx-auto px-6 grid md:grid-cols-[1fr_1.2fr] gap-[40px] md:gap-[60px] items-center">
@@ -99,48 +234,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-4 grid-rows-[150px_150px] sm:grid-rows-[180px_180px] md:grid-rows-[200px_200px]">
-          <div className="relative row-span-2 group overflow-hidden rounded-[24px] md:rounded-[32px]">
-            <Image
-              src="/images/Hero1.jpeg"
-              alt="Autumn Towne Senior Apartments"
-              fill
-              className="object-cover transition-all duration-700 
-               group-hover:scale-105 group-hover:brightness-105"
-            />
-            <div
-              className="absolute bottom-3 left-3 sm:bottom-5 sm:left-5
-      bg-white/95 px-3 py-1.5 sm:px-4 sm:py-2 rounded-[10px] sm:rounded-[12px]
-      flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm
-      font-semibold shadow text-[#5B2C1A]"
-            >
-              <FaSmile className="text-[#E95522]" />
-              <FaSmile className="text-[#E95522]" />
-              <FaSmile className="text-[#E95522]" />
-              <span>Happy Residents</span>
-            </div>
-          </div>
-
-          <div className="relative group overflow-hidden rounded-[24px] md:rounded-[32px]">
-            <Image
-              src="/images/Hero2.jpeg"
-              alt="Community Area"
-              fill
-              className="object-cover transition-all duration-700 
-               group-hover:scale-105 group-hover:brightness-105"
-            />
-          </div>
-
-          <div className="relative group overflow-hidden rounded-[24px] md:rounded-[32px]">
-            <Image
-              src="/images/Hero4.jpeg"
-              alt="Interior Design"
-              fill
-              className="object-cover transition-all duration-700 
-               group-hover:scale-105 group-hover:brightness-105"
-            />
-          </div>
-        </div>
+        {layoutData && <layoutData.Component images={layoutData.images} />}
       </div>
     </header>
   );
