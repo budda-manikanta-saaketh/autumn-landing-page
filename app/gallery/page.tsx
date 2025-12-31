@@ -111,6 +111,13 @@ export default function GalleryPage() {
               src="/images/Amenities.webp"
               alt="Autumn Towne Community"
               fill
+              priority
+              sizes="
+    (max-width: 768px) 90vw,
+    (max-width: 1024px) 45vw,
+    600px
+  "
+              quality={70}
               className="object-cover"
             />
           </div>
@@ -144,6 +151,13 @@ export default function GalleryPage() {
                   alt={img.title}
                   width={600}
                   height={800}
+                  loading="lazy"
+                  sizes="
+    (max-width: 640px) 90vw,
+    (max-width: 1024px) 45vw,
+    400px
+  "
+                  quality={65}
                   className="w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                 />
 

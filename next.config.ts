@@ -19,7 +19,7 @@ const nextConfig: NextConfig = {
       },
     ],
 
-    qualities: [90, 75, 100],
+    qualities: [90, 65, 75, 100],
     formats: ["image/webp"],
   },
 

@@ -90,6 +90,13 @@ function FloorPlanCard({ p }: any) {
               src={p.image}
               alt={p.title}
               fill
+              loading="lazy"
+              sizes="
+    (max-width: 640px) 90vw,
+    (max-width: 1024px) 45vw,
+    400px
+  "
+              quality={65}
               className="object-contain p-2"
             />
           </div>

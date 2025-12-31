@@ -20,6 +20,10 @@ const HERO_IMAGES = [
   "/images/Hero6.webp",
   "/images/Hero7.webp",
 ];
+const HERO_IMAGE_PROPS = {
+  sizes: "(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 720px",
+  quality: 65,
+};
 
 const getRandomImages = (count: number) =>
   [...HERO_IMAGES].sort(() => 0.5 - Math.random()).slice(0, count);
@@ -27,54 +31,59 @@ function LayoutOne({ images }: { images: string[] }) {
   return (
     <div className="grid grid-cols-2 gap-4 grid-rows-[200px_200px]">
       <div className="relative row-span-2 rounded-[32px] overflow-hidden">
-        <Image src={images[0]} alt="" fill className="object-cover" />
+        <Image
+          src={images[0]}
+          alt="Autumn Towne apartments"
+          fill
+          priority
+          {...HERO_IMAGE_PROPS}
+          className="object-cover"
+        />
       </div>
 
-      <div className="relative rounded-[32px] overflow-hidden">
-        <Image src={images[1]} alt="" fill className="object-cover" />
-      </div>
-
-      <div className="relative rounded-[32px] overflow-hidden">
-        <Image src={images[2]} alt="" fill className="object-cover" />
-      </div>
+      {images.slice(1).map((img, i) => (
+        <div key={i} className="relative rounded-[32px] overflow-hidden">
+          <Image
+            src={img}
+            alt="Autumn Towne community"
+            fill
+            loading="lazy"
+            {...HERO_IMAGE_PROPS}
+            className="object-cover"
+          />
+        </div>
+      ))}
     </div>
   );
 }
+
 function LayoutClassic({ images }: { images: string[] }) {
   return (
     <div className="grid grid-cols-2 gap-4 grid-rows-[150px_150px] sm:grid-rows-[180px_180px] md:grid-rows-[200px_200px]">
-      {/* BIG IMAGE */}
-      <div className="relative row-span-2 group overflow-hidden rounded-[24px] md:rounded-[32px]">
+      {/* BIG IMAGE (LCP) */}
+      <div className="relative row-span-2 overflow-hidden rounded-[32px]">
         <Image
           src={images[0]}
           alt="Autumn Towne Senior Apartments"
           fill
-          className="object-cover transition-all duration-700 
-          group-hover:scale-105 group-hover:brightness-105"
+          priority
+          {...HERO_IMAGE_PROPS}
+          className="object-cover transition-transform duration-700 hover:scale-105"
         />
       </div>
 
-      {/* SMALL IMAGE 1 */}
-      <div className="relative group overflow-hidden rounded-[24px] md:rounded-[32px]">
-        <Image
-          src={images[1]}
-          alt="Community Area"
-          fill
-          className="object-cover transition-all duration-700 
-          group-hover:scale-105 group-hover:brightness-105"
-        />
-      </div>
-
-      {/* SMALL IMAGE 2 */}
-      <div className="relative group overflow-hidden rounded-[24px] md:rounded-[32px]">
-        <Image
-          src={images[2]}
-          alt="Interior Design"
-          fill
-          className="object-cover transition-all duration-700 
-          group-hover:scale-105 group-hover:brightness-105"
-        />
-      </div>
+      {images.slice(1).map((img, i) => (
+        <div key={i} className="relative overflow-hidden rounded-[32px]">
+          <Image
+            src={img}
+            alt="Autumn Towne interiors"
+            fill
+            loading="lazy"
+            {...HERO_IMAGE_PROPS}
+            className="object-cover transition-transform duration-700 hover:scale-105"
+          />
+        </div>
+      ))}
     </div>
   );
 }
@@ -84,46 +93,93 @@ function LayoutTwo({ images }: { images: string[] }) {
     <div className="grid grid-cols-3 gap-4 h-[420px]">
       {images.slice(0, 3).map((img, i) => (
         <div key={i} className="relative rounded-[32px] overflow-hidden">
-          <Image src={img} alt="" fill className="object-cover" />
+          <Image
+            src={img}
+            alt="Autumn Towne apartments"
+            fill
+            priority={i === 0}
+            loading={i === 0 ? "eager" : "lazy"}
+            {...HERO_IMAGE_PROPS}
+            className="object-cover"
+          />
         </div>
       ))}
     </div>
   );
 }
+
 function LayoutThree({ images }: { images: string[] }) {
   return (
     <div className="grid grid-cols-2 gap-4">
+      {/* LCP IMAGE */}
       <div className="relative col-span-2 h-[220px] rounded-[32px] overflow-hidden">
-        <Image src={images[0]} alt="" fill className="object-cover" />
+        <Image
+          src={images[0]}
+          alt="Autumn Towne community living"
+          fill
+          priority
+          loading="eager"
+          {...HERO_IMAGE_PROPS}
+          className="object-cover"
+        />
       </div>
 
-      <div className="relative h-[180px] rounded-[32px] overflow-hidden">
-        <Image src={images[1]} alt="" fill className="object-cover" />
-      </div>
-
-      <div className="relative h-[180px] rounded-[32px] overflow-hidden">
-        <Image src={images[2]} alt="" fill className="object-cover" />
-      </div>
+      {/* Secondary images */}
+      {images.slice(1, 3).map((img, i) => (
+        <div
+          key={i}
+          className="relative h-[180px] rounded-[32px] overflow-hidden"
+        >
+          <Image
+            src={img}
+            alt="Autumn Towne interiors"
+            fill
+            loading="lazy"
+            {...HERO_IMAGE_PROPS}
+            className="object-cover"
+          />
+        </div>
+      ))}
     </div>
   );
 }
+
 function LayoutFour({ images }: { images: string[] }) {
   return (
     <div className="grid grid-cols-4 grid-rows-2 gap-4 h-[420px]">
+      {/* LCP IMAGE */}
       <div className="relative col-span-3 row-span-2 rounded-[32px] overflow-hidden">
-        <Image src={images[0]} alt="" fill className="object-cover" />
+        <Image
+          src={images[0]}
+          alt="Autumn Towne senior apartments"
+          fill
+          priority
+          loading="eager"
+          {...HERO_IMAGE_PROPS}
+          className="object-cover"
+        />
       </div>
 
-      <div className="relative col-span-1 row-span-1 rounded-[24px] overflow-hidden">
-        <Image src={images[1]} alt="" fill className="object-cover" />
-      </div>
-
-      <div className="relative col-span-1 row-span-1 rounded-[24px] overflow-hidden">
-        <Image src={images[2]} alt="" fill className="object-cover" />
-      </div>
+      {/* Smaller images */}
+      {images.slice(1, 3).map((img, i) => (
+        <div
+          key={i}
+          className="relative col-span-1 row-span-1 rounded-[24px] overflow-hidden"
+        >
+          <Image
+            src={img}
+            alt="Autumn Towne amenities"
+            fill
+            loading="lazy"
+            {...HERO_IMAGE_PROPS}
+            className="object-cover"
+          />
+        </div>
+      ))}
     </div>
   );
 }
+
 const HERO_LAYOUTS = [
   { component: LayoutClassic, imageCount: 3 },
   { component: LayoutOne, imageCount: 3 },

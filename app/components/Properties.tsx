@@ -115,7 +115,14 @@ export default function Properties() {
                       src={p.img}
                       alt={p.title}
                       fill
-                      sizes="100%"
+                      priority={i === 0} // only first card is priority
+                      loading={i === 0 ? "eager" : "lazy"}
+                      sizes="
+    (max-width: 640px) 90vw,
+    (max-width: 1024px) 45vw,
+    400px
+  "
+                      quality={65}
                       className="object-cover rounded-[20px]"
                     />
                   </div>
