@@ -1,5 +1,11 @@
 import { MetadataRoute } from "next";
 
+/**
+ * REQUIRED for `output: "export"`
+ * Marks this sitemap as build-time static
+ */
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://autumnplazaapartments.com";
   const lastModified = new Date();
@@ -16,6 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/contactus", priority: 0.8 },
   ];
 
+  const pages = staticPages.map((page) => ({
+    url: `${baseUrl}${page.path}`,
+    lastModified,
+    priority: page.priority,
+  }));
+
   // Floor plan detail pages
   const floorPlans = [
     "luxury-2-bedroom",
@@ -27,12 +39,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}/floorplans/${slug}`,
     lastModified,
     priority: 0.85,
-  }));
-
-  const pages = staticPages.map((page) => ({
-    url: `${baseUrl}${page.path}`,
-    lastModified,
-    priority: page.priority,
   }));
 
   return [...pages, ...floorPlans];

@@ -99,7 +99,7 @@ export default function BookVisit() {
 
             <div className="p-4 h-[700px] overflow-hidden rounded-[20px]">
               <InlineWidget
-                url="https://calendly.com/manikantaspam/30min"
+                url="https://calendly.com/w3-kalyan/30min"
                 styles={{
                   height: "100%",
                 }}

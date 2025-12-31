@@ -82,7 +82,7 @@ export default function FloorPlans() {
 }
 function FloorPlanCard({ p }: any) {
   return (
-    <Link href={`/floorplans/${p.slug}`} className="block">
+    <a href={`/floorplans/${p.slug}/`} className="block">
       <div className="bg-white rounded-[28px] border border-[#f0f0f0] overflow-hidden hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition hover:-translate-y-1">
         <div className="p-2">
           <div className="relative w-full aspect-[4/3] rounded-[20px] overflow-hidden bg-white">
@@ -129,6 +129,6 @@ function FloorPlanCard({ p }: any) {
           </div>
         </div>
       </div>
-    </Link>
+    </a>
   );
 }

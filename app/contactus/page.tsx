@@ -23,7 +23,7 @@ export default function ContactUs() {
     setLoading(true);
 
     const formData = new FormData();
-    formData.append("access_key", "YOUR_WEB3FORMS_KEY");
+    formData.append("access_key", "03079722-bc53-4599-b1ec-37a94fd5a1c4");
     formData.append("name", name);
     formData.append("email", email);
     formData.append("phone", phone);
