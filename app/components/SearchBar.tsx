@@ -1,6 +1,6 @@
 export default function SearchBar() {
   return (
-    <div className="flex justify-center -mt-0 relative z-10  px-4">
+    <div className="flex justify-center mt-10 md:mt-0 relative z-10  px-4">
       <div
         className="
           bg-white 

@@ -206,10 +206,12 @@ export default function Hero() {
     <header
       id="home"
       className="
-    h-screen
+    min-h-screen
     w-full
     flex items-center
     overflow-hidden
+    pt-20
+    md:pt-0
   "
     >
       <div className="max-w-[1280px] mx-auto px-6 grid md:grid-cols-[1fr_1.2fr] gap-[40px] md:gap-[60px] items-center">
