@@ -1,25 +1,28 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   Building2,
-  Store,
   Home,
-  Trees,
   ShieldCheck,
-  MapPin,
   Phone,
   Mail,
+  Trees,
+  Store,
+  MapPin,
 } from "lucide-react";
-import Link from "next/link";
+
+/* ================================================= */
+/* PAGE */
+/* ================================================= */
 
 export default function AutumnPlaza() {
   return (
-    <section className="pt-16 pb-8 md:md:pb-0">
-      <div className="max-w-[1200px] mx-auto px-6 space-y-16 md:space-y-24 lg:space-y-28">
-        {/* HERO / TOP OF PAGE */}
-
+    <>
+      {/* HERO */}
+      <FullSection>
         <div className="grid lg:grid-cols-2 gap-14 items-center">
-          <div className="space-y-4 md:space-y-6">
-            <h1 className="text-3xl md:text-4xl font-bold text-[#5B2C1A]">
+          <div className="space-y-6">
+            <h1 className="text-4xl font-bold text-[#5B2C1A]">
               Autumn Plaza Complex
             </h1>
 
@@ -28,135 +31,192 @@ export default function AutumnPlaza() {
             </p>
 
             <p className="text-lg text-[#E95522] font-semibold">
-              Modern Living in the Heart of Murfreesboro
+              A Modern Mixed-Use Community Designed for Everyday Living
             </p>
 
-            <p className="text-[#666] leading-relaxed max-w-[520px]">
-              Autumn Plaza is a thoughtfully designed mixed-use community
-              offering modern residential living above vibrant retail spaces —
-              bringing comfort, convenience, and connection together.
+            <p className="text-[#666] leading-relaxed max-w-[560px]">
+              Autumn Plaza blends contemporary residential living with
+              thoughtfully curated retail spaces, creating a walkable, connected
+              environment where convenience meets comfort.
             </p>
+
+            <div className="flex gap-4 pt-4">
+              <Link
+                href="/bookvisit"
+                className="bg-[#E95522] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#D0441A] transition"
+              >
+                Schedule a Visit
+              </Link>
+              <Link
+                href="/floorplans"
+                className="border border-[#E95522] text-[#E95522] px-8 py-3 rounded-full font-semibold hover:bg-[#E95522]/10 transition"
+              >
+                View Floor Plans
+              </Link>
+            </div>
           </div>
 
-          <div className="relative h-[380px] rounded-[28px] overflow-hidden group">
+          <div className="relative h-[460px] rounded-[28px] overflow-hidden">
             <Image
               src="/images/autumn-plaza.webp"
               alt="Autumn Plaza Exterior"
               fill
-              className="object-cover transition duration-500 group-hover:scale-105"
+              className="object-cover"
+              priority
             />
           </div>
         </div>
+      </FullSection>
 
-        {/* RESIDENTIAL SECTION */}
-
-        <Section title="Residential Living">
-          <p className="text-[#666] max-w-[720px]">
-            The residential apartments at Autumn Plaza are designed for comfort,
-            privacy, and ease of living with modern finishes and thoughtful
-            layouts.
+      {/* LIVING AT AUTUMN PLAZA */}
+      <FullSection bg>
+        <Section title="Living at Autumn Plaza">
+          <p className="text-[#666] max-w-[780px]">
+            Autumn Plaza is a thoughtfully designed mixed-use community where
+            modern residential living meets everyday convenience through
+            integrated retail spaces.
           </p>
 
-          <ul className="grid sm:grid-cols-2 gap-3 text-sm text-[#5B2C1A] mt-6">
-            <li>• In-unit washer & dryer</li>
-            <li>• Stainless steel appliances</li>
-            <li>• Secure private residential access</li>
-            <li>• Elevator access for residents</li>
-          </ul>
+          {/* RESIDENTIAL */}
+          <div className="mt-14">
+            <h3 className="text-xl font-bold text-[#5B2C1A] mb-6">
+              Residential Living
+            </h3>
 
-          <div className="mt-8">
-            <Link
-              href="/bookvisit"
-              className="inline-block bg-[#E95522] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#D0441A] transition"
-            >
-              Visit Today
-            </Link>
-          </div>
-        </Section>
-
-        {/* AMENITIES & SECURITY */}
-
-        <Section title="Amenities & Security">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Feature
-              icon={<ShieldCheck />}
-              title="Secure Entry"
-              desc="Controlled access points and security monitoring."
-            />
-            <Feature
-              icon={<Building2 />}
-              title="Private Elevator"
-              desc="Exclusive elevator access for Autumn Plaza residents."
-            />
-            <Feature
-              icon={<Home />}
-              title="Comfort Living"
-              desc="Modern finishes and thoughtfully designed interiors."
-            />
-          </div>
-        </Section>
-
-        {/* MAP & LOCATION */}
-
-        <Section title="Location">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            <div className="space-y-4">
-              <p className="text-[#666]">
-                Autumn Plaza is conveniently located near everyday essentials
-                and local attractions.
-              </p>
-
-              <ul className="text-sm text-[#5B2C1A] space-y-2">
-                <li>• Starbucks</li>
-                <li>• Publix</li>
-                <li>• Sam’s Club</li>
-                <li>• Boro Pickleball</li>
-              </ul>
+            <div className="grid md:grid-cols-3 gap-6">
+              <InfoCard
+                icon={<Home />}
+                title="Thoughtful Layouts"
+                desc="Spacious floor plans designed to maximize natural light and flow."
+              />
+              <InfoCard
+                icon={<Building2 />}
+                title="Private Access"
+                desc="Separate residential entrances and controlled building access."
+              />
+              <InfoCard
+                icon={<Trees />}
+                title="Peaceful Living"
+                desc="Quiet interiors above retail for a calm, residential feel."
+              />
             </div>
 
-            <div className="w-full h-[300px] rounded-2xl overflow-hidden">
-              <iframe
-                src="https://www.google.com/maps?q=146+Autumn+Towne+Way,+Murfreesboro,+TN+37128&output=embed"
-                className="w-full h-full border-0"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+            <ul className="grid sm:grid-cols-2 gap-3 text-sm text-[#5B2C1A] mt-8">
+              <li>• In-unit washer & dryer</li>
+              <li>• Stainless steel appliances</li>
+              <li>• Elevator access</li>
+              <li>• Secure residential corridors</li>
+            </ul>
+          </div>
+
+          {/* DIVIDER */}
+          <div className="my-16 h-px bg-[#E5DDD6]" />
+
+          {/* RETAIL */}
+          <div>
+            <h3 className="text-xl font-bold text-[#5B2C1A] mb-6">
+              Retail Convenience
+            </h3>
+
+            <p className="text-[#666] max-w-[720px] mb-10">
+              Ground-level retail spaces bring daily essentials and neighborhood
+              services just steps from your home, enhancing walkability and
+              community interaction.
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              <InfoCard
+                icon={<Store />}
+                title="Street-Level Access"
+                desc="Convenient retail located directly below residential spaces."
+              />
+              <InfoCard
+                icon={<MapPin />}
+                title="High Visibility"
+                desc="Positioned along a well-traveled corridor with steady foot traffic."
+              />
+              <InfoCard
+                icon={<Building2 />}
+                title="Flexible Retail Space"
+                desc="Ideal for cafés, services, and neighborhood-focused businesses."
               />
             </div>
           </div>
         </Section>
+      </FullSection>
 
-        {/* RETAIL SPACE */}
-
-        <Section title="Retail at Autumn Plaza">
-          <p className="text-[#666] max-w-[720px]">
-            Retail space is available at the base of the building, offering
-            excellent visibility and foot traffic.
+      {/* AMENITIES */}
+      <FullSection>
+        <Section title="Amenities & Security">
+          <p className="text-[#666] max-w-[760px]">
+            Autumn Plaza prioritizes safety, accessibility, and convenience
+            through well-planned amenities and secure infrastructure.
           </p>
 
-          <ul className="text-sm text-[#5B2C1A] mt-6 space-y-2">
-            <li>• Current Retail Tenant (optional)</li>
-            <li>• Opportunity for cafés & services</li>
-          </ul>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+            <Feature
+              icon={<ShieldCheck />}
+              title="Secure Entry"
+              desc="Controlled access points with monitored entry systems."
+            />
+            <Feature
+              icon={<Building2 />}
+              title="Private Elevator"
+              desc="Exclusive elevator access reserved for residents."
+            />
+            <Feature
+              icon={<Home />}
+              title="Modern Interiors"
+              desc="Clean finishes, durable materials, and timeless design."
+            />
+          </div>
         </Section>
+      </FullSection>
 
-        {/* GALLERY */}
+      {/* LOCATION */}
+      <FullSection bg>
+        <Section title="Prime Location">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <p className="text-[#666]">
+                Located in one of Murfreesboro’s most convenient corridors,
+                Autumn Plaza offers quick access to daily essentials,
+                recreation, and major roadways.
+              </p>
 
-        {/* <Section title="Gallery">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="h-[220px] bg-[#F5F1EE] rounded-2xl flex items-center justify-center">
-              Apartment Photos
+              <div className="grid grid-cols-2 gap-4 text-sm text-[#5B2C1A]">
+                <LocationItem label="Starbucks" />
+                <LocationItem label="Publix" />
+                <LocationItem label="Sam’s Club" />
+                <LocationItem label="Boro Pickleball" />
+              </div>
+
+              <p className="text-sm text-[#7A5D4A] flex items-center gap-2">
+                <MapPin size={16} />
+                Central Murfreesboro Location
+              </p>
             </div>
-            <div className="h-[220px] bg-[#F5F1EE] rounded-2xl flex items-center justify-center">
-              Retail Photos
-            </div>
-            <div className="h-[220px] bg-[#F5F1EE] rounded-2xl flex items-center justify-center">
-              Community Photos
+
+            <div className="w-full h-[420px] rounded-2xl overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps?q=146+Autumn+Towne+Way,+Murfreesboro,+TN+37128&output=embed"
+                className="w-full h-full border-0"
+                loading="lazy"
+              />
             </div>
           </div>
-        </Section> */}
-        {/* CONTACT */}
-        <Section title="Contact">
-          <div className="space-y-4 text-[#5B2C1A]">
+        </Section>
+      </FullSection>
+
+      {/* CONTACT */}
+      <FullSection bg>
+        <Section title="Contact & Leasing">
+          <p className="text-[#666] max-w-[720px]">
+            Interested in learning more about availability, leasing options, or
+            scheduling a private tour? Our team is here to help.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-8 mt-10 text-[#5B2C1A]">
             <p className="flex items-center gap-3">
               <Phone size={18} /> (615) 648-4099
             </p>
@@ -165,27 +225,32 @@ export default function AutumnPlaza() {
             </p>
           </div>
         </Section>
-        {/* CTA BANNER */}
-
-        <div className="bg-[#5B2C1A] rounded-[28px] p-6 md:p-10 text-center text-white space-y-2 md:space-y-4">
-          <h3 className="text-2xl font-bold">
-            Now Leasing Limited Units Available
-          </h3>
-          <Link
-            href="/bookvisit"
-            className="inline-block bg-[#E95522] px-8 py-3 rounded-full font-semibold hover:bg-[#D0441A] transition"
-          >
-            Schedule Tour
-          </Link>
-        </div>
-      </div>
-    </section>
+      </FullSection>
+    </>
   );
 }
 
 /* ================================================= */
-/* REUSABLE COMPONENTS */
+/* HELPERS */
 /* ================================================= */
+
+function FullSection({
+  children,
+  bg = false,
+}: {
+  children: React.ReactNode;
+  bg?: boolean;
+}) {
+  return (
+    <section
+      className={`min-h-screen w-full flex items-center ${
+        bg ? "bg-[#FAF7F5]" : "bg-white"
+      }`}
+    >
+      <div className="max-w-[1200px] mx-auto px-6 w-full">{children}</div>
+    </section>
+  );
+}
 
 function Section({
   title,
@@ -220,4 +285,28 @@ function Feature({
       <p className="text-sm text-[#666]">{desc}</p>
     </div>
   );
+}
+
+function InfoCard({
+  icon,
+  title,
+  desc,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  desc: string;
+}) {
+  return (
+    <div className="bg-white border border-[#eee] rounded-2xl p-6 space-y-3">
+      <div className="w-10 h-10 flex items-center justify-center bg-[#E95522]/10 rounded-lg text-[#E95522]">
+        {icon}
+      </div>
+      <h3 className="font-semibold text-[#5B2C1A]">{title}</h3>
+      <p className="text-sm text-[#666]">{desc}</p>
+    </div>
+  );
+}
+
+function LocationItem({ label }: { label: string }) {
+  return <div className="bg-white rounded-xl px-4 py-3">{label}</div>;
 }

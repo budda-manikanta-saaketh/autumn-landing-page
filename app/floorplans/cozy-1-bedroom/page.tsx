@@ -1,4 +1,5 @@
 import FloorPlanTabs from "../FloorPlanTabs";
+import FloorPlanHero from "../FloorPlanHero";
 
 const plan = {
   title: "Cozy 1 Bedroom",
@@ -17,20 +18,26 @@ const plan = {
 
 export default function Cozy1BedroomPage() {
   return (
-    <section className="pt-20 pb-24">
-      <div className="max-w-[1100px] mx-auto px-6 space-y-16">
-        <div>
-          <h1 className="text-4xl font-bold text-[#5B2C1A]">{plan.title}</h1>
+    <>
+      {/* FULLSCREEN HERO */}
+      <FloorPlanHero plan={plan} />
 
-          <p className="text-xl text-[#E95522] mt-2">
-            {plan.price} <span className="text-sm">/ month</span>
-          </p>
+      {/* DETAILS SECTION */}
+      <section className="py-24 bg-white">
+        <div className="max-w-[1100px] mx-auto px-6 space-y-16">
+          <div>
+            <h1 className="text-4xl font-bold text-[#5B2C1A]">{plan.title}</h1>
 
-          <p className="mt-4 text-[#666] max-w-[720px]">{plan.description}</p>
+            <p className="text-xl text-[#E95522] mt-2">
+              {plan.price} <span className="text-sm">/ month</span>
+            </p>
+
+            <p className="mt-4 text-[#666] max-w-[720px]">{plan.description}</p>
+          </div>
+
+          <FloorPlanTabs plan={plan} />
         </div>
-
-        <FloorPlanTabs plan={plan} />
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

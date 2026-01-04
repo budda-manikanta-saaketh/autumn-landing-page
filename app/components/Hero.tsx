@@ -203,7 +203,15 @@ export default function Hero() {
     });
   }, []);
   return (
-    <header id="home" className="pt-[120px] pb-[60px]">
+    <header
+      id="home"
+      className="
+    h-screen
+    w-full
+    flex items-center
+    overflow-hidden
+  "
+    >
       <div className="max-w-[1280px] mx-auto px-6 grid md:grid-cols-[1fr_1.2fr] gap-[40px] md:gap-[60px] items-center">
         <div className="text-center md:text-left text-[#5B2C1A]">
           <h1

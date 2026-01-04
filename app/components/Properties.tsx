@@ -162,7 +162,7 @@ export default function Properties() {
                   {/* FOOTER */}
                   <div className="flex justify-between items-center pt-4 border-t border-[#f5f5f5]">
                     <span className="text-sm font-medium text-[#5B2C1A]">
-                      View Details & 3D
+                      View 3D Tour & Details
                     </span>
 
                     {/* Arrow is visual only */}

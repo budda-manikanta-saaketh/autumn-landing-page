@@ -127,7 +127,7 @@ function FloorPlanCard({ p }: any) {
 
           <div className="flex justify-between items-center pt-4 border-t">
             <span className="text-sm font-medium text-[#5B2C1A]">
-              View Details & 3D
+              View 3D Tour & Details
             </span>
 
             <div className="w-10 h-10 bg-[#E95522] text-white rounded-full flex items-center justify-center">

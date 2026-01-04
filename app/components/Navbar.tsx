@@ -32,7 +32,7 @@ export default function Navbar() {
           shadow-[0_6px_30px_rgba(0,0,0,0.08)]
           w-[88%] md:w-[90%] max-w-[1200px]
           px-4 py-2.5 md:px-[30px] md:py-[12px]
-          rounded-full 
+          rounded-[20px]
           flex items-center justify-between
         "
       >

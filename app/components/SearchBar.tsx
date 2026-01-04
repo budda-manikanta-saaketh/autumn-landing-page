@@ -1,16 +1,16 @@
 export default function SearchBar() {
   return (
-    <div className="flex justify-center -mt-[30px] relative z-10 mb-20 px-4">
+    <div className="flex justify-center -mt-0 relative z-10  px-4">
       <div
         className="
           bg-white 
           p-3 
-          rounded-2xl 
+          rounded-[20px] 
           shadow-[0_15px_40px_rgba(0,0,0,0.08)]
           border border-[#f0f0f0]
 
           /* Desktop: pill with items inline */
-          md:rounded-full 
+          rounded-[20px] 
           md:flex md:items-center md:justify-between
 
           /* Width control */

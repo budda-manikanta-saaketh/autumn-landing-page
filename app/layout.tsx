@@ -108,6 +108,8 @@ const jsonLd = {
     "Luxury senior living community featuring modern floor plans, wellness center, secured dog park, billiards lounge, and social activities.",
 };
 
+import LayoutShell from "./components/LayoutShell";
+
 export default function RootLayout({
   children,
 }: {
@@ -125,13 +127,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="z-[1000]">
-          <Navbar />
-        </header>
-        <main className="min-h-screen">{children}</main>
-        <footer>
-          <Footer />
-        </footer>
+        <LayoutShell>{children}</LayoutShell>
       </body>
     </html>
   );

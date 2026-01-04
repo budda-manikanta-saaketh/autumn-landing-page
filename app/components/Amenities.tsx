@@ -30,13 +30,26 @@ const featureInfo: Record<string, string> = {
 
 export default function Amenities() {
   return (
-    <section id="amenities" className="py-4 md:py-8 bg-white mx-4 md:mx-6">
+    <section
+      id="amenities"
+      className="
+    h-screen
+    w-full
+    bg-white
+    flex items-center
+  "
+    >
       <div
         className="
-          max-w-[1280px] mx-auto px-4 md:px-6
-          grid grid-cols-1 md:grid-cols-2 
-          gap-12 md:gap-20 items-start
-        "
+    max-w-[1280px]
+    mx-auto
+    px-4 md:px-6
+    grid grid-cols-1 md:grid-cols-2
+    gap-12 md:gap-20
+    items-center
+    h-full
+    py-16
+  "
       >
         <div>
           <h2 className="text-[2rem] md:text-[2.5rem] leading-tight font-bold mb-6 text-[#5B2C1A]">
@@ -130,7 +143,7 @@ export default function Amenities() {
             </div>
           </Link>
         </div>
-        <div className="relative h-[260px] sm:h-[340px] md:h-[500px] rounded-[24px] md:rounded-[32px] overflow-hidden group shadow-xl">
+        <div className="relative h-full min-h-[420px] rounded-[24px] md:rounded-[32px] overflow-hidden group shadow-xl">
           <Image
             src="/images/Amenities.webp"
             alt="Community Living Spaces"
