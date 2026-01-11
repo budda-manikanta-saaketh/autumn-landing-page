@@ -133,26 +133,6 @@ export default function AboutUs() {
             </a>
           </div>
         </div>
-
-        <div className="mt-20 text-center bg-[#E95522]/10 rounded-[28px] p-10 shadow">
-          <h3 className="text-[1.8rem] md:text-[2rem] font-bold text-[#5B2C1A] mb-3">
-            Schedule a Visit Today
-          </h3>
-          <p className="text-[#666] max-w-[600px] mx-auto mb-6">
-            Come tour our community and see why so many seniors love calling
-            Autumn Towne their home.
-          </p>
-
-          <Link
-            href="/bookvisit"
-            className="
-              inline-block bg-[#E95522] text-white px-8 py-3 
-              rounded-full font-semibold hover:bg-[#cf4a1d] transition
-            "
-          >
-            Schedule Now
-          </Link>
-        </div>
       </div>
     </section>
   );

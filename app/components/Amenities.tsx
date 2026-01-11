@@ -12,7 +12,7 @@ import {
 } from "react-icons/fa";
 import { FaHammer } from "react-icons/fa6";
 const featureInfo: Record<string, string> = {
-  "Gourmet Coffee & Pastries":
+  "Gourmet Coffee Bar":
     "Enjoy fresh morning pastries and premium coffee daily in our community dining area.",
   "Billiards Club Room":
     "A cozy, social environment where residents can play billiards and relax.",
@@ -71,11 +71,11 @@ export default function Amenities() {
           <Link href={"/amenities"}>
             <div className="flex flex-wrap gap-3 md:gap-4 my-6 md:my-8">
               {[
-                { icon: <FaCoffee />, label: "Gourmet Coffee & Pastries" },
+                { icon: <FaCoffee />, label: "Gourmet Bar" },
                 { icon: <FaGamepad />, label: "Billiards Club Room" },
                 { icon: <FaDumbbell />, label: "Wellness Center" },
                 { icon: <FaWifi />, label: "Complementary Wi-Fi" },
-                { icon: <FaDog />, label: "Dog Park (Coming Soon)" },
+                { icon: <FaDog />, label: "Dog Park" },
                 { icon: <FaShieldAlt />, label: "24/7 Security Surveillance" },
                 { icon: <FaHammer />, label: "Stainless Steel Appliances" },
               ].map((f, i) => (

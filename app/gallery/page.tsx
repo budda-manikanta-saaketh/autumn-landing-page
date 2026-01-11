@@ -45,17 +45,17 @@ const IMAGES = [
   {
     src: "/images/dailylife/dl4.webp",
     category: "life",
-    title: "Secure Storage Lockers",
+    title: "Mailboxes Located Inside Lobby",
   },
-  {
-    src: "/images/dailylife/dl5.webp",
-    category: "life",
-    title: "Outdoor Pet Area",
-  },
+  // {
+  //   src: "/images/dailylife/dl5.webp",
+  //   category: "life",
+  //   title: "Gourmet Coffee Bar",
+  // },
   {
     src: "/images/dailylife/dl6.webp",
     category: "life",
-    title: "Modern Laundry Lounge",
+    title: "Community Laundry Room",
   },
   {
     src: "/images/dailylife/dl7.webp",
@@ -77,12 +77,13 @@ const IMAGES = [
   {
     src: "/images/community/c2.webp",
     category: "community",
-    title: "Neighbourly Connections",
+    title: "Neighborly Connections",
   },
   {
     src: "/images/community/c3.webp",
     category: "community",
     title: "Moments of Togetherness",
+    rotate: "rotate-180",
   },
 ];
 const HERO_CAROUSEL_IMAGES = IMAGES.slice(0, 5);
@@ -121,24 +122,31 @@ export default function GalleryPage() {
 
             const content = (
               <div className="relative w-full overflow-hidden rounded-[22px] group cursor-pointer">
-                <Image
-                  src={img.src}
-                  alt={img.title}
-                  width={600}
-                  height={800}
-                  loading="lazy"
-                  sizes="
-    (max-width: 640px) 90vw,
-    (max-width: 1024px) 45vw,
-    400px
-  "
-                  quality={65}
-                  className="w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                />
+                {/* IMAGE LAYER (ROTATED) */}
+                <div
+                  className={`transition-transform duration-700
+      ${img.rotate ?? ""}
+      group-hover:rotate-0
+    `}
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.title}
+                    width={600}
+                    height={800}
+                    loading="lazy"
+                    sizes="
+        (max-width: 640px) 90vw,
+        (max-width: 1024px) 45vw,
+        400px
+      "
+                    quality={65}
+                    className="w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  />
+                </div>
 
-                {/* ALWAYS VISIBLE TITLE BAR */}
-                <div className="absolute inset-x-0 bottom-0">
-                  {/* Gradient for readability */}
+                {/* TEXT OVERLAY (NOT ROTATED) */}
+                <div className="absolute inset-x-0 bottom-0 pointer-events-none">
                   <div className="bg-gradient-to-t from-black/70 via-black/40 to-transparent px-5 pt-10 pb-5 transition-all duration-300 group-hover:from-black/80">
                     <h3 className="text-white text-lg font-semibold leading-snug">
                       {img.title}

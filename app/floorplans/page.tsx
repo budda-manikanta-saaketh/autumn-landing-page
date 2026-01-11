@@ -116,12 +116,15 @@ function FloorPlanCard({ p }: any) {
 
           <p className="text-sm text-[#7A5D4A] mb-4">Autumn Towne Way</p>
 
-          <div className="flex gap-4 text-sm mb-6 text-[#5B2C1A]">
+          <div className="flex flex-wrap gap-3 text-sm text-[#5B2C1A] mb-6">
             <span className="flex items-center gap-1">
-              <FaBed className="text-[#E95522]" /> {p.beds} Beds
+              <FaBed className="text-[#E95522]" />
+              {p.beds} {p.beds === 1 ? "Bed" : "Beds"}
             </span>
+
             <span className="flex items-center gap-1">
-              <FaBath className="text-[#E95522]" /> {p.baths} Bath
+              <FaBath className="text-[#E95522]" />
+              {p.baths} {p.baths === 1 ? "Bath" : "Baths"}
             </span>
           </div>
 

@@ -6,6 +6,7 @@ import {
   FaArrowUp,
   FaPaperPlane,
   FaPhone,
+  FaCalendarAlt,
 } from "react-icons/fa";
 import Link from "next/link";
 import { FaPhoneFlip } from "react-icons/fa6";
@@ -24,20 +25,37 @@ export default function Footer() {
             happy to help.
           </p>
 
-          <Link
-            href="/contactus"
-            className="
-              bg-[#E95522] hover:bg-[#D0441A]
-              text-white font-semibold
-              px-10 py-4 text-lg
-              rounded-full shadow-lg hover:shadow-2xl
-              flex items-center justify-center gap-3
-              mx-auto w-max transition-transform hover:scale-[1.04]
-            "
-          >
-            <FaPhone size={18} className="scale-x-[-1]" />
-            Contact Us
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/contactus"
+              className="
+                bg-[#E95522] hover:bg-[#D0441A]
+                text-white font-semibold
+                px-10 py-4 text-lg
+                rounded-full shadow-lg hover:shadow-2xl
+                flex items-center justify-center gap-3
+                w-full sm:w-auto transition-transform hover:scale-[1.04]
+              "
+            >
+              <FaPhone size={18} className="scale-x-[-1]" />
+              Contact Us
+            </Link>
+
+            <Link
+              href="/bookvisit"
+              className="
+                bg-white hover:bg-gray-100
+                text-[#5B2C1A] font-semibold
+                px-10 py-4 text-lg
+                rounded-full shadow-lg hover:shadow-2xl
+                flex items-center justify-center gap-3
+                w-full sm:w-auto transition-transform hover:scale-[1.04]
+              "
+            >
+              <FaCalendarAlt size={18} />
+              Schedule Now
+            </Link>
+          </div>
         </div>
         <div
           className="

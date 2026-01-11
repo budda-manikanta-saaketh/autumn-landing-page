@@ -2,7 +2,7 @@ import FloorPlanHero from "../FloorPlanHero";
 import FloorPlanDetails from "../FloorPlanTabs";
 
 const plan = {
-  title: "Cozy 2 Bedroom",
+  title: "Spacious 2 Bedroom",
   price: "$1,795",
   beds: 2,
   baths: 2,

@@ -214,32 +214,44 @@ export default function Hero() {
     md:pt-0
   "
     >
-      <div className="max-w-[1280px] mx-auto px-6 grid md:grid-cols-[1fr_1.2fr] gap-[40px] md:gap-[60px] items-center">
-        <div className="text-center md:text-left text-[#5B2C1A]">
-          <h1
-            className="font-bold tracking-[-1.2px] mb-6 leading-[1.15]
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div
+          className="
+      w-full
+      max-w-[1600px] xl:max-w-[1800px] 2xl:max-w-[2000px]
+      mx-auto
+      px-6 sm:px-8 lg:px-12 xl:px-16
+      grid
+      md:grid-cols-[1fr_1.2fr]
+      gap-[40px] md:gap-[60px]
+      items-center
+    "
+        >
+          <div className="text-center md:text-left text-[#5B2C1A]">
+            <h1
+              className="font-bold tracking-[-1.2px] mb-6 leading-[1.15]
             text-[2.2rem] sm:text-[2.6rem] md:text-[3.2rem] lg:text-[3.8rem]"
-          >
-            Welcome to <br />
-            Autumn{" "}
-            <span
-              className="inline-flex items-center justify-center
+            >
+              Welcome to <br />
+              Autumn{" "}
+              <span
+                className="inline-flex items-center justify-center
               w-[45px] h-[45px] sm:w-[55px] sm:h-[55px] md:w-[60px] md:h-[60px]
               bg-[#E95522] text-white rounded-full
               text-[1.1rem] sm:text-[1.3rem] md:text-[1.5rem] mx-1 sm:mx-2"
-            >
-              <FaHome />
-            </span>
-            Towne
-          </h1>
+              >
+                <FaHome />
+              </span>
+              Towne
+            </h1>
 
-          <p className="text-[1rem] sm:text-[1.05rem] text-[#666] mb-8 max-w-[450px] mx-auto md:mx-0 leading-relaxed">
-            Autumn Towne Senior Apartments offers big city living with home-town
-            appeal.
-          </p>
-          <a
-            href="tel:6156484099"
-            className="
+            <p className="text-[1rem] sm:text-[1.05rem] text-[#666] mb-8 max-w-[450px] mx-auto md:mx-0 leading-relaxed">
+              Autumn Towne Senior Apartments offers big city living with
+              home-town appeal.
+            </p>
+            <a
+              href="tel:6156484099"
+              className="
               inline-flex items-center justify-center gap-3
               bg-[#E95522] hover:bg-[#cf4a1d]
               text-white font-semibold px-6 py-3 sm:px-8 sm:py-4
@@ -248,59 +260,60 @@ export default function Hero() {
               hover:scale-[1.05] active:scale-[0.98]
               mb-8
             "
-          >
-            <FaPhoneAlt className="text-xl" />
-            Call (615) 648-4099
-          </a>
-          <Link href={"/contactus"}>
-            <div
-              className="
+            >
+              <FaPhoneAlt className="text-xl" />
+              Call (615) 648-4099
+            </a>
+            <Link href={"/contactus"}>
+              <div
+                className="
     hidden md:flex items-center gap-4 
     bg-white shadow-md rounded-[20px] 
     px-5 py-3 mb-6 border border-transparent
     transition-all duration-300 
     hover:-translate-y-1 hover:shadow-lg hover:border-[#E95522]/30
   "
-            >
-              <div className="text-[2.5rem] text-[#C9C9C9] transition-colors duration-300 group-hover:text-[#5B2C1A]">
-                <FaUserCircle />
-              </div>
+              >
+                <div className="text-[2.5rem] text-[#C9C9C9] transition-colors duration-300 group-hover:text-[#5B2C1A]">
+                  <FaUserCircle />
+                </div>
 
-              <div className="transition-colors duration-300">
-                <span className="text-sm text-[#7a7a7a] block">
-                  Management Team
-                </span>
-                <h4 className="text-base font-semibold text-[#5B2C1A]">
-                  Here to assist you
-                </h4>
-              </div>
+                <div className="transition-colors duration-300">
+                  <span className="text-sm text-[#7a7a7a] block">
+                    Management Team
+                  </span>
+                  <h4 className="text-base font-semibold text-[#5B2C1A]">
+                    Here to assist you
+                  </h4>
+                </div>
 
-              <div className="ml-auto">
-                <div
-                  className="
+                <div className="ml-auto">
+                  <div
+                    className="
         w-10 h-10 rounded-full bg-[#E95522] text-white 
         flex items-center justify-center
         transition-all duration-300
         hover:bg-[#cf4a1d] hover:scale-110
       "
-                >
-                  <FaEnvelope />
+                  >
+                    <FaEnvelope />
+                  </div>
                 </div>
               </div>
-            </div>
-          </Link>
+            </Link>
 
-          <div className="flex justify-center md:justify-start gap-3 sm:gap-4 flex-wrap">
-            <div className="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-semibold flex items-center gap-2">
-              <FaStar className="text-yellow-500" /> 4.8 (120+)
-            </div>
+            <div className="flex justify-center md:justify-start gap-3 sm:gap-4 flex-wrap">
+              <div className="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-semibold flex items-center gap-2">
+                <FaStar className="text-yellow-500" /> 4.8 (120+)
+              </div>
 
-            <div className="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-semibold flex items-center gap-2">
-              <FaCheckCircle className="text-green-500" /> 55+ Community
+              <div className="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-semibold flex items-center gap-2">
+                <FaCheckCircle className="text-green-500" /> 55+ Community
+              </div>
             </div>
           </div>
+          {layoutData && <layoutData.Component images={layoutData.images} />}
         </div>
-        {layoutData && <layoutData.Component images={layoutData.images} />}
       </div>
     </header>
   );

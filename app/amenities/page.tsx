@@ -33,14 +33,14 @@ export default function Amenities() {
     "Close to Shopping, Restaurants, Coffee Shops",
     "Guest Greeting Area",
     "Resident Appreciation Receptions",
-    "Gourmet Coffee & Morning Pastries",
+    "Gourmet Coffee Bar",
     "Close to I-24, Hwy 96, Sam’s Club & Hospital",
   ];
 
   const features = [
     {
       icon: FaCoffee,
-      label: "Gourmet Coffee",
+      label: "Gourmet Coffee Bar",
       description:
         "Freshly brewed gourmet coffee available daily in our community lounge.",
     },
@@ -127,7 +127,7 @@ export default function Amenities() {
           </h2>
 
           <p className="text-[#7A5D4A] text-lg mt-5 max-w-3xl mx-auto">
-            Autumn Townes amenities are thoughtfully designed to offer comfort,
+            Autumn Towne's amenities are thoughtfully designed to offer comfort,
             convenience, and a warm community atmosphere.
           </p>
         </div>
@@ -305,31 +305,6 @@ export default function Amenities() {
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
-
-        <div className="bg-[#5B2C1A] rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all mb-6 md:mb-0">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-6">
-              <div className="w-16 h-16 min-w-[4rem] aspect-square flex-shrink-0 bg-white rounded-full flex items-center justify-center text-[#5B2C1A] text-3xl">
-                <FaCalendar />
-              </div>
-
-              <div>
-                <h4 className="text-2xl font-bold text-white">
-                  Schedule A Visit
-                </h4>
-                <p className="text-orange-100">
-                  Book a visit and experience Autumn Towne in person.
-                </p>
-              </div>
-            </div>
-
-            <a href="/bookvisit">
-              <button className="px-8 py-3 bg-[#E95522] hover:bg-orange-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
-                Schedule Now
-              </button>
-            </a>
           </div>
         </div>
       </div>

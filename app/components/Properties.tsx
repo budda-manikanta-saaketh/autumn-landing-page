@@ -27,7 +27,7 @@ const data = [
   {
     slug: "cozy-2-bedroom",
     price: "$1,795",
-    title: "Cozy 2 Bedroom",
+    title: "Spacious 2 Bedroom",
     beds: 2,
     baths: 2,
     sqft: 1039,
@@ -45,7 +45,7 @@ const data = [
   {
     slug: "cozy-1-bedroom",
     price: "$1,495",
-    title: "Cozy 1 Bedroom",
+    title: "Standard 1 Bedroom",
     beds: 1,
     baths: 1,
     sqft: 649,
@@ -65,7 +65,7 @@ export default function Properties() {
       <div className="max-w-[1280px] mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-10 md:mb-12 gap-6">
           <h2 className="text-[2rem] md:text-[2.5rem] leading-tight font-bold text-[#5B2C1A] text-center md:text-left">
-            Discover Best Properties <br className="hidden md:block" />
+            Discover Properties <br className="hidden md:block" />
             Tailored to You
           </h2>
 
@@ -141,6 +141,9 @@ export default function Properties() {
                       /month
                     </span>
                   </p>
+                  <p className="text-xs text-[#7A5D4A] mt-1">
+                    Plus fixed-rate utilities
+                  </p>
 
                   <h4 className="text-lg md:text-xl font-bold text-[#5B2C1A] mt-2">
                     {p.title}
@@ -152,10 +155,13 @@ export default function Properties() {
 
                   <div className="flex flex-wrap gap-3 text-sm text-[#5B2C1A] mb-6">
                     <span className="flex items-center gap-1">
-                      <FaBed className="text-[#E95522]" /> {p.beds} Beds
+                      <FaBed className="text-[#E95522]" />
+                      {p.beds} {p.beds === 1 ? "Bed" : "Beds"}
                     </span>
+
                     <span className="flex items-center gap-1">
-                      <FaBath className="text-[#E95522]" /> {p.baths} Bath
+                      <FaBath className="text-[#E95522]" />
+                      {p.baths} {p.baths === 1 ? "Bath" : "Baths"}
                     </span>
                   </div>
 

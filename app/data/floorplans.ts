@@ -33,7 +33,7 @@ export const FLOOR_PLANS = [
 
   {
     slug: "cozy-2-bedroom",
-    title: "Cozy 2 Bedroom",
+    title: "Spacious 2 Bedroom",
     price: "$1,795",
     beds: 2,
     baths: 2,
@@ -65,7 +65,7 @@ export const FLOOR_PLANS = [
 
   {
     slug: "cozy-1-bedroom",
-    title: "Cozy 1 Bedroom",
+    title: "Standard 1 Bedroom",
     price: "$1,495",
     beds: 1,
     baths: 1,

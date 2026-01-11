@@ -2,7 +2,7 @@ import FloorPlanTabs from "../FloorPlanTabs";
 import FloorPlanHero from "../FloorPlanHero";
 
 const plan = {
-  title: "Cozy 1 Bedroom",
+  title: "Standard 1 Bedroom",
   price: "$1,495",
   beds: 1,
   baths: 1,
