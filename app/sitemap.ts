@@ -28,7 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: page.priority,
   }));
 
-  // Floor plan detail pages
+  // Floor plan detail pages and sitemap
   const floorPlans = [
     "luxury-2-bedroom",
     "standard-2-bedroom",
