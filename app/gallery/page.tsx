@@ -96,7 +96,7 @@ export default function GalleryPage() {
 
   return (
     <section className="pt-[140px] pb-24">
-      <div className="max-w-[1320px] mx-auto px-6 space-y-24">
+      <div className="max-w-[1280px] 2xl:max-w-[1600px] mx-auto px-6 space-y-24">
         <GalleryHeroCarousel images={IMAGES.slice(0, 6)} />
 
         <div className="flex flex-wrap gap-3 justify-center">

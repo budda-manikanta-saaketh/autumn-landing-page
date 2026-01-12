@@ -62,7 +62,7 @@ export default function Properties() {
 
   return (
     <section id="properties" className="py-6 md:py-8">
-      <div className="max-w-[1280px] mx-auto px-4 md:px-6">
+      <div className="max-w-[1280px] 2xl:max-w-[1600px] mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-10 md:mb-12 gap-6">
           <h2 className="text-[2rem] md:text-[2.5rem] leading-tight font-bold text-[#5B2C1A] text-center md:text-left">
             Discover Properties <br className="hidden md:block" />

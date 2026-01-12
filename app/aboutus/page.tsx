@@ -16,7 +16,7 @@ import {
 export default function AboutUs() {
   return (
     <section className="pt-[140px] pb-4">
-      <div className="max-w-[1280px] mx-auto px-6">
+      <div className="max-w-[1280px] 2xl:max-w-[1600px] mx-auto px-6">
         <div className="text-center mb-12">
           <h1 className="text-[2.4rem] md:text-[3rem] font-bold text-[#5B2C1A] leading-tight">
             Welcome to <br />

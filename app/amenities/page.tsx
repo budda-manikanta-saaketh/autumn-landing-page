@@ -117,7 +117,7 @@ export default function Amenities() {
 
   return (
     <section className="pt-20 bg-gradient-to-b from-white via-orange-50/30 to-white">
-      <div className="max-w-[1280px] mx-auto px-4 md:px-6">
+      <div className="max-w-[1280px] 2xl:max-w-[1600px] mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold text-[#5B2C1A] leading-tight">
             Discover Beautiful
