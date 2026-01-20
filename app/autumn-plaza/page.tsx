@@ -11,8 +11,17 @@ import {
   Award,
   CheckCircle2,
 } from "lucide-react";
+import HeroLayouts from "../components/HeroLayouts";
 
 export default function AutumnPlaza() {
+  const AUTUMN_PLAZA_IMAGES = [
+    "/images/autumn-plaza/1.webp",
+    "/images/autumn-plaza/2.webp",
+    "/images/autumn-plaza/3.webp",
+    "/images/autumn-plaza/4.webp",
+    "/images/autumn-plaza/5.webp",
+  ];
+
   return (
     <div className="bg-white">
       {/* HERO */}
@@ -59,12 +68,8 @@ export default function AutumnPlaza() {
 
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-[#E95522]/20 to-[#5B2C1A]/20 rounded-3xl blur-2xl" />
-              <div className="relative h-[420px] sm:h-[500px] lg:h-[560px] xl:h-[620px] rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-[#5B2C1A] to-[#7A5D4A] flex items-center justify-center">
-                <img
-                  src="/images/autumn-plaza.webp"
-                  alt="Autumn Plaza Exterior"
-                  className="w-full h-full object-cover"
-                />
+              <div className="relative">
+                <HeroLayouts images={AUTUMN_PLAZA_IMAGES} />
               </div>
             </div>
           </div>
@@ -74,19 +79,20 @@ export default function AutumnPlaza() {
       {/* LIVING AT AUTUMN PLAZA */}
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
+          {/* SECTION HEADER */}
           <div className="text-center mb-16 xl:mb-20">
             <h2 className="text-4xl md:text-5xl xl:text-6xl font-bold text-[#5B2C1A] mb-6">
               Living at Autumn Plaza
             </h2>
             <p className="text-lg xl:text-xl text-[#666] max-w-4xl mx-auto leading-relaxed">
-              A thoughtfully designed mixed-use community where modern
-              residential living meets everyday convenience through integrated
-              retail spaces.
+              A modern mixed-use community offering comfortable residential
+              living paired with everyday conveniences just steps from your
+              door.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 xl:gap-16 items-start">
-            {/* RESIDENTIAL */}
+            {/* ================= RESIDENTIAL ================= */}
             <div>
               <div className="flex items-center gap-3 mb-10">
                 <div className="w-14 h-14 bg-[#E95522] rounded-xl flex items-center justify-center text-white">
@@ -97,40 +103,88 @@ export default function AutumnPlaza() {
                 </h3>
               </div>
 
+              {/* HIGHLIGHTS */}
               <div className="grid gap-6 xl:gap-8 mb-10">
                 <InfoCard
                   icon={<Home />}
-                  title="Thoughtful Layouts"
-                  desc="Spacious floor plans designed to maximize natural light and flow, creating a welcoming atmosphere."
+                  title="Well-Planned Layouts"
+                  desc="Functional floor plans designed for comfort, natural light, and everyday living."
                 />
                 <InfoCard
                   icon={<Building2 />}
-                  title="Private Access"
-                  desc="Separate residential entrances and controlled building access for enhanced security and privacy."
+                  title="Private & Secure Access"
+                  desc="Dedicated residential entrances with controlled access for added privacy and peace of mind."
                 />
                 <InfoCard
                   icon={<Trees />}
-                  title="Peaceful Living"
-                  desc="Quiet interiors above retail spaces provide a calm, residential feel with modern soundproofing."
+                  title="Quiet Living Environment"
+                  desc="Sound-conscious construction creates a calm residential atmosphere above retail spaces."
                 />
               </div>
 
-              <div className="bg-[#FAF7F5] rounded-2xl p-8 xl:p-10">
-                <h4 className="text-xl xl:text-2xl font-bold text-[#5B2C1A] mb-6">
-                  Premium Features Include:
+              {/* FEATURES */}
+              <div className="bg-[#FAF7F5] rounded-2xl p-8 xl:p-10 space-y-10">
+                <h4 className="text-xl xl:text-2xl font-bold text-[#5B2C1A]">
+                  Apartment Features & Details
                 </h4>
-                <div className="grid gap-4">
-                  <FeatureItem text="In-unit washer & dryer" />
-                  <FeatureItem text="Stainless steel appliances" />
-                  <FeatureItem text="Elevator access to all floors" />
-                  <FeatureItem text="Secure residential corridors" />
-                  <FeatureItem text="Energy-efficient windows" />
-                  <FeatureItem text="High-speed internet ready" />
+
+                {/* APPLIANCES */}
+                <div>
+                  <h5 className="text-lg xl:text-xl font-semibold text-[#5B2C1A] mb-4">
+                    Appliances
+                  </h5>
+                  <div className="grid gap-3">
+                    <FeatureItem text="Dishwasher" />
+                    <FeatureItem text="Washer & Dryer" />
+                    <FeatureItem text="Refrigerator & Freezer" />
+                    <FeatureItem text="Microwave Oven" />
+                    <FeatureItem text="Oven & Range" />
+                  </div>
+                </div>
+
+                {/* COMFORT */}
+                <div>
+                  <h5 className="text-lg xl:text-xl font-semibold text-[#5B2C1A] mb-4">
+                    Comfort & Climate
+                  </h5>
+                  <div className="grid gap-3">
+                    <FeatureItem text="Central air conditioning" />
+                    <FeatureItem text="Electric heating" />
+                    <FeatureItem text="Ceiling fans" />
+                    <FeatureItem text="Durable vinyl flooring" />
+                    <FeatureItem text="Patio or balcony available" />
+                  </div>
+                </div>
+
+                {/* INTERNET */}
+                <div>
+                  <h5 className="text-lg xl:text-xl font-semibold text-[#5B2C1A] mb-4">
+                    Internet & Media
+                  </h5>
+                  <div className="grid gap-3">
+                    <FeatureItem text="Building-wide wireless internet" />
+                    <FeatureItem text="High-speed internet ready" />
+                    <FeatureItem text="Cable TV ready" />
+                  </div>
+                </div>
+
+                {/* POLICIES */}
+                <div>
+                  <h5 className="text-lg xl:text-xl font-semibold text-[#5B2C1A] mb-4">
+                    Community Details & Policies
+                  </h5>
+                  <div className="grid gap-3">
+                    <FeatureItem text="Common area maintenance included" />
+                    <FeatureItem text="Landscaping, dumpster & pest control included" />
+                    <FeatureItem text="On-site parking lot" />
+                    <FeatureItem text="One-year and multi-year lease options" />
+                    <FeatureItem text="Pet-free community (no dogs or cats)" />
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* RETAIL */}
+            {/* ================= RETAIL ================= */}
             <div>
               <div className="flex items-center gap-3 mb-10">
                 <div className="w-14 h-14 bg-[#E95522] rounded-xl flex items-center justify-center text-white">
@@ -142,27 +196,26 @@ export default function AutumnPlaza() {
               </div>
 
               <p className="text-lg xl:text-xl text-[#666] mb-10 leading-relaxed">
-                Ground-level retail spaces bring daily essentials and
-                neighborhood services just steps from your home, enhancing
-                walkability and community interaction while supporting local
-                businesses.
+                Ground-level retail spaces bring everyday essentials and
+                neighborhood services directly into the community, enhancing
+                walkability and convenience.
               </p>
 
               <div className="grid gap-6 xl:gap-8">
                 <InfoCard
                   icon={<Store />}
-                  title="Street-Level Access"
-                  desc="Convenient retail located directly below residential spaces with dedicated parking and entrances."
+                  title="Street-Level Retail"
+                  desc="Easily accessible storefronts with dedicated customer access and nearby parking."
                 />
                 <InfoCard
                   icon={<MapPin />}
-                  title="High Visibility"
-                  desc="Positioned along a well-traveled corridor with steady foot traffic and excellent exposure."
+                  title="Prime Visibility"
+                  desc="Located along a well-traveled corridor offering strong visibility and foot traffic."
                 />
                 <InfoCard
                   icon={<Building2 />}
-                  title="Flexible Retail Space"
-                  desc="Ideal for cafés, services, and neighborhood-focused businesses with customizable layouts."
+                  title="Flexible Commercial Space"
+                  desc="Adaptable layouts suitable for cafés, services, and local businesses."
                 />
               </div>
             </div>
@@ -217,8 +270,9 @@ export default function AutumnPlaza() {
               Prime Location
             </h2>
             <p className="text-lg xl:text-xl text-[#666] max-w-4xl mx-auto leading-relaxed">
-              Located in one of Murfreesboro's most convenient corridors with
-              quick access to daily essentials, recreation, and major roadways.
+              Located in one of Murfreesboro&apos;s most convenient corridors
+              with quick access to daily essentials, recreation, and major
+              roadways.
             </p>
           </div>
 
@@ -252,11 +306,14 @@ export default function AutumnPlaza() {
               </div>
             </div>
 
+            {/* EMBEDDED MAP – UPDATED */}
             <div className="w-full h-[500px] lg:h-[600px] xl:h-[680px] rounded-2xl overflow-hidden shadow-xl">
               <iframe
-                src="https://www.google.com/maps?q=146+Autumn+Towne+Way,+Murfreesboro,+TN+37128&output=embed"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2792.01140933425!2d-86.45208732494461!3d35.84446302099107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8863f7c884e93763%3A0x3d9441bc1b38a238!2s2909%20Old%20Fort%20Pkwy%2C%20Murfreesboro%2C%20TN%2037128%2C%20USA!5e1!3m2!1sen!2sin!4v1768900221905!5m2!1sen!2sin"
                 className="w-full h-full border-0"
                 loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
               />
             </div>
           </div>
