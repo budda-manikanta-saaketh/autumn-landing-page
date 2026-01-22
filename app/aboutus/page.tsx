@@ -76,16 +76,20 @@ export default function AboutUs() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                name: "Margaret L.",
-                text: "Autumn Towne feels like family. The staff is caring, and the community keeps me active and happy every day.",
+                name: "Gloria D.",
+                text: "Autumn Towne is a place to truly connect with our neighbors. Great special events and activities. We are a family here at Autumn Towne.",
               },
               {
-                name: "Robert D.",
-                text: "I love the peaceful atmosphere and the friendships I’ve built here. It truly feels like home.",
+                name: "Judith F.",
+                text: "Autumn Towne is a beautiful 55+ community and we are happy to call it home. The amenities are great, and every day is a cheerful experience.",
               },
               {
-                name: "Helen S.",
-                text: "From the amenities to the people, everything is thoughtfully designed for comfort and joy.",
+                name: "Troy W.",
+                text: "I love living at Autumn Towne; the people and staff are very friendly and helpful. Very clean and organized.",
+              },
+              {
+                name: "Barbara L.",
+                text: "Autumn Towne is one of the best senior communities I've lived in! The price is great, and there are no utility bills. I love it here.",
               },
             ].map((t, i) => (
               <div
