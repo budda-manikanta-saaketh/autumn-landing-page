@@ -68,12 +68,6 @@ const IMAGES = [
     title: "Resident Club Room",
   },
 
-  // COMMUNITY
-  {
-    src: "/images/community/c1.webp",
-    category: "community",
-    title: "Community Social Events",
-  },
   {
     src: "/images/community/c2.webp",
     category: "community",
@@ -126,7 +120,6 @@ export default function GalleryPage() {
                 <div
                   className={`transition-transform duration-700
       ${img.rotate ?? ""}
-      group-hover:rotate-0
     `}
                 >
                   <Image

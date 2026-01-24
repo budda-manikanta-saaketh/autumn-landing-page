@@ -22,7 +22,11 @@ export default function Navbar() {
     if (href === "/") return pathname === "/";
     return pathname.startsWith(href);
   };
+  const isAutumnPlaza = pathname.startsWith("/autumn-plaza");
 
+  const logoSrc = isAutumnPlaza
+    ? "/logos/autumn-plaza-logo.jpg"
+    : "/logos/logo.png";
   return (
     <nav className="fixed top-3 left-0 w-full z-[1000] flex justify-center">
       <div
@@ -39,12 +43,12 @@ export default function Navbar() {
         {/* LOGO */}
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/logos/logo.png"
+            src={logoSrc}
             alt="Autumn Towne Logo"
             width={120}
             height={63}
             priority
-            className="h-8 w-auto md:h-10"
+            className="h-8 w-auto md:h-10 transition-all duration-300"
           />
         </Link>
 

@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import {
   Building2,
   Home,
@@ -14,6 +15,8 @@ import {
 import HeroLayouts from "../components/HeroLayouts";
 
 export default function AutumnPlaza() {
+  const [showAllAmenities, setShowAllAmenities] = useState(false);
+
   const AUTUMN_PLAZA_IMAGES = [
     "/images/autumn-plaza/1.webp",
     "/images/autumn-plaza/2.webp",
@@ -28,8 +31,17 @@ export default function AutumnPlaza() {
       <section className="py-16 md:py-24 bg-gradient-to-b from-[#FAF7F5] to-white">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
           <div className="grid lg:grid-cols-2 gap-16 xl:gap-20 items-center">
-            <div className="space-y-6">
-              <div className="inline-block bg-[#E95522]/10 text-[#E95522] px-4 py-2 rounded-full text-sm font-semibold">
+            {/* IMAGE – LEFT ON DESKTOP */}
+            <div className="relative lg:order-1">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#E95522]/20 to-[#5B2C1A]/20 rounded-3xl blur-2xl" />
+              <div className="relative">
+                <HeroLayouts images={AUTUMN_PLAZA_IMAGES} />
+              </div>
+            </div>
+
+            {/* CONTENT – RIGHT ON DESKTOP */}
+            <div className="space-y-6 lg:order-2 text-right">
+              <div className="inline-block bg-[#E95522]/10 text-[#E95522] px-4 py-2 rounded-full text-sm font-semibold ml-auto">
                 Modern Mixed-Use Living
               </div>
 
@@ -37,7 +49,7 @@ export default function AutumnPlaza() {
                 Autumn Plaza Complex
               </h1>
 
-              <p className="text-lg text-[#7A5D4A] font-medium flex items-center gap-2">
+              <p className="text-lg text-[#7A5D4A] font-medium flex items-center gap-2 justify-end">
                 <MapPin size={20} className="text-[#E95522]" />
                 146 Autumn Towne Way, Murfreesboro, TN 37128
               </p>
@@ -48,28 +60,21 @@ export default function AutumnPlaza() {
                 walkable, connected environment where convenience meets comfort.
               </p>
 
-              <div className="flex flex-wrap gap-4 pt-6">
+              <div className="flex flex-wrap gap-4 pt-6 justify-end">
                 <button className="bg-[#E95522] text-white px-10 py-4 text-lg rounded-full font-semibold hover:bg-[#D0441A] transition-all shadow-lg hover:shadow-xl">
                   Schedule a Visit
                 </button>
               </div>
 
-              <div className="flex flex-wrap items-center gap-6 xl:gap-8 pt-4 text-base text-[#7A5D4A]">
+              <div className="flex flex-wrap items-center gap-6 xl:gap-8 pt-4 text-base text-[#7A5D4A] justify-end">
                 <div className="flex items-center gap-2">
                   <Phone size={18} className="text-[#E95522]" />
-                  <span>(615) 555-0100</span>
+                  <span>(615) 648-4099</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail size={18} className="text-[#E95522]" />
-                  <span>info@autumnplaza.com</span>
+                  <span>AutumnPlaza5@gmail.com</span>
                 </div>
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#E95522]/20 to-[#5B2C1A]/20 rounded-3xl blur-2xl" />
-              <div className="relative">
-                <HeroLayouts images={AUTUMN_PLAZA_IMAGES} />
               </div>
             </div>
           </div>
@@ -82,7 +87,7 @@ export default function AutumnPlaza() {
           {/* SECTION HEADER */}
           <div className="text-center mb-16 xl:mb-20">
             <h2 className="text-4xl md:text-5xl xl:text-6xl font-bold text-[#5B2C1A] mb-6">
-              Living at Autumn Plaza
+              Modern Living with Integrated Retail
             </h2>
             <p className="text-lg xl:text-xl text-[#666] max-w-4xl mx-auto leading-relaxed">
               A modern mixed-use community offering comfortable residential
@@ -102,6 +107,13 @@ export default function AutumnPlaza() {
                   Residential Living
                 </h3>
               </div>
+              <p className="text-lg xl:text-xl text-[#666] mb-10 leading-relaxed">
+                Thoughtfully designed apartments provide a peaceful retreat with
+                modern comforts, efficient layouts, and secure access.
+                Residential spaces are intentionally separated from retail
+                activity, ensuring quiet living while remaining connected to
+                everyday conveniences below.
+              </p>
 
               {/* HIGHLIGHTS */}
               <div className="grid gap-6 xl:gap-8 mb-10">
@@ -133,12 +145,20 @@ export default function AutumnPlaza() {
                   <h5 className="text-lg xl:text-xl font-semibold text-[#5B2C1A] mb-4">
                     Appliances
                   </h5>
+
                   <div className="grid gap-3">
+                    {/* Always visible */}
                     <FeatureItem text="Dishwasher" />
                     <FeatureItem text="Washer & Dryer" />
                     <FeatureItem text="Refrigerator & Freezer" />
-                    <FeatureItem text="Microwave Oven" />
-                    <FeatureItem text="Oven & Range" />
+
+                    {/* Hidden by default */}
+                    {showAllAmenities && (
+                      <>
+                        <FeatureItem text="Microwave Oven" />
+                        <FeatureItem text="Oven & Range" />
+                      </>
+                    )}
                   </div>
                 </div>
 
@@ -147,12 +167,20 @@ export default function AutumnPlaza() {
                   <h5 className="text-lg xl:text-xl font-semibold text-[#5B2C1A] mb-4">
                     Comfort & Climate
                   </h5>
+
                   <div className="grid gap-3">
+                    {/* Always visible */}
                     <FeatureItem text="Central air conditioning" />
-                    <FeatureItem text="Electric heating" />
                     <FeatureItem text="Ceiling fans" />
-                    <FeatureItem text="Durable vinyl flooring" />
-                    <FeatureItem text="Patio or balcony available" />
+
+                    {/* Hidden by default */}
+                    {showAllAmenities && (
+                      <>
+                        <FeatureItem text="Electric heating" />
+                        <FeatureItem text="Durable vinyl flooring" />
+                        <FeatureItem text="Patio or balcony available" />
+                      </>
+                    )}
                   </div>
                 </div>
 
@@ -161,10 +189,18 @@ export default function AutumnPlaza() {
                   <h5 className="text-lg xl:text-xl font-semibold text-[#5B2C1A] mb-4">
                     Internet & Media
                   </h5>
+
                   <div className="grid gap-3">
-                    <FeatureItem text="Building-wide wireless internet" />
+                    {/* Always visible */}
                     <FeatureItem text="High-speed internet ready" />
-                    <FeatureItem text="Cable TV ready" />
+
+                    {/* Hidden by default */}
+                    {showAllAmenities && (
+                      <>
+                        <FeatureItem text="Building-wide wireless internet" />
+                        <FeatureItem text="Cable TV ready" />
+                      </>
+                    )}
                   </div>
                 </div>
 
@@ -173,14 +209,32 @@ export default function AutumnPlaza() {
                   <h5 className="text-lg xl:text-xl font-semibold text-[#5B2C1A] mb-4">
                     Community Details & Policies
                   </h5>
+
                   <div className="grid gap-3">
-                    <FeatureItem text="Common area maintenance included" />
-                    <FeatureItem text="Landscaping, dumpster & pest control included" />
+                    {/* Always visible */}
                     <FeatureItem text="On-site parking lot" />
-                    <FeatureItem text="One-year and multi-year lease options" />
-                    <FeatureItem text="Pet-free community (no dogs or cats)" />
+                    <FeatureItem text="Common area maintenance included" />
+
+                    {/* Hidden by default */}
+                    {showAllAmenities && (
+                      <>
+                        <FeatureItem text="Landscaping, dumpster & pest control included" />
+                        <FeatureItem text="One-year and multi-year lease options" />
+                        <FeatureItem text="Pet-free community (no dogs or cats)" />
+                      </>
+                    )}
                   </div>
                 </div>
+
+                {/* TOGGLE BUTTON */}
+                <button
+                  onClick={() => setShowAllAmenities(!showAllAmenities)}
+                  className="text-[#E95522] font-semibold hover:underline transition"
+                >
+                  {showAllAmenities
+                    ? "Show fewer amenities"
+                    : "View all amenities"}
+                </button>
               </div>
             </div>
 
@@ -201,7 +255,7 @@ export default function AutumnPlaza() {
                 walkability and convenience.
               </p>
 
-              <div className="grid gap-6 xl:gap-8">
+              <div className="grid gap-6 xl:gap-8 mb-10">
                 <InfoCard
                   icon={<Store />}
                   title="Street-Level Retail"
@@ -217,6 +271,22 @@ export default function AutumnPlaza() {
                   title="Flexible Commercial Space"
                   desc="Adaptable layouts suitable for cafés, services, and local businesses."
                 />
+              </div>
+
+              {/* FEATURE LIST */}
+              <div className="bg-[#FAF7F5] rounded-2xl p-8 xl:p-10">
+                <h4 className="text-xl xl:text-2xl font-bold text-[#5B2C1A] mb-6">
+                  Retail Space Features
+                </h4>
+
+                <div className="grid gap-3">
+                  <FeatureItem text="Convenient ground-floor access" />
+                  <FeatureItem text="Clear storefront visibility" />
+                  <FeatureItem text="Flexible interior layouts" />
+                  <FeatureItem text="Dedicated customer parking areas" />
+                  <FeatureItem text="Pedestrian-friendly walkways" />
+                  <FeatureItem text="Designed for a variety of neighborhood services" />
+                </div>
               </div>
             </div>
           </div>

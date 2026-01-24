@@ -9,6 +9,7 @@ import {
   FaUsers,
   FaTools,
   FaCalendar,
+  FaDog,
 } from "react-icons/fa";
 
 export default function Amenities() {
@@ -26,10 +27,10 @@ export default function Amenities() {
 
   const socialAmenities = [
     "Family Dining Room with Kitchenette",
-    "Club Room with Billiards Table",
+    "Club Room with Pool Table",
     "Large Screen TVs in Lobby & Club Room",
     "Community and Family Functions",
-    "Dog Park (Coming Soon)",
+    "Dog Park",
     "Close to Shopping, Restaurants, Coffee Shops",
     "Guest Greeting Area",
     "Resident Appreciation Receptions",
@@ -69,7 +70,7 @@ export default function Amenities() {
         "A comfortable social space for gatherings, games, and community events.",
     },
     {
-      icon: FaHome,
+      icon: FaDog,
       label: "Dog Park",
       description:
         "Secure, pet-friendly outdoor area where dogs can play and socialize.",
@@ -97,13 +98,13 @@ export default function Amenities() {
 
     "Family Dining Room with Kitchenette":
       "A warm gathering space for meals and celebrations.",
-    "Club Room with Billiards Table":
+    "Club Room with Pool Table":
       "Play games, meet neighbors, and unwind in comfort.",
     "Large Screen TVs in Lobby & Club Room":
       "Perfect for sports, movies, and entertainment.",
     "Community and Family Functions":
       "Regular activities and events to stay socially connected.",
-    "Dog Park (Coming Soon)": "A fenced-in, secure area for your pets to play.",
+    "Dog Park": "A fenced-in, secure area for your pets to play.",
     "Close to Shopping, Restaurants, Coffee Shops":
       "Convenient access to daily essentials and dining.",
     "Guest Greeting Area": "A welcoming lobby area for receiving guests.",

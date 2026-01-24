@@ -38,10 +38,10 @@ export default function SearchBar() {
 
           <div className="flex flex-col px-6 py-3 text-center md:text-left">
             <label className="text-[0.75rem] text-[#666] font-semibold mb-1">
-              Price Range
+              Price starting from
             </label>
             <span className="font-bold text-[0.95rem] text-[#5B2C1A]">
-              $1,495 - $1,995
+              $1,495
             </span>
           </div>
         </div>

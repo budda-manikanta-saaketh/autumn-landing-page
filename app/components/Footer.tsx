@@ -6,10 +6,16 @@ import {
   FaArrowUp,
   FaPhone,
   FaCalendarAlt,
+  FaBuilding,
+  FaLinkedin,
 } from "react-icons/fa";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { SiZillow } from "react-icons/si";
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isAutumnPlaza = pathname.startsWith("/autumn-plaza");
   return (
     <footer id="contact" className="bg-[#FDF9F6] relative">
       {/* CONTAINER */}
@@ -114,18 +120,34 @@ export default function Footer() {
         >
           {/* BRAND */}
           <div>
-            <h3 className="text-3xl lg:text-4xl font-extrabold text-[#5B2C1A] tracking-tight">
-              Autumn <span className="text-[#E95522]">Towne</span>
+            <h3 className="text-3xl lg:text-4xl font-extrabold text-[#5B2C1A] mb-2 tracking-tight">
+              {isAutumnPlaza ? (
+                <>
+                  Autumn <span className="text-[#E95522]">Plaza</span>
+                </>
+              ) : (
+                <>
+                  Autumn <span className="text-[#E95522]">Towne</span>
+                </>
+              )}
             </h3>
 
-            <h4 className="text-xl font-semibold mt-8 mb-2 text-[#E95522]">
-              Address
-            </h4>
-
             <p className="text-[#5B2C1A] text-base lg:text-lg leading-relaxed font-medium">
-              146 Autumn Towne Way,
-              <br />
-              Murfreesboro, TN 37128
+              {isAutumnPlaza ? (
+                <>
+                  2909 Old Fort Pkwy
+                  <br />
+                  Murfreesboro, TN 37128
+                  <br />
+                  United States
+                </>
+              ) : (
+                <>
+                  146 Autumn Towne Way,
+                  <br />
+                  Murfreesboro, TN 37128
+                </>
+              )}
             </p>
           </div>
 
@@ -176,23 +198,105 @@ export default function Footer() {
               Follow Us
             </h4>
             <div className="flex items-center gap-4">
-              {[FaInstagram, FaFacebook].map((Icon, i) => (
+              {/* Instagram */}
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+      w-12 h-12 lg:w-14 lg:h-14
+      bg-[#FBE4DD]
+      rounded-full
+      flex items-center justify-center
+      text-[#5B2C1A] text-2xl
+      hover:bg-[#E95522] hover:text-white
+      transition
+    "
+                aria-label="Instagram"
+              >
+                <FaInstagram />
+              </a>
+
+              {/* Facebook */}
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+      w-12 h-12 lg:w-14 lg:h-14
+      bg-[#FBE4DD]
+      rounded-full
+      flex items-center justify-center
+      text-[#5B2C1A] text-2xl
+      hover:bg-[#E95522] hover:text-white
+      transition
+    "
+                aria-label="Facebook"
+              >
+                <FaFacebook />
+              </a>
+
+              {/* Apartments.com */}
+              {!isAutumnPlaza && (
                 <a
-                  key={i}
-                  href="#"
+                  href="https://www.apartments.com/autumn-towne-senior-apartments-murfreesboro-tn/7t1674y/?utm_source=shared_listing&utm_medium=direct"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="
-                    w-12 h-12 lg:w-14 lg:h-14
-                    bg-[#FBE4DD]
-                    rounded-full
-                    flex items-center justify-center
-                    text-[#5B2C1A] text-2xl
-                    hover:bg-[#E95522] hover:text-white
-                    transition
-                  "
+      w-12 h-12 lg:w-14 lg:h-14
+      bg-[#FBE4DD]
+      rounded-full
+      flex items-center justify-center
+      text-[#5B2C1A] text-2xl
+      hover:bg-[#E95522] hover:text-white
+      transition
+    "
+                  aria-label="Apartments.com"
+                  title="View on Apartments.com"
                 >
-                  <Icon />
+                  <FaBuilding />
                 </a>
-              ))}
+              )}
+              {isAutumnPlaza && (
+                <a
+                  href="https://www.zillow.com/apartments/murfreesboro-tn/autumn-plaza/CjTkPp/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+        w-12 h-12 lg:w-14 lg:h-14
+        bg-[#FBE4DD]
+        rounded-full
+        flex items-center justify-center
+        text-[#5B2C1A] text-2xl
+        hover:bg-[#E95522] hover:text-white
+        transition
+      "
+                  aria-label="View on Zillow"
+                  title="View Autumn Plaza on Zillow"
+                >
+                  <SiZillow />
+                </a>
+              )}
+              {isAutumnPlaza && (
+                <a
+                  href="https://www.linkedin.com/company/autumn-towne/s"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+        w-12 h-12 lg:w-14 lg:h-14
+        bg-[#FBE4DD]
+        rounded-full
+        flex items-center justify-center
+        text-[#5B2C1A] text-2xl
+        hover:bg-[#E95522] hover:text-white
+        transition
+      "
+                  aria-label="View on Zillow"
+                  title="View Autumn Plaza on Zillow"
+                >
+                  <FaLinkedin />
+                </a>
+              )}
             </div>
           </div>
         </div>
@@ -200,11 +304,11 @@ export default function Footer() {
         {/* FOOTER TEXT */}
         <p className="text-center text-[#5B2C1A] text-sm lg:text-base mt-8 px-4 leading-relaxed font-medium">
           All rental information, terms, and prices are subject to change
-          without notice. Please check the website for the latest updates.
+          without notice.
         </p>
 
         <div className="text-center py-8 text-[#5B2C1A] text-sm lg:text-base font-semibold">
-          © 2025 Autumn Towne Luxury Apartments for Seniors. All Rights
+          © 2026 Autumn Towne Luxury Apartments for Seniors. All Rights
           Reserved.
         </div>
 

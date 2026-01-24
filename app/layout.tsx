@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Autumn Towne Senior Apartments offers luxury 1 & 2-bedroom floor plans, wellness center, secured dog park, gourmet coffee bar, billiards lounge, and community events in Murfreesboro, TN.",
+    "Autumn Towne Senior Apartments offers luxury 1 & 2-bedroom floor plans, wellness center, secured dog park, gourmet coffee bar, pool lounge, and community events in Murfreesboro, TN.",
 
   keywords: [
     "Senior apartments Murfreesboro TN",
@@ -105,7 +105,7 @@ const jsonLd = {
   petsAllowed: "Yes",
   smokingAllowed: "No",
   description:
-    "Luxury senior living community featuring modern floor plans, wellness center, secured dog park, billiards lounge, and social activities.",
+    "Luxury senior living community featuring modern floor plans, wellness center, secured dog park, pool lounge, and social activities.",
 };
 
 import LayoutShell from "./components/LayoutShell";

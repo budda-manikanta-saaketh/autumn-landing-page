@@ -74,7 +74,7 @@ max-w-[1280px] 2xl:max-w-[1600px]
             <div className="flex flex-wrap gap-3 md:gap-4 my-6 md:my-8">
               {[
                 { icon: <FaCoffee />, label: "Gourmet Bar" },
-                { icon: <FaGamepad />, label: "Billiards Club Room" },
+                { icon: <FaGamepad />, label: "Pool Club Room" },
                 { icon: <FaDumbbell />, label: "Wellness Center" },
                 { icon: <FaWifi />, label: "Complementary Wi-Fi" },
                 { icon: <FaDog />, label: "Dog Park" },

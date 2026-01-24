@@ -68,6 +68,9 @@ function LayoutOne({ images }: { images: string[] }) {
     </div>
   );
 }
+function logViewport() {
+  console.log("Viewport:", window.innerWidth, "x", window.innerHeight);
+}
 
 function LayoutClassic({ images }: { images: string[] }) {
   return (
@@ -233,6 +236,10 @@ const HERO_LAYOUTS = [
 ];
 
 export default function Hero() {
+  useEffect(() => {
+    logViewport();
+  }, []);
+
   const [layoutData, setLayoutData] = useState<{
     Component: any;
     images: string[];
@@ -255,7 +262,6 @@ export default function Hero() {
     flex items-center
     overflow-hidden
     pt-20
-    md:pt-0
   "
     >
       <div className="max-w-[1280px] 2xl:max-w-[1600px] mx-auto px-6 grid md:grid-cols-[1fr_1.2fr] gap-[40px] md:gap-[60px] items-center">

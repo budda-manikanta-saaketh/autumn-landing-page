@@ -56,8 +56,8 @@ export default function AboutUs() {
             <p className="text-[#666] leading-relaxed text-[1.05rem] mb-4">
               Enjoy a morning brew from our gourmet coffee bar located in the
               community dining room. Take Rover for a walk in our secured dog
-              park, meet friends for a game of billiards, or relax with a book
-              in the lobby’s comfortable seating area.
+              park, meet friends for a game of pool, or relax with a book in the
+              lobby’s comfortable seating area.
             </p>
 
             <p className="text-[#666] leading-relaxed text-[1.05rem]">

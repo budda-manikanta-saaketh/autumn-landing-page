@@ -57,7 +57,7 @@ export default function Properties() {
   const [filter, setFilter] = useState("all");
 
   const filtered = data.filter((p) =>
-    filter === "all" ? true : p.beds.toString() === filter
+    filter === "all" ? true : p.beds.toString() === filter,
   );
 
   return (
@@ -134,11 +134,11 @@ export default function Properties() {
                     {p.sqft} sqft
                   </h3>
 
-                  <p className="text-[#5B2C1A] font-semibold mt-1">
-                    {p.price}
-                    <span className="text-sm text-[#7A5D4A] font-normal">
+                  <p className="text-sm text-[#7A5D4A] font-normal">
+                    {`Price starting from`}
+                    <span className="text-[#5B2C1A] font-semibold mt-1">
                       {" "}
-                      /month
+                      {p.price}
                     </span>
                   </p>
                   <p className="text-xs text-[#7A5D4A] mt-1">
