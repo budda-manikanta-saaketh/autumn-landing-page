@@ -11,7 +11,6 @@ export default function LayoutShell({
 }) {
   const pathname = usePathname();
 
-  // Hide navbar on floorplan pages
   const hideNavbar =
     pathname.startsWith("/floorplans/") && pathname !== "/floorplans/";
 
@@ -23,7 +22,14 @@ export default function LayoutShell({
         </header>
       )}
 
-      <main className="min-h-screen">{children}</main>
+      {/* Add top padding ONLY when navbar is shown */}
+      <main
+        className={`min-h-screen ${
+          !hideNavbar ? "pt-[110px] md:pt-[130px]" : ""
+        }`}
+      >
+        {children}
+      </main>
 
       <footer>
         <Footer />

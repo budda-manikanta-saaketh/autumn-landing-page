@@ -12,7 +12,7 @@ import {
   Award,
   CheckCircle2,
 } from "lucide-react";
-import HeroLayouts from "../components/HeroLayouts";
+import HeroLayouts from "../../components/HeroLayouts";
 
 export default function AutumnPlaza() {
   const [showAllAmenities, setShowAllAmenities] = useState(false);
