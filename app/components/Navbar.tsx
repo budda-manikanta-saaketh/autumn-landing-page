@@ -68,11 +68,12 @@ export default function Navbar() {
           }
         `}
       >
-        <div className="grid grid-cols-[auto_1fr_auto] grid-rows-2 items-center gap-x-6">
-          {/* ================= LOGO (row span 2) ================= */}
+        {/* ── DESKTOP: 2-col grid — Logo (row-span-2) | Right content ── */}
+        <div className="hidden md:grid grid-cols-[auto_1fr] gap-x-6 items-center">
+          {/* LOGO — spans both rows, vertically centered */}
           <Link
-            href={isAutumnPlaza ? "/autumn-plaza" : "/"}
-            className="row-span-2 shrink-0 opacity-100 hover:opacity-80 transition-opacity duration-200"
+            href={isAutumnPlaza ? "/autumn-plaza/home" : "/"}
+            className="row-span-2 self-center shrink-0 opacity-100 hover:opacity-80 transition-opacity duration-200"
           >
             <Image
               src={logoSrc}
@@ -84,86 +85,109 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* ================= ROW 1 – PROJECT SWITCHER ================= */}
-          <div className="hidden md:flex justify-start">
-            <div className="flex gap-6 text-[0.88rem] font-semibold tracking-wide">
+          {/* ROW 1 — Project Switcher (left) + CTAs (right) */}
+          <div className="flex items-center justify-between gap-4 pb-2.5">
+            {/* Project Switcher — left aligned */}
+            <div className="flex gap-[3px] bg-black/[0.04] rounded-full p-[3px]">
               <Link
                 href="/"
-                className={`transition-all duration-200 ${
-                  !isAutumnPlaza
-                    ? "text-[#E95522]"
-                    : "text-[#999] hover:text-[#E95522]"
-                }`}
+                className={`
+                  text-[0.8rem] font-semibold tracking-wide px-5 py-1.5 rounded-full
+                  transition-all duration-200 whitespace-nowrap
+                  ${
+                    !isAutumnPlaza
+                      ? "bg-[#E95522] text-white shadow-[0_2px_8px_rgba(233,85,34,0.28)]"
+                      : "text-[#999] hover:text-[#E95522]"
+                  }
+                `}
               >
                 Autumn Towne
               </Link>
-
               <Link
                 href="/autumn-plaza/home"
-                className={`transition-all duration-200 ${
-                  isAutumnPlaza
-                    ? "text-[#E95522]"
-                    : "text-[#999] hover:text-[#E95522]"
-                }`}
+                className={`
+                  text-[0.8rem] font-semibold tracking-wide px-5 py-1.5 rounded-full
+                  transition-all duration-200 whitespace-nowrap
+                  ${
+                    isAutumnPlaza
+                      ? "bg-[#E95522] text-white shadow-[0_2px_8px_rgba(233,85,34,0.28)]"
+                      : "text-[#999] hover:text-[#E95522]"
+                  }
+                `}
               >
                 Autumn Plaza
               </Link>
             </div>
+
+            {/* CTA Buttons — right aligned */}
+            <div className="flex items-center gap-2 shrink-0">
+              <Link
+                href="/contactus"
+                className="text-[0.835rem] font-semibold tracking-wide px-[18px] py-[7px] rounded-full border-[1.5px] border-[#8b5a3c] text-[#8b5a3c] hover:bg-[#8b5a3c] hover:text-white transition-all duration-200 whitespace-nowrap"
+              >
+                Contact Us
+              </Link>
+              <Link
+                href="/bookvisit"
+                className="text-[0.835rem] font-semibold tracking-wide px-5 py-[7px] rounded-full bg-[#E95522] text-white hover:bg-[#cf4a1d] transition-all duration-200 whitespace-nowrap"
+              >
+                Schedule Now
+              </Link>
+            </div>
           </div>
 
-          {/* ================= ROW 1 – CTA (RIGHT) ================= */}
-          <div className="hidden md:flex items-center gap-2 justify-end">
-            <Link
-              href="/contactus"
-              className="text-[0.835rem] font-semibold tracking-wide px-[18px] py-[7px] rounded-full border-[1.5px] border-[#8b5a3c] text-[#8b5a3c] hover:bg-[#8b5a3c] hover:text-white transition-all duration-200"
-            >
-              Contact Us
-            </Link>
-
-            <Link
-              href="/bookvisit"
-              className="text-[0.835rem] font-semibold tracking-wide px-5 py-[7px] rounded-full bg-[#E95522] text-white hover:bg-[#cf4a1d] transition-all duration-200"
-            >
-              Schedule Now
-            </Link>
+          {/* ROW 2 — Nav Links */}
+          <div className="pt-2.5 border-t border-black/[0.06]">
+            <ul className="flex items-center gap-7">
+              {currentMenu.map(([label, href]) => {
+                const isActive = isActiveRoute(href);
+                return (
+                  <li key={href} className="relative group">
+                    <Link
+                      href={href}
+                      className={`text-[0.875rem] tracking-[0.01em] pb-0.5 transition-colors duration-200 ${
+                        isActive
+                          ? "text-[#E95522] font-semibold"
+                          : "text-[#666] font-medium hover:text-[#E95522]"
+                      }`}
+                    >
+                      {label}
+                    </Link>
+                    <span
+                      className={`absolute -bottom-0.5 left-1/2 -translate-x-1/2 h-[1.5px] bg-[#E95522] rounded-full transition-all duration-200 ${
+                        isActive ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
+                    />
+                  </li>
+                );
+              })}
+            </ul>
           </div>
+        </div>
 
-          {/* ================= ROW 2 – NAV LINKS ================= */}
-          <ul className="hidden md:flex items-center gap-7 col-span-2 mt-2">
-            {currentMenu.map(([label, href]) => {
-              const isActive = isActiveRoute(href);
-              return (
-                <li key={href} className="relative group">
-                  <Link
-                    href={href}
-                    className={`text-[0.875rem] tracking-[0.01em] pb-0.5 transition-colors duration-200 ${
-                      isActive
-                        ? "text-[#E95522] font-semibold"
-                        : "text-[#666] font-medium hover:text-[#E95522]"
-                    }`}
-                  >
-                    {label}
-                  </Link>
+        {/* ── MOBILE: Logo + Hamburger ── */}
+        <div className="flex md:hidden items-center justify-between">
+          <Link
+            href={isAutumnPlaza ? "/autumn-plaza/home" : "/"}
+            className="shrink-0 opacity-100 hover:opacity-80 transition-opacity duration-200"
+          >
+            <Image
+              src={logoSrc}
+              alt={isAutumnPlaza ? "Autumn Plaza Logo" : "Autumn Towne Logo"}
+              width={130}
+              height={65}
+              className="h-12 w-auto"
+              priority
+            />
+          </Link>
 
-                  <span
-                    className={`absolute -bottom-0.5 left-1/2 -translate-x-1/2 h-[1.5px] bg-[#E95522] rounded-full transition-all duration-200 ${
-                      isActive ? "w-full" : "w-0 group-hover:w-full"
-                    }`}
-                  />
-                </li>
-              );
-            })}
-          </ul>
-
-          {/* ================= MOBILE HAMBURGER ================= */}
-          <div className="md:hidden col-start-3 row-start-1 flex justify-end">
-            <button
-              className="w-9 h-9 rounded-[10px] bg-black/[0.04] text-[#333] text-lg hover:bg-[#E95522]/10 hover:text-[#E95522] transition-all duration-200"
-              onClick={() => setOpen(!open)}
-            >
-              {open ? <FaTimes /> : <FaBars />}
-            </button>
-          </div>
+          <button
+            className="w-9 h-9 flex items-center justify-center rounded-[10px] bg-black/[0.04] text-[#333] text-lg hover:bg-[#E95522]/10 hover:text-[#E95522] transition-all duration-200"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+          >
+            {open ? <FaTimes /> : <FaBars />}
+          </button>
         </div>
       </div>
 
@@ -183,8 +207,8 @@ export default function Navbar() {
             px-6 py-5
           "
         >
-          {/* Mobile Project Switcher */}
-          <div className="flex justify-center mb-4">
+          {/* Mobile Project Switcher — left aligned */}
+          <div className="flex justify-start mb-4">
             <div className="flex gap-[3px] bg-black/[0.04] rounded-full p-[3px]">
               <Link
                 href="/"
@@ -202,7 +226,7 @@ export default function Navbar() {
                 Autumn Towne
               </Link>
               <Link
-                href="/autumn-plaza"
+                href="/autumn-plaza/home"
                 onClick={() => setOpen(false)}
                 className={`
                   text-[0.78rem] font-semibold tracking-wide px-4 py-1 rounded-full
