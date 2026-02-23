@@ -264,7 +264,7 @@ export default function Hero() {
     pt-20
   "
     >
-      <div className="max-w-[1280px] 2xl:max-w-[1600px] mx-auto px-6 grid md:grid-cols-[1fr_1.2fr] gap-[40px] md:gap-[60px] items-center">
+      <div className="max-w-[1280px] mx-auto px-6 grid md:grid-cols-[1fr_1.2fr] gap-[40px] md:gap-[60px] items-center mb-10">
         <div className="text-center md:text-left text-[#5B2C1A]">
           <h1
             className="font-bold tracking-[-1.2px] mb-6 leading-[1.15]

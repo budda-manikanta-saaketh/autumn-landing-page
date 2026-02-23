@@ -25,7 +25,7 @@ export default function LayoutShell({
       {/* Add top padding ONLY when navbar is shown */}
       <main
         className={`min-h-screen ${
-          !hideNavbar ? "pt-[110px] md:pt-[130px]" : ""
+          !hideNavbar ? "pt-[100px] md:pt-[50px]" : ""
         }`}
       >
         {children}

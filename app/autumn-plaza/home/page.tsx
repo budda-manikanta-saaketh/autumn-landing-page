@@ -28,10 +28,10 @@ export default function AutumnPlaza() {
   return (
     <div className="bg-white">
       {/* HERO */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-[#FAF7F5] to-white">
+      <section id="plaza-hero" className="py-16 md:py-24 bg-white scroll-mt-32">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
           <div className="grid lg:grid-cols-2 gap-16 xl:gap-20 items-center">
-            {/* IMAGE – LEFT ON DESKTOP */}
+            {/* IMAGE */}
             <div className="relative lg:order-1">
               <div className="absolute inset-0 bg-gradient-to-r from-[#E95522]/20 to-[#5B2C1A]/20 rounded-3xl blur-2xl" />
               <div className="relative">
@@ -39,7 +39,7 @@ export default function AutumnPlaza() {
               </div>
             </div>
 
-            {/* CONTENT – RIGHT ON DESKTOP */}
+            {/* CONTENT */}
             <div className="space-y-6 lg:order-2 text-right">
               <div className="inline-block bg-[#E95522]/10 text-[#E95522] px-4 py-2 rounded-full text-sm font-semibold ml-auto">
                 Modern Mixed-Use Living
@@ -82,9 +82,11 @@ export default function AutumnPlaza() {
       </section>
 
       {/* LIVING AT AUTUMN PLAZA */}
-      <section className="py-20 md:py-28 bg-white">
+      <section
+        id="plaza-living"
+        className="py-20 md:py-28 bg-white scroll-mt-28"
+      >
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
-          {/* SECTION HEADER */}
           <div className="text-center mb-16 xl:mb-20">
             <h2 className="text-4xl md:text-5xl xl:text-6xl font-bold text-[#5B2C1A] mb-6">
               Modern Living with Integrated Retail
@@ -97,7 +99,7 @@ export default function AutumnPlaza() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 xl:gap-16 items-start">
-            {/* ================= RESIDENTIAL ================= */}
+            {/* RESIDENTIAL */}
             <div>
               <div className="flex items-center gap-3 mb-10">
                 <div className="w-14 h-14 bg-[#E95522] rounded-xl flex items-center justify-center text-white">
@@ -110,12 +112,8 @@ export default function AutumnPlaza() {
               <p className="text-lg xl:text-xl text-[#666] mb-10 leading-relaxed">
                 Thoughtfully designed apartments provide a peaceful retreat with
                 modern comforts, efficient layouts, and secure access.
-                Residential spaces are intentionally separated from retail
-                activity, ensuring quiet living while remaining connected to
-                everyday conveniences below.
               </p>
 
-              {/* HIGHLIGHTS */}
               <div className="grid gap-6 xl:gap-8 mb-10">
                 <InfoCard
                   icon={<Home />}
@@ -134,25 +132,19 @@ export default function AutumnPlaza() {
                 />
               </div>
 
-              {/* FEATURES */}
               <div className="bg-[#FAF7F5] rounded-2xl p-8 xl:p-10 space-y-10">
                 <h4 className="text-xl xl:text-2xl font-bold text-[#5B2C1A]">
                   Apartment Features & Details
                 </h4>
 
-                {/* APPLIANCES */}
                 <div>
                   <h5 className="text-lg xl:text-xl font-semibold text-[#5B2C1A] mb-4">
                     Appliances
                   </h5>
-
                   <div className="grid gap-3">
-                    {/* Always visible */}
                     <FeatureItem text="Dishwasher" />
                     <FeatureItem text="Washer & Dryer" />
                     <FeatureItem text="Refrigerator & Freezer" />
-
-                    {/* Hidden by default */}
                     {showAllAmenities && (
                       <>
                         <FeatureItem text="Microwave Oven" />
@@ -162,18 +154,13 @@ export default function AutumnPlaza() {
                   </div>
                 </div>
 
-                {/* COMFORT */}
                 <div>
                   <h5 className="text-lg xl:text-xl font-semibold text-[#5B2C1A] mb-4">
                     Comfort & Climate
                   </h5>
-
                   <div className="grid gap-3">
-                    {/* Always visible */}
                     <FeatureItem text="Central air conditioning" />
                     <FeatureItem text="Ceiling fans" />
-
-                    {/* Hidden by default */}
                     {showAllAmenities && (
                       <>
                         <FeatureItem text="Electric heating" />
@@ -184,17 +171,12 @@ export default function AutumnPlaza() {
                   </div>
                 </div>
 
-                {/* INTERNET */}
                 <div>
                   <h5 className="text-lg xl:text-xl font-semibold text-[#5B2C1A] mb-4">
                     Internet & Media
                   </h5>
-
                   <div className="grid gap-3">
-                    {/* Always visible */}
                     <FeatureItem text="High-speed internet ready" />
-
-                    {/* Hidden by default */}
                     {showAllAmenities && (
                       <>
                         <FeatureItem text="Building-wide wireless internet" />
@@ -204,18 +186,13 @@ export default function AutumnPlaza() {
                   </div>
                 </div>
 
-                {/* POLICIES */}
                 <div>
                   <h5 className="text-lg xl:text-xl font-semibold text-[#5B2C1A] mb-4">
                     Community Details & Policies
                   </h5>
-
                   <div className="grid gap-3">
-                    {/* Always visible */}
                     <FeatureItem text="On-site parking lot" />
                     <FeatureItem text="Common area maintenance included" />
-
-                    {/* Hidden by default */}
                     {showAllAmenities && (
                       <>
                         <FeatureItem text="Landscaping, dumpster & pest control included" />
@@ -226,7 +203,6 @@ export default function AutumnPlaza() {
                   </div>
                 </div>
 
-                {/* TOGGLE BUTTON */}
                 <button
                   onClick={() => setShowAllAmenities(!showAllAmenities)}
                   className="text-[#E95522] font-semibold hover:underline transition"
@@ -238,7 +214,7 @@ export default function AutumnPlaza() {
               </div>
             </div>
 
-            {/* ================= RETAIL ================= */}
+            {/* RETAIL */}
             <div>
               <div className="flex items-center gap-3 mb-10">
                 <div className="w-14 h-14 bg-[#E95522] rounded-xl flex items-center justify-center text-white">
@@ -251,8 +227,7 @@ export default function AutumnPlaza() {
 
               <p className="text-lg xl:text-xl text-[#666] mb-10 leading-relaxed">
                 Ground-level retail spaces bring everyday essentials and
-                neighborhood services directly into the community, enhancing
-                walkability and convenience.
+                neighborhood services directly into the community.
               </p>
 
               <div className="grid gap-6 xl:gap-8 mb-10">
@@ -273,12 +248,10 @@ export default function AutumnPlaza() {
                 />
               </div>
 
-              {/* FEATURE LIST */}
               <div className="bg-[#FAF7F5] rounded-2xl p-8 xl:p-10">
                 <h4 className="text-xl xl:text-2xl font-bold text-[#5B2C1A] mb-6">
                   Retail Space Features
                 </h4>
-
                 <div className="grid gap-3">
                   <FeatureItem text="Convenient ground-floor access" />
                   <FeatureItem text="Clear storefront visibility" />
@@ -294,7 +267,10 @@ export default function AutumnPlaza() {
       </section>
 
       {/* AMENITIES */}
-      <section className="py-20 md:py-28 bg-[#FAF7F5]">
+      <section
+        id="plaza-amenities"
+        className="py-20 md:py-28 bg-[#FAF7F5] scroll-mt-28"
+      >
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
           <div className="text-center mb-16 xl:mb-20">
             <h2 className="text-4xl md:text-5xl xl:text-6xl font-bold text-[#5B2C1A] mb-6">
@@ -302,8 +278,7 @@ export default function AutumnPlaza() {
             </h2>
             <p className="text-lg xl:text-xl text-[#666] max-w-4xl mx-auto leading-relaxed">
               Autumn Plaza prioritizes safety, accessibility, and convenience
-              through well-planned amenities and secure infrastructure designed
-              for modern living.
+              through well-planned amenities and secure infrastructure.
             </p>
           </div>
 
@@ -333,7 +308,10 @@ export default function AutumnPlaza() {
       </section>
 
       {/* LOCATION */}
-      <section className="py-20 md:py-28 bg-white">
+      <section
+        id="plaza-location"
+        className="py-20 md:py-28 bg-white scroll-mt-28"
+      >
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
           <div className="text-center mb-16 xl:mb-20">
             <h2 className="text-4xl md:text-5xl xl:text-6xl font-bold text-[#5B2C1A] mb-6">
@@ -376,7 +354,6 @@ export default function AutumnPlaza() {
               </div>
             </div>
 
-            {/* EMBEDDED MAP – UPDATED */}
             <div className="w-full h-[500px] lg:h-[600px] xl:h-[680px] rounded-2xl overflow-hidden shadow-xl">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2792.01140933425!2d-86.45208732494461!3d35.84446302099107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8863f7c884e93763%3A0x3d9441bc1b38a238!2s2909%20Old%20Fort%20Pkwy%2C%20Murfreesboro%2C%20TN%2037128%2C%20USA!5e1!3m2!1sen!2sin!4v1768900221905!5m2!1sen!2sin"
