@@ -13,8 +13,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const isAutumnPlaza = pathname.startsWith("/autumn-plaza");
-  const isPlazaHome =
-    pathname.startsWith("/autumn-plaza") && !pathname.includes("aboutus");
+  const isPlazaHome = pathname === "/autumn-plaza/home";
   const isPlazaAboutUs = pathname.startsWith("/autumn-plaza/aboutus");
 
   useEffect(() => {
