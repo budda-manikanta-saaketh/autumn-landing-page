@@ -105,7 +105,7 @@ export default function AboutUs() {
           </div>
         </div>
         {/* ================= SOCIAL MEDIA ================= */}
-        <div className="mt-24 text-center">
+        {/* <div className="mt-24 text-center">
           <h3 className="text-[1.8rem] font-bold text-[#5B2C1A] mb-4">
             Stay Connected With Us
           </h3>
@@ -136,7 +136,7 @@ export default function AboutUs() {
               <FaInstagram />
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
