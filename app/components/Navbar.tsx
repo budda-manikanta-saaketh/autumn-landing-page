@@ -147,11 +147,11 @@ export default function Navbar() {
           <Link
             href="/"
             className={`
-              relative px-7 py-[8px] text-[0.8rem] font-semibold tracking-wide
+              relative px-7 py-[9px] text-[0.82rem] font-semibold tracking-wide
               whitespace-nowrap select-none transition-colors duration-200
-              rounded-tl-[18px] bg-white/95 backdrop-blur-xl
+              rounded-tl-[18px] backdrop-blur-xl
               border-t border-l border-r border-black/[0.08]
-              ${!isAutumnPlaza ? "text-[#E95522]" : "text-[#aaa] hover:text-[#E95522]"}
+              ${!isAutumnPlaza ? "bg-white text-[#E95522] shadow-[0_4px_14px_rgba(0,0,0,0.08)]" : "bg-[#f6f6f6]/95 text-[#626262] hover:text-[#E95522]"}
             `}
           >
             Autumn Towne
@@ -163,11 +163,11 @@ export default function Navbar() {
           <Link
             href="/autumn-plaza/home"
             className={`
-              relative px-7 py-[8px] text-[0.8rem] font-semibold tracking-wide
+              relative px-7 py-[9px] text-[0.82rem] font-semibold tracking-wide
               whitespace-nowrap select-none transition-colors duration-200
-              rounded-tr-[18px] bg-white/95 backdrop-blur-xl
+              rounded-tr-[18px] backdrop-blur-xl
               border-t border-r border-l border-black/[0.08]
-              ${isAutumnPlaza ? "text-[#E95522]" : "text-[#aaa] hover:text-[#E95522]"}
+              ${isAutumnPlaza ? "bg-white text-[#E95522] shadow-[0_4px_14px_rgba(0,0,0,0.08)]" : "bg-[#f6f6f6]/95 text-[#626262] hover:text-[#E95522]"}
             `}
           >
             Autumn Plaza
@@ -303,14 +303,14 @@ export default function Navbar() {
               <Link
                 href="/"
                 onClick={() => setOpen(false)}
-                className={`text-[0.78rem] font-semibold tracking-wide px-4 py-1 rounded-full transition-all duration-200 whitespace-nowrap ${!isAutumnPlaza ? "bg-[#E95522] text-white shadow-[0_2px_8px_rgba(233,85,34,0.28)]" : "text-[#999] hover:text-[#E95522]"}`}
+                className={`text-[0.8rem] font-semibold tracking-wide px-4 py-1 rounded-full transition-all duration-200 whitespace-nowrap ${!isAutumnPlaza ? "bg-[#E95522] text-white shadow-[0_2px_8px_rgba(233,85,34,0.28)]" : "text-[#5f5f5f] hover:text-[#E95522]"}`}
               >
                 Autumn Towne
               </Link>
               <Link
                 href="/autumn-plaza/home"
                 onClick={() => setOpen(false)}
-                className={`text-[0.78rem] font-semibold tracking-wide px-4 py-1 rounded-full transition-all duration-200 whitespace-nowrap ${isAutumnPlaza ? "bg-[#E95522] text-white shadow-[0_2px_8px_rgba(233,85,34,0.28)]" : "text-[#999] hover:text-[#E95522]"}`}
+                className={`text-[0.8rem] font-semibold tracking-wide px-4 py-1 rounded-full transition-all duration-200 whitespace-nowrap ${isAutumnPlaza ? "bg-[#E95522] text-white shadow-[0_2px_8px_rgba(233,85,34,0.28)]" : "text-[#5f5f5f] hover:text-[#E95522]"}`}
               >
                 Autumn Plaza
               </Link>
